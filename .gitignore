@@ -1,0 +1,15 @@
+# files and folders to be ignored
+.idea/
+*.iml
+*.rar
+*.zip
+
+# out folder is to save the idea compiler output files
+out/
+
+# folder pages/ is to save the result files
+pages/
+
+
+*.class
+
