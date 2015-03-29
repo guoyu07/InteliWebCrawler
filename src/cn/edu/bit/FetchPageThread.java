@@ -23,12 +23,14 @@ public class FetchPageThread implements Runnable{
      */
     private String initUrl;
 
+    private boolean isNewParserTread = true;
+
     /**
      * the size of the waiting blocking queue
      * set to 100 as const
      */
-    public static final int URL_QUEUE_SIZE = 100;
-    public static final int PAGE_QUEUE_SIZE = 100;
+    public static final int URL_QUEUE_SIZE = 150;
+    public static final int PAGE_QUEUE_SIZE = 50;
     /**
      * url blocking queue, use blockingQueue class to implements concurrency
      * void the usage of await and notify calls
@@ -48,19 +50,24 @@ public class FetchPageThread implements Runnable{
 
     @Override
     public void run() {
-        String url;
+        String url = null;
         Main.currentThreadNum++;
         System.out.println("new thread starting : " + Thread.currentThread().getName());
-
         try {
-            while ((url = urlQueue.take()) != null) {
+            url = urlQueue.take();
+        } catch (InterruptedException e) {
+            System.out.println("url queue take error " + e.getMessage());
+        }
+
+        while (url != null) {
+            try {
                 // if thread size not full£¬ then start a new thread
                 if (Main.currentThreadNum < Main.THREAD_SIZE) {
                     new Thread(new FetchPageThread(url)).start();
                 }
                 System.out.println("fetching " + url);
                 // FileUtils fu = new FileUtils(Thread.currentThread().getName() + "-" + url.substring(url.lastIndexOf("/")+1) + "_1.html");
-                FileUtils fu = new FileUtils(Thread.currentThread().getName() + FileUtils.md5(url).substring(0, 8) + "_1.html");
+                FileUtils fu = new FileUtils(Thread.currentThread().getName() + "-" + FileUtils.md5(url).substring(0, 8) + "_1.html");
                 // fu.setName(Thread.currentThread().getName() + FileUtils.md5(url).substring(0, 8) + ".html");
                 // fu.setName();
                 String pageStr =fetchOnePage(url);
@@ -69,17 +76,31 @@ public class FetchPageThread implements Runnable{
                 fu.close();
 
                 // use new thread to parseHTML
-                new Thread(new HtmlParserThread(pageStr, urlQueue)).start();
+                pageQueue.put(pageStr);
+                if (this.isNewParserTread) {
+                    new Thread(new HtmlParserThread(pageQueue, urlQueue)).start();
+                    this.isNewParserTread = false;
+                }
 
                 Main.pageSize++;
-                if (Main.pageSize > 1000 ) return;
+                System.out.println("fetching success no: " + Main.pageSize);
+                if (Main.pageSize > 10000 ) return;
+            } catch (InterruptedException e) {
+                // e.printStackTrace();
+                System.out.println(e.getMessage());
+            } catch (NoSuchAlgorithmException e) {
+                // e.printStackTrace();
+                System.out.println(e.getMessage());
+            } catch (IOException e) {
+                // e.printStackTrace();
+                System.out.println(e.getMessage());
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            try {
+                url = urlQueue.take();
+            } catch (InterruptedException e) {
+                System.out.println("url queue take error " + e.getMessage());
+            }
         }
 
         System.out.println("end of thread :" + Thread.currentThread().getName());
@@ -192,10 +213,11 @@ public class FetchPageThread implements Runnable{
         } catch (IOException e) {
             System.out.println("read line error");
         }
-        System.out.println("read finish:" + sb.length());
+        // System.out.println("read finish:" + sb.length());
 
         return sb;
     }
+
     /**
      * get header's meta info as map
      * key as meta tag's name
