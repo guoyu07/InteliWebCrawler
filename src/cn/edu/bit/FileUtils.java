@@ -9,7 +9,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -19,7 +21,7 @@ import java.util.Scanner;
  */
 public class FileUtils {
 
-    Calendar cal = Calendar.getInstance();
+    static Calendar cal = Calendar.getInstance();
     private Path file;
     final static String BASE_DIR = "pages";
     private String content;
@@ -32,7 +34,7 @@ public class FileUtils {
      * constructor use file only
      * @param fileName String
      */
-    public FileUtils(String fileName) throws IOException, NoSuchAlgorithmException {
+    public FileUtils(String fileName) throws IOException {
 
         if (fileName.equals("")) return;
         this.name = fileName;
@@ -51,11 +53,18 @@ public class FileUtils {
     }
 
     // constructor create directory if not exist
-    public FileUtils(String content, String fileName) throws IOException, NoSuchAlgorithmException {
+    public FileUtils(String content, String fileName) throws IOException {
         this(fileName);
 
         this.content = content;
         //this.file = Files.createFile(Paths.get(baseDirStr, this.name));
+
+    }
+
+    /**
+     * blank constructor
+     */
+    public FileUtils() {
 
     }
 
@@ -87,7 +96,7 @@ public class FileUtils {
         if (Files.notExists(pathWithName)) {
             Files.createFile(pathWithName);
         }
-        writer.close();
+        // writer.close();
         writer = new PrintWriter(new FileWriter(pathWithName.toFile()));
     }
 
@@ -105,6 +114,14 @@ public class FileUtils {
             System.out.println("Digest error");
         }
         return hashStr;
+    }
+
+    /**
+     * get a formatted date string,
+     * @return String
+     */
+    public static String nowTime() {
+        return new SimpleDateFormat("HH-mm-ss_SSS").format(new Date());
     }
 
     public void close() {

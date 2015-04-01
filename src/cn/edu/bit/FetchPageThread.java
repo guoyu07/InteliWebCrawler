@@ -1,9 +1,7 @@
 package cn.edu.bit;
 
 import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.*;
 import java.nio.charset.Charset;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
@@ -29,8 +27,14 @@ public class FetchPageThread implements Runnable{
      * the size of the waiting blocking queue
      * set to 100 as const
      */
-    public static final int URL_QUEUE_SIZE = 150;
-    public static final int PAGE_QUEUE_SIZE = 50;
+    public static final int URL_QUEUE_SIZE = 3000;
+
+    /**
+     * decrease the limit of pages buffer to 20
+     * for net fetching is much more slower than page parser
+     */
+    public static final int PAGE_QUEUE_SIZE = 20;
+
     /**
      * url blocking queue, use blockingQueue class to implements concurrency
      * void the usage of await and notify calls
@@ -61,21 +65,18 @@ public class FetchPageThread implements Runnable{
 
         while (url != null) {
             try {
-                // if thread size not full£¬ then start a new thread
-                if (Main.currentThreadNum < Main.THREAD_SIZE) {
-                    new Thread(new FetchPageThread(url)).start();
-                }
+
                 System.out.println("fetching " + url);
-                // FileUtils fu = new FileUtils(Thread.currentThread().getName() + "-" + url.substring(url.lastIndexOf("/")+1) + "_1.html");
-                FileUtils fu = new FileUtils(Thread.currentThread().getName() + "-" + FileUtils.md5(url).substring(0, 8) + "_1.html");
-                // fu.setName(Thread.currentThread().getName() + FileUtils.md5(url).substring(0, 8) + ".html");
-                // fu.setName();
-                String pageStr =fetchOnePage(url);
-                fu.setContent(pageStr);
-                fu.saveToFile();
-                fu.close();
+
+                /**
+                 * add url to the first line of the pageStr
+                 * @date 2015-04-01 22:50
+                 */
+                String pageStr = "<h3>" + url + "</h3>" + fetchOnePage(url);
+                if (pageStr.length() <= (url.length()+9) ) continue;
 
                 // use new thread to parseHTML
+                // one fetch thread with one parse thread
                 pageQueue.put(pageStr);
                 if (this.isNewParserTread) {
                     new Thread(new HtmlParserThread(pageQueue, urlQueue)).start();
@@ -85,22 +86,28 @@ public class FetchPageThread implements Runnable{
                 Main.pageSize++;
                 System.out.println("fetching success no: " + Main.pageSize);
                 if (Main.pageSize > 10000 ) return;
+
+                // sleep
+                // wait(100);
+                // Thread.sleep(100);
             } catch (InterruptedException e) {
-                // e.printStackTrace();
-                System.out.println(e.getMessage());
-            } catch (NoSuchAlgorithmException e) {
                 // e.printStackTrace();
                 System.out.println(e.getMessage());
             } catch (IOException e) {
                 // e.printStackTrace();
                 System.out.println(e.getMessage());
+            } finally {
+                try {
+                    url = urlQueue.take();
+                    // if thread size not full£¬ then start a new thread
+                    if (Main.currentThreadNum < Main.THREAD_SIZE) {
+                        new Thread(new FetchPageThread(url)).start();
+                    }
+                } catch (InterruptedException e) {
+                    System.out.println("url queue take error " + e.getMessage());
+                }
             }
 
-            try {
-                url = urlQueue.take();
-            } catch (InterruptedException e) {
-                System.out.println("url queue take error " + e.getMessage());
-            }
         }
 
         System.out.println("end of thread :" + Thread.currentThread().getName());
@@ -115,17 +122,21 @@ public class FetchPageThread implements Runnable{
     public static String fetchOnePage(String urlStr) throws IOException {
 
         URL url;
+        /**
+         * @date 2015-04-01 add proxy
+         */
+        Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("10.4.20.2", 3128));
 
         try {
             url = new URL(urlStr);
         } catch (MalformedURLException e) {
             System.out.println("Param::" + urlStr + " is not a good url string.");
-            return null;
+            return "";
         }
 
-        HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+        HttpURLConnection conn = (HttpURLConnection)url.openConnection(proxy);
         if (conn == null) {
-            throw new IllegalArgumentException("url protocol must be http");
+            throw new IllegalArgumentException("url protocol must be http or proxy server error");
         }
 
         // set connect and read timeout both to just 1 second
