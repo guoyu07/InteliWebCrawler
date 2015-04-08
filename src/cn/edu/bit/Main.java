@@ -25,30 +25,14 @@ public class Main {
 
         if (urlSet == null) return;
 
-        // String url = "www.baidu.com";
-        // URL url = new URL("http://www.baidu.com");
-        // HttpURLConnection conn = (HttpURLConnection)url.openConnection();
-        // if (conn == null) {
-        //     throw new IllegalArgumentException("url protocol must be http");
-        // }
-//
-        // // set connect and read timeout both to just 1 second
-        // conn.setConnectTimeout(5000);
-        // conn.setReadTimeout(10000);
-        // conn.setInstanceFollowRedirects(true);
-        // conn.setRequestProperty("User-agent", "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36");
-//
-        // // send request
-        // conn.connect();
-        // InputStream is = (InputStream) conn.getContent();
-        // Scanner sc = new Scanner(is);
-        // while (sc.hasNextLine()) {
-        //     System.out.println(sc.nextLine());
-        // }
         for (String anUrl : urlSet) {
             // System.out.println("seed: " + anUrl);
             FetchPageThread fpt = new FetchPageThread(anUrl);
             new Thread(fpt).start();
         }
+    }
+
+    public synchronized static void addFetchedUrl(String urlHash) {
+        urlFetched.add(urlHash);
     }
 }

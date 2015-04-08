@@ -74,17 +74,21 @@ public class HtmlParserThread implements Runnable {
             doc = Jsoup.parse(pageStr);
             Elements links = doc.select("a[href]");
             for (Element link : links) {
-                String hrefStr = link.attr("href");
+                String hrefStr = removeUrlSpm(link.attr("href"));
                 // if (hrefStr.startsWith("http://item.jd.com") || hrefStr.startsWith("http://channel.jd.com") || hrefStr.startsWith("http://list.jd.com") ) {
-                if (hrefStr.startsWith("http://book.douban.com") || hrefStr.startsWith("http://music.douban.com") || hrefStr.startsWith("http://movie.douban.com") ) {
-                    // check if fetched
-                    String hashUrl = FileUtils.md5(hrefStr);
-                    if (Main.urlFetched.contains(hashUrl)) {
-                        continue;
-                    }
-                    urlArr.add(hrefStr);
-                    Main.urlFetched.add(hashUrl);
+                // if (hrefStr.startsWith("http://book.douban.com") || hrefStr.startsWith("http://music.douban.com") || hrefStr.startsWith("http://movie.douban.com") ) {
+                // check if fetched
+                // fetch only the first 8 letters as url's hash code
+                String hashUrl = FileUtils.md5(hrefStr).substring(0, 8);
+                if (Main.urlFetched.contains(hashUrl)) {
+                    // System.out.println("hash " + hashUrl + "has fetched. skip..");
+                    continue;
                 }
+                urlArr.add(hrefStr);
+
+                // add hashUrl to fetched url hashSet
+                Main.addFetchedUrl(hashUrl);
+                // }
             }
             // add to urlQueue
             // if queue is full or cannot put all new urls to queue
@@ -97,14 +101,22 @@ public class HtmlParserThread implements Runnable {
                     int removeNum = oldSize - restNum;
                     int i=0;
                     for (; i<removeNum; i++) {
-                        urlArr.remove(i);
+                        // always remove the first item
+                        urlArr.remove(1);
                     }
                     
                     System.out.println("drop urls: " + (i+1) + " :: add:" + urlArr.size() );
                 } else if (restNum < 0) {
                     urlArr.clear();
+                    System.out.println("Drop all new urls");
                 }
-                urlQueue.addAll(urlArr);
+                // urlQueue.addAll(urlArr);
+                for (String u : urlArr)
+                    try {
+                        urlQueue.put(u);
+                    } catch (InterruptedException e) {
+                        System.out.println("put into url queue error " + e.getMessage());
+                    }
 //            } catch (InterruptedException e) {
 //                System.out.println("put to queue error" + e.getMessage());
 //            }
@@ -114,5 +126,22 @@ public class HtmlParserThread implements Runnable {
                 System.out.println("page queue take error: " + e.getMessage());
             }
         }
+    }
+
+    /**
+     * process url, especially for taobao to remove the spam part of it
+     * @param url String url to be processed
+     * @return String
+     */
+    public static String removeUrlSpm(String url) {
+        int spamIndex = url.indexOf("spm");
+        if (spamIndex != -1) {
+            StringBuilder urlBuilder = new StringBuilder(url);
+            int endOfSpm = url.indexOf("&", spamIndex);
+
+            if (endOfSpm == -1) endOfSpm = url.length();
+            urlBuilder.delete(spamIndex, endOfSpm);
+            return urlBuilder.toString();
+        } else return url;
     }
 }

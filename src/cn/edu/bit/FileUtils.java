@@ -100,9 +100,14 @@ public class FileUtils {
         writer = new PrintWriter(new FileWriter(pathWithName.toFile()));
     }
 
+    /**
+     * get string s's md5 hashcode
+     * @param s String to be hashed
+     * @return String s's md5 code, "" if failed
+     */
     public static String md5(String s) {
         byte[] digbytes = new byte[0];
-        String hashStr = null;
+        String hashStr = "";
         try {
             digbytes = MessageDigest.getInstance("MD5").digest(s.getBytes("UTF-8"));
             StringBuilder fileName = new StringBuilder();

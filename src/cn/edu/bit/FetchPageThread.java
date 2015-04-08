@@ -148,17 +148,19 @@ public class FetchPageThread implements Runnable{
         // send request
         conn.connect();
         Map<String, List<String>> headers = conn.getHeaderFields();
-        int resCode = conn.getResponseCode();
+        // int resCode = conn.getResponseCode();
         int contentLength = conn.getContentLength();
 
         // get charset
         String resType = conn.getContentType();
         String charset = null;
-        int charsetIndex = resType.indexOf("charset=");
-        if (charsetIndex != -1) {
-            int nextCommaIndex = resType.indexOf(";", charsetIndex);
-            if (nextCommaIndex != -1) charset = resType.substring(charsetIndex + 8, resType.indexOf(";", charsetIndex));
-            else charset = resType.substring(charsetIndex + 8);
+        if (resType != null) {
+            int charsetIndex = resType.indexOf("charset=");
+            if (charsetIndex != -1) {
+                int nextCommaIndex = resType.indexOf(";", charsetIndex);
+                if (nextCommaIndex != -1) charset = resType.substring(charsetIndex + 8, resType.indexOf(";", charsetIndex));
+                else charset = resType.substring(charsetIndex + 8);
+            }
         }
         InputStream res = (InputStream) conn.getContent();
         // build string
@@ -169,11 +171,15 @@ public class FetchPageThread implements Runnable{
         // }
 
         // get head and remove it
-        int indexOfHead = pageStrBuilder.indexOf("</head>");
-        StringBuilder headBuilder = pageStrBuilder.delete(0, indexOfHead + 7);
+        /**
+         * head tag handle
+         * remove for now
+         */
+        // int indexOfHead = pageStrBuilder.indexOf("</head>");
+        // StringBuilder headBuilder = pageStrBuilder.delete(0, indexOfHead + 7);
 
         // get all meta tags
-        Map<String, String> metaTags = getMetaMap(headBuilder);
+        // Map<String, String> metaTags = getMetaMap(headBuilder);
 
 
         // remove all style/script tag and return
