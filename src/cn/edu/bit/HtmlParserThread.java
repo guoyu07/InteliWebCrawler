@@ -74,7 +74,15 @@ public class HtmlParserThread implements Runnable {
             doc = Jsoup.parse(pageStr);
             Elements links = doc.select("a[href]");
             for (Element link : links) {
-                String hrefStr = removeUrlSpm(link.attr("href"));
+                String hrefStr = (link.attr("href"));
+                if (hrefStr.startsWith("//")) hrefStr = "http:" + hrefStr;
+                // check if it a available link
+                if ( !isAvailableUrl(hrefStr) ) continue;
+                // if (hrefStr.startsWith("http://detail.tmall.com/item.htm?")) hrefStr = sliceUrlForId(hrefStr);
+                // else if (hrefStr.startsWith("http://list.tmall.com")) hrefStr = sliceListUrl(hrefStr);
+                // else continue; // do not handle for other urls
+                System.out.println("new href : " + hrefStr);
+
                 // if (hrefStr.startsWith("http://item.jd.com") || hrefStr.startsWith("http://channel.jd.com") || hrefStr.startsWith("http://list.jd.com") ) {
                 // if (hrefStr.startsWith("http://book.douban.com") || hrefStr.startsWith("http://music.douban.com") || hrefStr.startsWith("http://movie.douban.com") ) {
                 // check if fetched
@@ -87,7 +95,9 @@ public class HtmlParserThread implements Runnable {
                 urlArr.add(hrefStr);
 
                 // add hashUrl to fetched url hashSet
-                Main.addFetchedUrl(hashUrl);
+                // Main.addFetchedUrl(hashUrl);
+                // add hashUrl directly
+                Main.urlFetched.add(hashUrl);
                 // }
             }
             // add to urlQueue
@@ -126,6 +136,8 @@ public class HtmlParserThread implements Runnable {
                 System.out.println("page queue take error: " + e.getMessage());
             }
         }
+        
+        System.out.println(Thread.currentThread().getName() + " quit for pageStr is null");
     }
 
     /**
@@ -143,5 +155,59 @@ public class HtmlParserThread implements Runnable {
             urlBuilder.delete(spamIndex, endOfSpm);
             return urlBuilder.toString();
         } else return url;
+    }
+
+    /**
+     * for detail.taobao.com remove all other params
+     * leave id only is ok
+     * @param url String
+     * @return String
+     */
+    public static String sliceUrlForId(String url) {
+//        int htmIndex = url.indexOf("item.htm?");
+//        if (htmIndex == -1) return url;
+//        int idIndex = url.indexOf("id=");
+//        if (idIndex != -1) {
+//            StringBuilder urlBuilder = new StringBuilder(url);
+//            int endOfId = url.indexOf("&", idIndex);
+//
+//            if (endOfId == -1) endOfId = url.length();
+//            // urlBuilder.delete(idIndex, endOfId);
+//            String idStr = urlBuilder.substring(idIndex, endOfId);
+//            urlBuilder.delete(htmIndex + 9, urlBuilder.length());
+//            urlBuilder.append(idStr);
+//            return urlBuilder.toString();
+//        } else
+            return url;
+    }
+
+    /**
+     * slice list/search url, leave cat param only is ok
+     * @param url String
+     * @return String
+     */
+    public static String sliceListUrl(String url) {
+//        if (url.startsWith("http://list.tmall.com/")) {
+//            int htmIndex = url.indexOf("htm?");
+//            // String newQuery = "";
+//
+//            int catIndex = url.indexOf("cat=");
+//            if (catIndex != -1) {
+//                StringBuilder urlBuilder = new StringBuilder(url);
+//                int endOfCat = urlBuilder.indexOf("&", catIndex);
+//
+//                if (endOfCat == -1) endOfCat = urlBuilder.length();
+//                String catStr = urlBuilder.substring(catIndex, endOfCat);
+//                urlBuilder.delete(htmIndex + 4, urlBuilder.length());
+//                urlBuilder.append(catStr);
+//                return urlBuilder.toString();
+//            }
+//        }
+        return url;
+    }
+
+
+    public static boolean isAvailableUrl(String href) {
+        return href.startsWith("http://") && !(href.endsWith("jpg") || href.endsWith("jpeg") || href.endsWith("png"));
     }
 }

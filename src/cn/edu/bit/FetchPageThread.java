@@ -73,7 +73,10 @@ public class FetchPageThread implements Runnable{
                  * @date 2015-04-01 22:50
                  */
                 String pageStr = "<h3>" + url + "</h3>" + fetchOnePage(url);
-                if (pageStr.length() <= (url.length()+9) ) continue;
+                if (pageStr.length() <= (url.length()+9) ) {
+                    System.out.println("page no content");
+                    continue;
+                }
 
                 // use new thread to parseHTML
                 // one fetch thread with one parse thread
@@ -84,18 +87,15 @@ public class FetchPageThread implements Runnable{
                 }
 
                 Main.pageSize++;
-                System.out.println("fetching success no: " + Main.pageSize);
-                if (Main.pageSize > 10000 ) return;
+                if (Main.pageSize % 500 == 0) System.out.println("fetching success no: " + Main.pageSize);
+                if (Main.pageSize > 10000 ) break;
 
                 // sleep
                 // wait(100);
                 // Thread.sleep(100);
             } catch (InterruptedException e) {
                 // e.printStackTrace();
-                System.out.println(e.getMessage());
-            } catch (IOException e) {
-                // e.printStackTrace();
-                System.out.println(e.getMessage());
+                System.out.println("InterruptedException " + " " +  e.getMessage());
             } finally {
                 try {
                     url = urlQueue.take();
@@ -119,7 +119,7 @@ public class FetchPageThread implements Runnable{
      * @return String
      * @throws IOException
      */
-    public static String fetchOnePage(String urlStr) throws IOException {
+    public static String fetchOnePage(String urlStr) {
 
         URL url;
         /**
@@ -134,7 +134,13 @@ public class FetchPageThread implements Runnable{
             return "";
         }
 
-        HttpURLConnection conn = (HttpURLConnection)url.openConnection(proxy);
+        HttpURLConnection conn = null;
+        try {
+            conn = (HttpURLConnection)url.openConnection(proxy);
+        } catch (IOException e) {
+            System.out.println("open connection error " + e.getMessage());
+            return "";
+        }
         if (conn == null) {
             throw new IllegalArgumentException("url protocol must be http or proxy server error");
         }
@@ -146,7 +152,12 @@ public class FetchPageThread implements Runnable{
         conn.setRequestProperty("User-agent", "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36");
 
         // send request
-        conn.connect();
+        try {
+            conn.connect();
+        } catch (IOException e) {
+            System.out.println("conn connect error " + e.getMessage());
+            return "";
+        }
         Map<String, List<String>> headers = conn.getHeaderFields();
         // int resCode = conn.getResponseCode();
         int contentLength = conn.getContentLength();
@@ -162,12 +173,21 @@ public class FetchPageThread implements Runnable{
                 else charset = resType.substring(charsetIndex + 8);
             }
         }
-        InputStream res = (InputStream) conn.getContent();
+        InputStream res = null;
+        try {
+            res = conn.getInputStream();
+        } catch (IOException e) {
+            System.out.println("res getInputStream error " + e.getMessage());
+            return "";
+        }
         // build string
-        StringBuilder pageStrBuilder = null;
+        // System.out.println(res.toString());
+        StringBuilder pageStrBuilder =  (readFromStreamByLine(res));
         // if (contentLength != -1) pageStrBuilder = new StringBuilder(readBytesFromStream(res, contentLength, charset));
         // else {
-            pageStrBuilder = new StringBuilder(readFromStreamByLine(res));
+        // pageStrBuilder = (readFromStreamByLine(res));
+        
+        // System.out.println("pageStr length: " + pageStrBuilder.length());
         // }
 
         // get head and remove it
@@ -226,6 +246,7 @@ public class FetchPageThread implements Runnable{
         try {
             while ((line = br.readLine() ) != null) {
                 sb.append(line);
+                // System.out.println("line: " + line);
             }
         } catch (IOException e) {
             System.out.println("read line error");
