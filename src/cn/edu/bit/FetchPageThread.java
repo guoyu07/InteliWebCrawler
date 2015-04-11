@@ -100,7 +100,7 @@ public class FetchPageThread implements Runnable{
             } finally {
                 try {
                     url = urlQueue.take();
-                    // if thread size not full£¬ then start a new thread
+                    // if thread size not full, then start a new thread
                     if (Main.currentThreadNum < Main.THREAD_SIZE) {
                         new Thread(new FetchPageThread(url)).start();
                     }
