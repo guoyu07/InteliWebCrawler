@@ -72,8 +72,9 @@ public class FetchPageThread implements Runnable{
                  * add url to the first line of the pageStr
                  * @date 2015-04-01 22:50
                  */
-                String pageStr = "<h3>" + url + "</h3>" + fetchOnePage(url);
-                if (pageStr.length() <= (url.length()+9) ) {
+                String pageStr = "" + url + System.getProperty("line.separator") + fetchOnePage(url);
+                // if it is to short, drop it
+                if (pageStr.length() <= 5000) {
                     System.out.println("page no content");
                     continue;
                 }
@@ -117,7 +118,6 @@ public class FetchPageThread implements Runnable{
      * fetch one page as string from a url
      * @param urlStr String
      * @return String
-     * @throws IOException
      */
     public static String fetchOnePage(String urlStr) {
 
@@ -134,7 +134,7 @@ public class FetchPageThread implements Runnable{
             return "";
         }
 
-        HttpURLConnection conn = null;
+        HttpURLConnection conn;
         try {
             conn = (HttpURLConnection)url.openConnection(proxy);
         } catch (IOException e) {

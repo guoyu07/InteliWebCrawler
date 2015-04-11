@@ -6,8 +6,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.BlockingQueue;
 
 /**
@@ -58,7 +57,8 @@ public class HtmlParserThread implements Runnable {
         }
         while (pageStr != null) {
             ArrayList<String> urlArr = new ArrayList<String>();
-
+            String parentUrl = pageStr.substring(0, pageStr.indexOf(System.getProperty("line.separator")));
+            String baseUrl = parentUrl.substring(0, parentUrl.indexOf("/"));
             try {
                 String fileName = FileUtils.nowTime() + "-" + Thread.currentThread().getName() + ".html";
                 // System.out.println( "new file: " + fileName);
@@ -76,12 +76,13 @@ public class HtmlParserThread implements Runnable {
             for (Element link : links) {
                 String hrefStr = (link.attr("href"));
                 if (hrefStr.startsWith("//")) hrefStr = "http:" + hrefStr;
+                else if (hrefStr.startsWith("/")) hrefStr = baseUrl + hrefStr;
                 // check if it a available link
                 if ( !isAvailableUrl(hrefStr) ) continue;
                 // if (hrefStr.startsWith("http://detail.tmall.com/item.htm?")) hrefStr = sliceUrlForId(hrefStr);
                 // else if (hrefStr.startsWith("http://list.tmall.com")) hrefStr = sliceListUrl(hrefStr);
                 // else continue; // do not handle for other urls
-                System.out.println("new href : " + hrefStr);
+                // System.out.println("new href : " + hrefStr);
 
                 // if (hrefStr.startsWith("http://item.jd.com") || hrefStr.startsWith("http://channel.jd.com") || hrefStr.startsWith("http://list.jd.com") ) {
                 // if (hrefStr.startsWith("http://book.douban.com") || hrefStr.startsWith("http://music.douban.com") || hrefStr.startsWith("http://movie.douban.com") ) {
@@ -208,6 +209,14 @@ public class HtmlParserThread implements Runnable {
 
 
     public static boolean isAvailableUrl(String href) {
-        return href.startsWith("http://") && !(href.endsWith("jpg") || href.endsWith("jpeg") || href.endsWith("png"));
+
+        final String[] postfix = {"jpg", "jpeg", "pdf", "apk", "zip", "rar", "7z", "gif", "ttf", "swf", "doc"};
+        final List<String> postfixList = Arrays.asList(postfix);
+        int suffixIndex = href.lastIndexOf(".");
+        if (suffixIndex != -1) {
+            String suffix = href.substring(suffixIndex);
+            return href.startsWith("http://") && !(postfixList.contains(suffix));
+        }
+        return true;
     }
 }
