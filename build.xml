@@ -7,6 +7,12 @@
   <property name="src" location="src/cn/edu/bit"/>
   <property name="build" location="build"/>
   <property name="dist"  location="dist"/>
+  <property name="classpath"  location="lib"/>
+
+  <classpath>
+    <pathelement path="${classpath}"/>
+    <pathelement location="lib/jsoup-1.8.1.jar"/>
+  </classpath>
 
   <target name="init">
     <!-- Create the time stamp -->
@@ -18,7 +24,7 @@
   <target name="compile" depends="init"
           description="compile the source " >
     <!-- Compile the java code from ${src} into ${build} -->
-    <javac srcdir="${src}" destdir="${build}" classpath="lib/jsoup-1.8.jar"/>
+    <javac srcdir="${src}" destdir="${build}" classpath="lib/jsoup-1.8.1.jar"/>
   </target>
 
   <target name="dist" depends="compile"
