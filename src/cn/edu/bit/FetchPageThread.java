@@ -89,7 +89,7 @@ public class FetchPageThread implements Runnable{
 
                 Main.pageSize++;
                 if (Main.pageSize % 500 == 0) System.out.println("fetching success no: " + Main.pageSize);
-                if (Main.pageSize > 10000 ) break;
+                if (Main.pageSize > Main.FULL_PAGE_SIZE ) break;
 
                 // sleep
                 // wait(100);

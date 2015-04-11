@@ -10,6 +10,7 @@ public class Main {
 
     public static int pageSize = 0;
     public final static int THREAD_SIZE = 100;
+    public final static int FULL_PAGE_SIZE = 1200000;
     public static int currentThreadNum = 0;
 
     public static HashSet<String> urlFetched = new HashSet<String>();
