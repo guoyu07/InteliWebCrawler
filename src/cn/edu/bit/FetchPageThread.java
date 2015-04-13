@@ -207,7 +207,8 @@ public class FetchPageThread implements Runnable{
 
 
         // remove all style/script tag and return
-        String trimedStr = trimExtraTag(pageStrBuilder);
+        // String trimedStr = trimExtraTag(pageStrBuilder);
+        String trimedStr = new String(pageStrBuilder);
         if (charset != null) {
             byte[] strBytes = trimedStr.getBytes();
             Charset cs = Charset.forName(charset);

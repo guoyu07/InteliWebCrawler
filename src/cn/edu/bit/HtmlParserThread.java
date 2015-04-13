@@ -6,6 +6,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.*;
 import java.util.concurrent.BlockingQueue;
 
@@ -58,7 +60,7 @@ public class HtmlParserThread implements Runnable {
         while (pageStr != null) {
             ArrayList<String> urlArr = new ArrayList<String>();
             String parentUrl = pageStr.substring(0, pageStr.indexOf(System.getProperty("line.separator")));
-            String baseUrl = parentUrl.substring(0, parentUrl.indexOf("/"));
+            String baseUrl = getUrlHost(parentUrl);
             try {
                 String fileName = FileUtils.nowTime() + "-" + Thread.currentThread().getName() + ".html";
                 // System.out.println( "new file: " + fileName);
@@ -213,8 +215,8 @@ public class HtmlParserThread implements Runnable {
         /**
          * if href out of seeds domains, return false
          */
-        if ( !href.contains("csdn") || !href.contains("cnblogs") || !href.contains("51cto")) {
-            System.out.println("bad href out of domains");
+        if (!(href.contains("csdn") || href.contains("cnblogs") || href.contains("51cto") || href.contains("iteye") ) ) {
+            System.out.println("bad href out of domains: " + href);
             return false;
         }
         final String[] postfix = {"jpg", "jpeg", "pdf", "apk", "zip", "rar", "7z", "tar", "gz", "2z", "", "gif", "ttf", "swf", "doc"};
@@ -225,5 +227,15 @@ public class HtmlParserThread implements Runnable {
             return href.startsWith("http://") && !(postfixList.contains(suffix));
         }
         return true;
+    }
+
+    public static String getUrlHost(String url) {
+        URI uri;
+        try {
+            uri =  new URI(url);
+        } catch (URISyntaxException e) {
+            return "";
+        }
+        return uri.getHost();
     }
 }
