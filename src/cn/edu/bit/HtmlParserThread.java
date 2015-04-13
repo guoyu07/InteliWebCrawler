@@ -223,7 +223,7 @@ public class HtmlParserThread implements Runnable {
         final List<String> postfixList = Arrays.asList(postfix);
         int suffixIndex = href.lastIndexOf(".");
         if (suffixIndex != -1) {
-            String suffix = href.substring(suffixIndex);
+            String suffix = href.substring(suffixIndex+1);
             return href.startsWith("http://") && !(postfixList.contains(suffix));
         }
         return true;
