@@ -210,7 +210,14 @@ public class HtmlParserThread implements Runnable {
 
     public static boolean isAvailableUrl(String href) {
 
-        final String[] postfix = {"jpg", "jpeg", "pdf", "apk", "zip", "rar", "7z", "gif", "ttf", "swf", "doc"};
+        /**
+         * if href out of seeds domains, return false
+         */
+        if ( !href.contains("csdn") || !href.contains("cnblogs") || !href.contains("51cto")) {
+            System.out.println("bad href out of domains");
+            return false;
+        }
+        final String[] postfix = {"jpg", "jpeg", "pdf", "apk", "zip", "rar", "7z", "tar", "gz", "2z", "", "gif", "ttf", "swf", "doc"};
         final List<String> postfixList = Arrays.asList(postfix);
         int suffixIndex = href.lastIndexOf(".");
         if (suffixIndex != -1) {

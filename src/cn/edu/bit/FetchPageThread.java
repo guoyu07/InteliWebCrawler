@@ -74,8 +74,8 @@ public class FetchPageThread implements Runnable{
                  */
                 String pageStr = "" + url + System.getProperty("line.separator") + fetchOnePage(url);
                 // if it is to short, drop it
-                if (pageStr.length() <= 5000) {
-                    System.out.println("page no content");
+                if (pageStr.length() <= 5000 && pageStr.length() > 5*1000*1000) {
+                    System.out.println("page no content or too big" + pageStr.length());
                     continue;
                 }
 
@@ -166,6 +166,10 @@ public class FetchPageThread implements Runnable{
         String resType = conn.getContentType();
         String charset = null;
         if (resType != null) {
+            if (!resType.contains("text")) {
+                System.out.println("res content type error: " + resType);
+                return "";
+            }
             int charsetIndex = resType.indexOf("charset=");
             if (charsetIndex != -1) {
                 int nextCommaIndex = resType.indexOf(";", charsetIndex);
@@ -253,6 +257,8 @@ public class FetchPageThread implements Runnable{
         try {
             while ((line = br.readLine() ) != null) {
                 sb.append(line);
+                // break it if file is too big
+                if (sb.length() > 5 * 1000 * 1000) break;
                 // System.out.println("line: " + line);
             }
         } catch (IOException e) {
