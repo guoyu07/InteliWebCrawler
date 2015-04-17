@@ -74,7 +74,7 @@ public class FetchPageThread implements Runnable{
                  */
                 String pageStr = "" + url + System.getProperty("line.separator") + fetchOnePage(url);
                 // if it is to short, drop it
-                if (pageStr.length() <= 5000 && pageStr.length() > 5*1000*1000) {
+                if (pageStr.length() <= 5000 || pageStr.length() > 5*1000*1000) {
                     System.out.println("page no content or too big" + pageStr.length());
                     continue;
                 }
