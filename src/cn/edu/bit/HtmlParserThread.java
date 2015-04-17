@@ -216,7 +216,7 @@ public class HtmlParserThread implements Runnable {
          * if href out of seeds domains, return false
          */
         if (!(href.contains("csdn") || href.contains("cnblogs") || href.contains("51cto") || href.contains("iteye") ) ) {
-            System.out.println("bad href out of domains: " + href);
+            // System.out.println("bad href out of domains: " + href);
             return false;
         }
         final String[] postfix = {"jpg", "jpeg", "pdf", "apk", "zip", "rar", "7z", "tar", "gz", "2z", "", "gif", "ttf", "swf", "doc"};
