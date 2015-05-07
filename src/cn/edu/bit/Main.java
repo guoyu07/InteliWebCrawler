@@ -12,7 +12,9 @@ public class Main {
 
 
     public static Logger mainLogger = LogManager.getLogger(Main.class.getName());
-    public static Logger statusLogger = LogManager.getLogger("cn.edu.bit.Status");
+    public static Logger doneLogger = LogManager.getLogger("cn.edu.bit.UrlsDone");
+    public static Logger todoLogger = LogManager.getLogger("cn.edu.bit.UrlsTo");
+    public static Property config = Property.getInstance();
 
     public static int pageSize = 0;
     public final static int THREAD_SIZE = 100;
@@ -45,6 +47,8 @@ public class Main {
             FetchPageThread fpt = new FetchPageThread(anUrl);
             new Thread(fpt).start();
         }
+
+        System.out.println(config);
     }
 
     public synchronized static void addFetchedUrl(String urlHash) {

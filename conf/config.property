@@ -1,33 +1,35 @@
 # java config property file
 # config the project
-maxFetchingThread=100
-maxParseThread=100
+maxFetchingThread=120
+maxParseThread=120
 
 # database config
 dbHost=127.0.0.1
-dbPort=3306
+dbPort=13306
 dbUserName=webCrawler
 dbPassword=webCrawler
 dbName=webCrawler
 
-isTrimTag=true
-trimTags=css-script
+# trimTags=css-script
+isTrimTags=true
 
 
 # auto change ip address
-autoChangeIp=true
+isAutoChangeIp=true
 
 # proxy config
 useProxy=true
 proxyHost=10.4.20.2
 proxyPort=3128
+proxyUsername=""
+proxyPassword=""
 
 
 # log config
 useFileLog=true
-logFile=log/crawler.log
+# logFile=log/crawler.log
 
 # save status
 isSaveStatus=true
-statusFolder=status
+# statusFolder=status
 
