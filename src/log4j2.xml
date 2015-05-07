@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+    <Properties>
+        <Property name="log-path">./log</Property>
+        <Property name="status-path">./status</Property>
+    </Properties>
+    <Appenders>
+        <RollingFile name="RollingFile" fileName="${log-path}/crawler.log"
+                     filePattern="${log-path}/crawler-%d{yyyy-MM-dd}-%i.log" >
+            <PatternLayout>
+                <pattern>%d{dd/MMM/yyyy HH:mm:ss,SSS}- %c{1}: %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1 KB" />
+            </Policies>
+            <DefaultRolloverStrategy max="4"/>
+        </RollingFile>
+        <File name="UrlsDoneFile" fileName="${status-path}/url-done.txt" >
+            <PatternLayout>
+                <pattern>%m%n</pattern>
+            </PatternLayout>
+        </File>
+        <File name="UrlsToFile" fileName="${status-path}/url-to.txt" >
+            <PatternLayout>
+                <pattern>%m%n</pattern>
+            </PatternLayout>
+        </File>
+        <RollingFile name="ThreadFile" fileName="${log-path}/Thread.log"
+                     filePattern="${log-path}/Thread-%d{yyyy-MM-dd}-%i.log" >
+            <PatternLayout>
+                <pattern>%d{dd/MMM/yyyy HH:mm:ss,SSS}- %c{1}: %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="3 KB" />
+            </Policies>
+            <DefaultRolloverStrategy max="4"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="debug" additivity="false">
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+        <Logger name="cn.edu.bit.Main" level="debug" additivity="false">
+            <appender-ref ref="ThreadFile" level="debug"/>
+        </Logger>
+        <Logger name="cn.edu.bit.UrlsDone" level="debug" additivity="false">
+            <appender-ref ref="UrlsDoneFile" level="debug"/>
+        </Logger>
+        <Logger name="cn.edu.bit.UrlsTo" level="debug" additivity="false">
+            <appender-ref ref="UrlsToFile" level="debug"/>
+        </Logger>
+        <Logger name="root" level="debug" additivity="false">
+            <appender-ref ref="RollingFile" level="debug"/>
+        </Logger>
+    </Loggers>
+</Configuration>

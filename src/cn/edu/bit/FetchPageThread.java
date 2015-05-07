@@ -56,59 +56,61 @@ public class FetchPageThread implements Runnable{
     public void run() {
         String url = null;
         Main.currentThreadNum++;
-        System.out.println("new thread starting : " + Thread.currentThread().getName());
+        Main.mainLogger.info("new thread starting : " + Thread.currentThread().getName());
         try {
             url = urlQueue.take();
         } catch (InterruptedException e) {
-            System.out.println("url queue take error " + e.getMessage());
+            Main.mainLogger.info("url queue take error " + e.getMessage());
         }
 
-        while (url != null) {
-            try {
+        while (url != null) try {
 
-                System.out.println("fetching " + url);
+            Main.mainLogger.info("fetching " + url);
 
-                /**
-                 * add url to the first line of the pageStr
-                 * @date 2015-04-01 22:50
-                 */
-                String pageStr = "" + url + System.getProperty("line.separator") + fetchOnePage(url);
-                // if it is to short, drop it
-                if (pageStr.length() <= 5000 || pageStr.length() > 5*1000*1000) {
-                    System.out.println("page no content or too big" + pageStr.length());
-                    continue;
-                }
-
-                // use new thread to parseHTML
-                // one fetch thread with one parse thread
-                pageQueue.put(pageStr);
-                if (this.isNewParserTread) {
-                    new Thread(new HtmlParserThread(pageQueue, urlQueue)).start();
-                    this.isNewParserTread = false;
-                }
-
-                Main.pageSize++;
-                if (Main.pageSize % 500 == 0) System.out.println("fetching success no: " + Main.pageSize);
-                if (Main.pageSize > Main.FULL_PAGE_SIZE ) break;
-
-                // sleep
-                // wait(100);
-                // Thread.sleep(100);
-            } catch (InterruptedException e) {
-                // e.printStackTrace();
-                System.out.println("InterruptedException " + " " +  e.getMessage());
-            } finally {
-                try {
-                    url = urlQueue.take();
-                    // if thread size not full, then start a new thread
-                    if (Main.currentThreadNum < Main.THREAD_SIZE) {
-                        new Thread(new FetchPageThread(url)).start();
-                    }
-                } catch (InterruptedException e) {
-                    System.out.println("url queue take error " + e.getMessage());
-                }
+            /**
+             * add url to the first line of the pageStr
+             * @date 2015-04-01 22:50
+             */
+            String pageStr = "" + url + System.getProperty("line.separator") + fetchOnePage(url);
+            Main.statusLogger.info(url);
+            // if it is to short, drop it
+            if (pageStr.length() <= 5000 || pageStr.length() > 5 * 1000 * 1000) {
+                Main.mainLogger.info("page no content or too big" + pageStr.length());
+                continue;
             }
 
+            // use new thread to parseHTML
+            // one fetch thread with one parse thread
+            pageQueue.put(pageStr);
+            if (this.isNewParserTread) {
+                new Thread(new HtmlParserThread(pageQueue, urlQueue)).start();
+                this.isNewParserTread = false;
+            }
+
+            Main.pageSize++;
+            if (Main.pageSize % 500 == 0) {
+                Main.mainLogger.info("fetching success no: " + Main.pageSize);
+            }
+            if (Main.pageSize > Main.FULL_PAGE_SIZE) {
+                break;
+            }
+
+            // sleep
+            // wait(100);
+            // Thread.sleep(100);
+        } catch (InterruptedException e) {
+            // e.printStackTrace();
+            Main.mainLogger.info("InterruptedException " + " " + e.getMessage());
+        } finally {
+            try {
+                url = urlQueue.take();
+                // if thread size not full, then start a new thread
+                if (Main.currentThreadNum < Main.THREAD_SIZE) {
+                    new Thread(new FetchPageThread(url)).start();
+                }
+            } catch (InterruptedException e) {
+                Main.mainLogger.info("url queue take error " + e.getMessage());
+            }
         }
 
         System.out.println("end of thread :" + Thread.currentThread().getName());
@@ -125,7 +127,7 @@ public class FetchPageThread implements Runnable{
         /**
          * @date 2015-04-01 add proxy
          */
-        Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("10.4.20.2", 3128));
+        Proxy proxy; //  = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("10.4.20.2", 3128));
 
         try {
             url = new URL(urlStr);
@@ -136,7 +138,7 @@ public class FetchPageThread implements Runnable{
 
         HttpURLConnection conn;
         try {
-            conn = (HttpURLConnection)url.openConnection(proxy);
+            conn = (HttpURLConnection)url.openConnection();
         } catch (IOException e) {
             System.out.println("open connection error " + e.getMessage());
             return "";
