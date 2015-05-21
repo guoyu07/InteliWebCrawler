@@ -3,7 +3,6 @@ package cn.edu.bit;
 import java.io.*;
 import java.net.*;
 import java.nio.charset.Charset;
-import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +26,7 @@ public class FetchPageThread implements Runnable{
      * the size of the waiting blocking queue
      * set to 100 as const
      */
-    public static final int URL_QUEUE_SIZE = 3000;
+    public static final int URL_QUEUE_SIZE = 30000;
 
     /**
      * decrease the limit of pages buffer to 20
@@ -52,11 +51,26 @@ public class FetchPageThread implements Runnable{
         }
     }
 
+    /**
+     * constructor from a file input stream, url-to
+     * @param is InputStream of url-to file
+     */
+    public FetchPageThread(InputStream is) {
+
+    }
+
+    public FetchPageThread(BlockingQueue<String> urlQueue) {
+        this.urlQueue = urlQueue;
+    }
+
     @Override
     public void run() {
         String url = null;
         Main.currentThreadNum++;
         Main.mainLogger.info("new thread starting : " + Thread.currentThread().getName());
+
+        Main.threadUrlMap.put(Thread.currentThread().getName(), this.urlQueue);
+
         try {
             url = urlQueue.take();
         } catch (InterruptedException e) {
@@ -72,10 +86,10 @@ public class FetchPageThread implements Runnable{
              * @date 2015-04-01 22:50
              */
             String pageStr = "" + url + System.getProperty("line.separator") + fetchOnePage(url);
-            Main.statusLogger.info(url);
+            Main.doneLogger.info(FileUtils.shortMd5(url));
             // if it is to short, drop it
             if (pageStr.length() <= 5000 || pageStr.length() > 5 * 1000 * 1000) {
-                Main.mainLogger.info("page no content or too big" + pageStr.length());
+                Main.mainLogger.info("page no content or too big: " + pageStr.length() + " @" + url);
                 continue;
             }
 
@@ -87,11 +101,11 @@ public class FetchPageThread implements Runnable{
                 this.isNewParserTread = false;
             }
 
-            Main.pageSize++;
-            if (Main.pageSize % 500 == 0) {
-                Main.mainLogger.info("fetching success no: " + Main.pageSize);
+            Main.pageCount++;
+            if (Main.pageCount % 500 == 0) {
+                Main.mainLogger.info("fetching success no: " + Main.pageCount);
             }
-            if (Main.pageSize > Main.FULL_PAGE_SIZE) {
+            if (Main.pageCount > Main.FULL_PAGE_SIZE) {
                 break;
             }
 
@@ -127,7 +141,7 @@ public class FetchPageThread implements Runnable{
         /**
          * @date 2015-04-01 add proxy
          */
-        Proxy proxy; //  = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("10.4.20.2", 3128));
+        Proxy proxy;//  = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("10.4.20.2", 3128));
 
         try {
             url = new URL(urlStr);
@@ -158,6 +172,7 @@ public class FetchPageThread implements Runnable{
             conn.connect();
         } catch (IOException e) {
             System.out.println("conn connect error " + e.getMessage());
+            Main.mainLogger.info("conn connect error " + e.getMessage());
             return "";
         }
         Map<String, List<String>> headers = conn.getHeaderFields();
@@ -260,6 +275,8 @@ public class FetchPageThread implements Runnable{
         try {
             while ((line = br.readLine() ) != null) {
                 sb.append(line);
+                // append line separator
+                sb.append(System.getProperty("line.separator"));
                 // break it if file is too big
                 if (sb.length() > 5 * 1000 * 1000) break;
                 // System.out.println("line: " + line);

@@ -21,6 +21,7 @@ public class Property {
      */
     public int maxFetchingThread;
     public int maxParseThread;
+    public int pagesToFetch;
 
     public String dbHost;
     public int dbPort;
@@ -38,6 +39,7 @@ public class Property {
     public boolean useFileLog;
 
     public boolean isSaveStatus;
+    public boolean isResume;
 
     private Property() {
         props = new Properties();
@@ -48,9 +50,11 @@ public class Property {
             props.load(in);
             maxFetchingThread   = Integer.parseInt(props.getProperty("maxFetchingThread", "100"));
             maxParseThread      = Integer.parseInt(props.getProperty("maxParseThread", "100"));
+            pagesToFetch        = Integer.parseInt(props.getProperty("pagesToFetch", "10000"));
             dbHost = props.getProperty("dbHost");
             dbPort = Integer.parseInt(props.getProperty("dbPort", "3306"));
             dbUsername  = props.getProperty("dbUsername", "");
+            dbPassword  = props.getProperty("dbPassword", "");
             dbName      = props.getProperty("dbName", "");
             isTrimTags  = Boolean.parseBoolean(props.getProperty("isTrimTags", "1"));
             isAutoChangeIp  = Boolean.parseBoolean(props.getProperty("isAutoChangeIp", "1"));
@@ -61,6 +65,7 @@ public class Property {
             ProxyPassword   = props.getProperty("ProxyPassword", "");
             useFileLog    = Boolean.parseBoolean(props.getProperty("useFileLog", "1"));
             isSaveStatus    = Boolean.parseBoolean(props.getProperty("isSaveStatus", "1"));
+            isResume        = Boolean.parseBoolean(props.getProperty("isResume", "1"));
         } catch (FileNotFoundException e) {
             System.out.println("=============\r\nFile config.property not found\rr\n=============");
         } catch (IOException e) {

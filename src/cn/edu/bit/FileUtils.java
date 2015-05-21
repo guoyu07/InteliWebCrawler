@@ -4,6 +4,7 @@ package cn.edu.bit;
 import sun.misc.resources.Messages_es;
 
 import java.io.*;
+import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -84,20 +85,34 @@ public class FileUtils {
         return 1;
     }
 
-    public void setName(String name) throws IOException {
+    public void setName(String name)  {
         this.name = name;
         String baseDirStr = BASE_DIR + File.separator +cal.get(Calendar.YEAR) + "_" + cal.get(Calendar.MONTH) + "_"
                 + cal.get(Calendar.DAY_OF_MONTH);
         Path baseDir = Paths.get(baseDirStr);
         if (Files.notExists(baseDir)) {
-            Files.createDirectories(baseDir);
+            try {
+                Files.createDirectories(baseDir);
+            } catch (IOException e) {
+                Main.mainLogger.info("create dir:" + baseDirStr + " already exist");
+            }
         }
         Path pathWithName = Paths.get(baseDirStr, this.name);
+        
+        // create file if not exist
         if (Files.notExists(pathWithName)) {
-            Files.createFile(pathWithName);
+            try {
+                Files.createFile(pathWithName);
+            } catch (IOException e) {
+                Main.mainLogger.info("File " + pathWithName + " already exist");
+            }
         }
         // writer.close();
-        writer = new PrintWriter(new FileWriter(pathWithName.toFile()));
+        try {
+            writer = new PrintWriter(new FileWriter(pathWithName.toFile()));
+        } catch (IOException e) {
+            Main.mainLogger.info("new printWriter exception");
+        }
     }
 
     /**
@@ -119,6 +134,15 @@ public class FileUtils {
             System.out.println("Digest error");
         }
         return hashStr;
+    }
+
+    /**
+     * return the string s's md5 value's first 8 characters
+     * @param s string to calculate
+     * @return md5 string's first 8 chars
+     */
+    public static String shortMd5(String s) {
+        return md5(s).substring(0, 8);
     }
 
     /**

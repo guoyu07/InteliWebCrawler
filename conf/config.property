@@ -3,6 +3,8 @@
 maxFetchingThread=120
 maxParseThread=120
 
+pagesToFetch=50
+
 # database config
 dbHost=127.0.0.1
 dbPort=13306
@@ -32,4 +34,4 @@ useFileLog=true
 # save status
 isSaveStatus=true
 # statusFolder=status
-
+isResume=true

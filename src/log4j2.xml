@@ -11,7 +11,7 @@
                 <pattern>%d{dd/MMM/yyyy HH:mm:ss,SSS}- %c{1}: %m%n</pattern>
             </PatternLayout>
             <Policies>
-                <SizeBasedTriggeringPolicy size="1 KB" />
+                <SizeBasedTriggeringPolicy size="100 KB" />
             </Policies>
             <DefaultRolloverStrategy max="4"/>
         </RollingFile>
@@ -25,13 +25,18 @@
                 <pattern>%m%n</pattern>
             </PatternLayout>
         </File>
+        <File name="HashUrlMapFile" fileName="${status-path}/hash-url-map.txt" >
+            <PatternLayout>
+                <pattern></pattern>
+            </PatternLayout>
+        </File>
         <RollingFile name="ThreadFile" fileName="${log-path}/Thread.log"
                      filePattern="${log-path}/Thread-%d{yyyy-MM-dd}-%i.log" >
             <PatternLayout>
                 <pattern>%d{dd/MMM/yyyy HH:mm:ss,SSS}- %c{1}: %m%n</pattern>
             </PatternLayout>
             <Policies>
-                <SizeBasedTriggeringPolicy size="3 KB" />
+                <SizeBasedTriggeringPolicy size="80 KB" />
             </Policies>
             <DefaultRolloverStrategy max="4"/>
         </RollingFile>
@@ -48,6 +53,9 @@
         </Logger>
         <Logger name="cn.edu.bit.UrlsTo" level="debug" additivity="false">
             <appender-ref ref="UrlsToFile" level="debug"/>
+        </Logger>
+        <Logger name="cn.edu.bit.HashUrlMap" level="debug" additivity="false">
+            <appender-ref ref="HashUrlMapFile" level="debug"/>
         </Logger>
         <Logger name="root" level="debug" additivity="false">
             <appender-ref ref="RollingFile" level="debug"/>

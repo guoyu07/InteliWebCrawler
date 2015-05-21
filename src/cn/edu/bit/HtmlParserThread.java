@@ -49,7 +49,7 @@ public class HtmlParserThread implements Runnable {
         Random rand = new Random();
         Main.currentThreadNum++;
 
-        System.out.println("Html page parsing @ " + Thread.currentThread().getName());
+        Main.mainLogger.info("Html page parsing @ " + Thread.currentThread().getName());
 
         String pageStr = null;
         try {
@@ -59,18 +59,16 @@ public class HtmlParserThread implements Runnable {
         }
         while (pageStr != null) {
             ArrayList<String> urlArr = new ArrayList<String>();
-            String parentUrl = pageStr.substring(0, pageStr.indexOf(System.getProperty("line.separator")));
+            int urlIndex =  pageStr.indexOf(System.getProperty("line.separator"));
+            String parentUrl = pageStr.substring(0, urlIndex);
             String baseUrl = getUrlHost(parentUrl);
-            try {
-                String fileName = FileUtils.nowTime() + "-" + Thread.currentThread().getName() + ".html";
-                // System.out.println( "new file: " + fileName);
-                fu.setName(fileName);
-                fu.setContent(pageStr);
-                fu.saveToFile();
-                fu.close();
-            } catch (IOException e) {
-                System.out.println("save one file error, for " + e.getMessage());
-            }
+            // String fileName = FileUtils.nowTime() + "-" + Thread.currentThread().getName() + ".html";
+            String fileName = FileUtils.shortMd5(parentUrl) + ".html";
+            // System.out.println( "new file: " + fileName);
+            fu.setName(fileName);
+            fu.setContent(pageStr.substring(urlIndex + System.getProperty("line.separator").length()));
+            fu.saveToFile();
+            fu.close();
 
 
             doc = Jsoup.parse(pageStr);
@@ -81,16 +79,10 @@ public class HtmlParserThread implements Runnable {
                 else if (hrefStr.startsWith("/")) hrefStr = baseUrl + hrefStr;
                 // check if it a available link
                 if ( !isAvailableUrl(hrefStr) ) continue;
-                // if (hrefStr.startsWith("http://detail.tmall.com/item.htm?")) hrefStr = sliceUrlForId(hrefStr);
-                // else if (hrefStr.startsWith("http://list.tmall.com")) hrefStr = sliceListUrl(hrefStr);
-                // else continue; // do not handle for other urls
-                // System.out.println("new href : " + hrefStr);
 
-                // if (hrefStr.startsWith("http://item.jd.com") || hrefStr.startsWith("http://channel.jd.com") || hrefStr.startsWith("http://list.jd.com") ) {
-                // if (hrefStr.startsWith("http://book.douban.com") || hrefStr.startsWith("http://music.douban.com") || hrefStr.startsWith("http://movie.douban.com") ) {
                 // check if fetched
                 // fetch only the first 8 letters as url's hash code
-                String hashUrl = FileUtils.md5(hrefStr).substring(0, 8);
+                String hashUrl = FileUtils.shortMd5(hrefStr);
                 if (Main.urlFetched.contains(hashUrl)) {
                     // System.out.println("hash " + hashUrl + "has fetched. skip..");
                     continue;
@@ -101,6 +93,7 @@ public class HtmlParserThread implements Runnable {
                 // Main.addFetchedUrl(hashUrl);
                 // add hashUrl directly
                 Main.urlFetched.add(hashUrl);
+                Main.mapLogger.info(hashUrl + "   " + parentUrl);
                 // }
             }
             // add to urlQueue
