@@ -17,20 +17,25 @@ public class Main {
     public static Logger mapLogger = LogManager.getLogger("cn.edu.bit.HashUrlMap");
     public static Property config = Property.getInstance();
 
-    // pages count
-    public static int pageCount = 0;
+    public static boolean hasLogedHash = false;
+
+    // pages count, start from 1
+    public static int pageCount = 1;
     public final static int THREAD_SIZE = 100;
 
-    // ×Ü¹²ÒªÅÀÈ¡µÄÊıÁ¿
+    // æœ€å¤§çˆ¬å–ç½‘é¡µæ•°é‡
     public final static int FULL_PAGE_SIZE = config.pagesToFetch;
 
-    // µ±Ç°ÒÑÓĞÅÀÈ¡Ïß³ÌÊıÁ¿
+    // å½“å‰çº¿ç¨‹æ•°
     public static int currentThreadNum = 0;
 
-    // ÒÑÅÀÈ¡Ò³Ãæ¼¯ºÏ,±£´æµÄÊÇurlµÄhashÖµ
+    // ä¿å­˜å·²ç»çˆ¬å–çš„é¡µé¢çš„urlçš„hashçš„é›†åˆ
     public static ConcurrentSkipListSet<String> urlFetched = new ConcurrentSkipListSet<String>();
 
-    // Ïß³ÌµÄ´ıÅÀÈ¡¶ÓÁĞ£¬Thread.getNameÓë´ıÅÀÈ¡¶ÓÁĞÓ³Éä
+    // ä¿å­˜urlçš„çŸ­md5å€¼ä¸åŸurlçš„å¯¹åº”ï¼Œæœ€åä¸€æ¬¡å†™å…¥æ—¥å¿—
+    public static ConcurrentHashMap<String, String> hashUrlMap = new ConcurrentHashMap<String, String>();
+
+    // ä¿å­˜å„çº¿ç¨‹å¾…çˆ¬å–é˜Ÿåˆ—çš„å¼•ç”¨
     public static ConcurrentHashMap<String, BlockingQueue<String>> threadUrlMap = new ConcurrentHashMap<String, BlockingQueue<String>>();
 
     public static ExecutorService executor;
@@ -41,16 +46,18 @@ public class Main {
         System.out.println("Start at :: " + cal.getTime());
         mainLogger.info("Start at :: " + cal.getTime());
 
-        // init a thread pool upto 100
-        executor = Executors.newFixedThreadPool(100);
+        // init a thread pool up to 100
+        // executor = Executors.newFixedThreadPool(100);
         Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             @Override
             public void uncaughtException(Thread t, Throwable e) {
                 System.out.println("Thread " + t.getName() + " end cuz " + e.getMessage() + " restarting now.");
+                e.printStackTrace();
                 String oldThreadName = t.getName();
                 BlockingQueue<String> oldQueue = threadUrlMap.get(oldThreadName);
-                if (oldQueue == null) return;
-                // new thread
+                // return if oldQueue has no url left
+                if (oldQueue == null || oldQueue.size() == 0) return;
+                // or use new thread
                 new Thread(new FetchPageThread(oldQueue)).start();
 
                 // remove old key-value pair
@@ -121,5 +128,9 @@ public class Main {
 
     public synchronized static void addFetchedUrl(String urlHash) {
         urlFetched.add(urlHash);
+    }
+
+    public synchronized static void fetchedCountPlus() {
+        Main.pageCount++;
     }
 }

@@ -4,6 +4,7 @@ import java.io.*;
 import java.net.*;
 import java.nio.charset.Charset;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -25,12 +26,13 @@ public class FetchPageThread implements Runnable{
     /**
      * the size of the waiting blocking queue
      * set to 100 as const
+     * update size to 30000; 2015-05-22
      */
     public static final int URL_QUEUE_SIZE = 30000;
 
     /**
      * decrease the limit of pages buffer to 20
-     * for net fetching is much more slower than page parser
+     * for page fetching is much more slower than page parser
      */
     public static final int PAGE_QUEUE_SIZE = 20;
 
@@ -86,6 +88,10 @@ public class FetchPageThread implements Runnable{
              * @date 2015-04-01 22:50
              */
             String pageStr = "" + url + System.getProperty("line.separator") + fetchOnePage(url);
+            if (pageStr.contains("<title>用户登录")) {
+                Main.mainLogger.info("this is a login page, drop it. @ " + url);
+                continue;
+            }
             Main.doneLogger.info(FileUtils.shortMd5(url));
             // if it is to short, drop it
             if (pageStr.length() <= 5000 || pageStr.length() > 5 * 1000 * 1000) {
@@ -101,12 +107,30 @@ public class FetchPageThread implements Runnable{
                 this.isNewParserTread = false;
             }
 
-            Main.pageCount++;
+            // Main.fetchedCountPlus();
             if (Main.pageCount % 500 == 0) {
                 Main.mainLogger.info("fetching success no: " + Main.pageCount);
+                System.out.println("another 500 pages done, and the last url is:" + Main.urlFetched.last());
             }
             if (Main.pageCount > Main.FULL_PAGE_SIZE) {
-                break;
+
+                // log hash-url-maps
+                synchronized (this.getClass()) {
+                    if (!Main.hasLogedHash) {
+                        //@todo save scenario for resuming
+                        Main.mainLogger.info("===============================");
+                        Main.mainLogger.info("-- Page fetch done. exiting  --");
+                        Main.mainLogger.info("===============================");
+                        System.out.println("fetch done, exiting");
+                        Main.hasLogedHash = true;
+                        System.out.println("logging hash-url-map");
+                        for (Map.Entry<String, String> hashUrlMap : Main.hashUrlMap.entrySet()) {
+                            Main.mapLogger.info(hashUrlMap.getKey() + " " + hashUrlMap.getValue());
+                        }
+                        System.out.println("map logging done");
+                    }
+                }
+                System.exit(1);
             }
 
             // sleep
@@ -141,7 +165,7 @@ public class FetchPageThread implements Runnable{
         /**
          * @date 2015-04-01 add proxy
          */
-        Proxy proxy;//  = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("10.4.20.2", 3128));
+        Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("10.4.20.2", 3128));
 
         try {
             url = new URL(urlStr);
@@ -152,7 +176,7 @@ public class FetchPageThread implements Runnable{
 
         HttpURLConnection conn;
         try {
-            conn = (HttpURLConnection)url.openConnection();
+            conn = (HttpURLConnection)url.openConnection(proxy);
         } catch (IOException e) {
             System.out.println("open connection error " + e.getMessage());
             return "";
@@ -184,7 +208,7 @@ public class FetchPageThread implements Runnable{
         String charset = null;
         if (resType != null) {
             if (!resType.contains("text")) {
-                System.out.println("res content type error: " + resType);
+                Main.mainLogger.info("res content type error: " + resType + " @" + urlStr);
                 return "";
             }
             int charsetIndex = resType.indexOf("charset=");

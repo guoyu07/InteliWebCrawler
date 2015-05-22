@@ -2,6 +2,7 @@ package cn.edu.bit;
 
 import org.junit.Assert;
 import org.junit.Test;
+import sun.reflect.misc.FieldUtil;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -35,5 +36,11 @@ public class MainTest {
         System.out.println(threadUrlMap.get("url-1"));
         Assert.assertEquals(blockQ, bq2);
 
+    }
+
+    @Test
+    public void TestShortMd5() {
+        Assert.assertEquals(FileUtils.shortMd5("http://home.cnblogs.com/u/Dawn----123/"), FileUtils.shortMd5("http://home.cnblogs.com/u/Dawn----123/"));
+        System.out.println(FileUtils.shortMd5("http://home.cnblogs.com/u/Dawn----123/"));
     }
 }

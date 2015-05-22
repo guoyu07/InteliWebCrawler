@@ -55,7 +55,7 @@ public class HtmlParserThread implements Runnable {
         try {
             pageStr = pageQueue.take();
         } catch (InterruptedException e) {
-            System.out.println("queue take error " + e.getMessage());
+            Main.mainLogger.info("queue take error " + e.getMessage());
         }
         while (pageStr != null) {
             ArrayList<String> urlArr = new ArrayList<String>();
@@ -68,6 +68,7 @@ public class HtmlParserThread implements Runnable {
             fu.setName(fileName);
             fu.setContent(pageStr.substring(urlIndex + System.getProperty("line.separator").length()));
             fu.saveToFile();
+            Main.fetchedCountPlus();
             fu.close();
 
 
@@ -93,7 +94,9 @@ public class HtmlParserThread implements Runnable {
                 // Main.addFetchedUrl(hashUrl);
                 // add hashUrl directly
                 Main.urlFetched.add(hashUrl);
-                Main.mapLogger.info(hashUrl + "   " + parentUrl);
+                // Main.mapLogger.info(hashUrl + "   " + parentUrl);
+                // add to hashUrlMap, log when exit
+                Main.hashUrlMap.put(hashUrl, parentUrl);
                 // }
             }
             // add to urlQueue
@@ -111,17 +114,17 @@ public class HtmlParserThread implements Runnable {
                         urlArr.remove(1);
                     }
                     
-                    System.out.println("drop urls: " + (i+1) + " :: add:" + urlArr.size() );
+                    Main.mainLogger.info("drop urls: " + (i + 1) + " :: add:" + urlArr.size());
                 } else if (restNum < 0) {
                     urlArr.clear();
-                    System.out.println("Drop all new urls");
+                    Main.mainLogger.info("Drop all new urls");
                 }
                 // urlQueue.addAll(urlArr);
                 for (String u : urlArr)
                     try {
                         urlQueue.put(u);
                     } catch (InterruptedException e) {
-                        System.out.println("put into url queue error " + e.getMessage());
+                        Main.mainLogger.info("put into url queue error " + e.getMessage());
                     }
 //            } catch (InterruptedException e) {
 //                System.out.println("put to queue error" + e.getMessage());
@@ -129,7 +132,7 @@ public class HtmlParserThread implements Runnable {
             try {
                 pageStr = pageQueue.take();
             } catch (InterruptedException e) {
-                System.out.println("page queue take error: " + e.getMessage());
+                Main.mainLogger.info("page queue take error: " + e.getMessage());
             }
         }
         
@@ -212,6 +215,9 @@ public class HtmlParserThread implements Runnable {
             // System.out.println("bad href out of domains: " + href);
             return false;
         }
+        // 登录页面则跳过
+        if (href.contains("signin") || href.contains("login")) return false;
+
         final String[] postfix = {"jpg", "jpeg", "pdf", "apk", "zip", "rar", "7z", "tar", "gz", "2z", "", "gif", "ttf", "swf", "doc"};
         final List<String> postfixList = Arrays.asList(postfix);
         int suffixIndex = href.lastIndexOf(".");

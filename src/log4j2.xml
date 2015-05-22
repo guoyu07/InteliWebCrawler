@@ -27,7 +27,7 @@
         </File>
         <File name="HashUrlMapFile" fileName="${status-path}/hash-url-map.txt" >
             <PatternLayout>
-                <pattern></pattern>
+                <pattern>%m%n</pattern>
             </PatternLayout>
         </File>
         <RollingFile name="ThreadFile" fileName="${log-path}/Thread.log"

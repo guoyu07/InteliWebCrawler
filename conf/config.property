@@ -3,7 +3,7 @@
 maxFetchingThread=120
 maxParseThread=120
 
-pagesToFetch=50
+pagesToFetch=2000
 
 # database config
 dbHost=127.0.0.1
@@ -34,4 +34,10 @@ useFileLog=true
 # save status
 isSaveStatus=true
 # statusFolder=status
-isResume=true
+isResume=false
+
+# url regular expression
+urlPattern=.*
+
+# these file type will be ignored, not case sensitive
+excludeType=jpg,jpeg,pdf,apk,zip,rar,7z,tar,gz,2z,gif,ttf,swf,doc
