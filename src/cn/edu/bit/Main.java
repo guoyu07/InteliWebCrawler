@@ -83,6 +83,7 @@ public class Main {
                             System.out.println("resumed thread count: " + threadCount);
                             Main.mainLogger.info("resumed thread count: " + threadCount);
                         } else {
+                            newThreadCount++;
                             Main.resumeOneThreadFromOneFile(f);
                         }
                         // clean the url-to file
@@ -101,7 +102,7 @@ public class Main {
                 }
             }
 
-            mainLogger.info("new thread resumed: " + newThreadCount);
+            if (newThreadCount != 0) mainLogger.info("new thread resumed: " + newThreadCount);
 
         } else {
             // read seed file to start crawling

@@ -153,6 +153,11 @@ public class FileUtils {
         return new SimpleDateFormat("HH-mm-ss_SSS").format(new Date());
     }
 
+    /**
+     * clean a file, delete all its content
+     * use RandomAccessFile.setLength(0)
+     * @param f file to be cleaned
+     */
     public static void cleanFile(File f) {
         try {
             RandomAccessFile raf = new RandomAccessFile(f, "rw");
@@ -165,8 +170,11 @@ public class FileUtils {
         }
     }
 
+    /**
+     * close the writer instance
+     */
     public void close() {
-        this.writer.close();
+        if (this.writer != null) this.writer.close();
     }
 
 }

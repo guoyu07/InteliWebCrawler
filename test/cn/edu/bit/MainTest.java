@@ -62,6 +62,13 @@ public class MainTest {
 
     @Test
     public void testShortMd5Right() {
-        Assert.assertEquals("bb2287e6 ", FileUtils.shortMd5("http://www.csdn.net/tag/%E4%BA%A7%E5%93%81/news"));
+        Assert.assertEquals("157535e5", FileUtils.shortMd5("http://www.csdn.net/tag/%E4%BA%A7%E5%93%81/news"));
+    }
+
+    @Test
+    public void testCleanFile() {
+        File f = new File("status/url-done.txt");
+        FileUtils.cleanFile(f);
+        Assert.assertEquals(0, f.length());
     }
 }

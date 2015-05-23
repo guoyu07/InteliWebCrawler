@@ -5,14 +5,15 @@
 ### TODO ###
 1. 定义登录一面的刷选规则
 2. 定义根据页面内容进行刷选的正则规则
-3. 使用java.util.concurrent.Executors 保证运行的thread数目不减少，尤其是parserThread异常中止后能重启。
-4. 保存已经读取的url到文件，保证系统异常退出后能继续之前的作业
-5. 已经读取的url保存的是md5之后的值
-6. 设计一种保存运行状态“url-to”方法，保存那些将要爬取得数据。用于下一次继续运行
+3. 使用java.util.concurrent.Executors 保证运行的thread数目不减少，尤其是parserThread异常中止后能重启。（abandoned）
+4. 保存已经读取的url到文件，保证系统异常退出后能继续之前的作业（done）
+5. 已经读取的url保存的是md5之后的值（done）
+6. 设计一种保存运行状态“url-to”方法，保存那些将要爬取得数据。用于下一次继续运行（done）
 7. 动态配置重载
 
 ### NOTICE ###
 1. 现在的resume操作再次爬取的数量也是在配置里面设置的数量，而没有计算之前爬取的数量，所以如果是增量爬取需要手动修改配置
+2. 如果使用resume的话需要保证url-to.txt文件有内容，否则不能呢个继续爬取，也不会使用seed配置
 
 ### Contributor ###
 wuxu92@gmail.com
