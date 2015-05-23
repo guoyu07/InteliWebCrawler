@@ -39,5 +39,5 @@ isResume=false
 # url regular expression
 urlPattern=.*
 
-# these file type will be ignored, not case sensitive
+# these file type will be ignored, use lowerCase
 excludeType=jpg,jpeg,pdf,apk,zip,rar,7z,tar,gz,2z,gif,ttf,swf,doc

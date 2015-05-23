@@ -4,6 +4,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -41,6 +44,8 @@ public class Property {
     public boolean isSaveStatus;
     public boolean isResume;
 
+    public List<String> excludeType;
+
     private Property() {
         props = new Properties();
 
@@ -66,6 +71,10 @@ public class Property {
             useFileLog    = Boolean.parseBoolean(props.getProperty("useFileLog", "1"));
             isSaveStatus    = Boolean.parseBoolean(props.getProperty("isSaveStatus", "1"));
             isResume        = Boolean.parseBoolean(props.getProperty("isResume", "1"));
+
+            String excludeTypeStr = props.getProperty("excludeType", "");
+            excludeType = Arrays.asList(excludeTypeStr.split(","));
+
         } catch (FileNotFoundException e) {
             System.out.println("=============\r\nFile config.property not found\rr\n=============");
         } catch (IOException e) {
@@ -88,20 +97,21 @@ public class Property {
     public String toString() {
         return
                 "maxFetchingThread:" + maxFetchingThread + "-" +
-                "maxParseThread:" + maxParseThread + "-" +
-                "dbHost:" + dbHost + "-" +
-                "dbPort:" + dbPort + "-" +
-                "dbUsername:" + dbUsername + "-" +
-                "dbName:" + dbName + "-" +
-                "isTrimTags:" + isTrimTags + "-" +
-                "isAutoChangeIp:" + isAutoChangeIp + "-" +
-                "useProxy:" + useProxy + "-" +
-                "ProxyHost:" + ProxyHost + "-" +
-                "ProxyPort:" + ProxyPort + "-" +
-                "ProxyUsername:" + ProxyUsername + "-" +
-                "ProxyPassword:" + ProxyPassword + "-" +
-                "useFileLog:" + useFileLog + "-" +
-                "useFileLog:" + useFileLog + "-" +
-                "isSaveStatus:" + isSaveStatus;
+                        "maxParseThread:" + maxParseThread + "-" +
+                        "dbHost:" + dbHost + "-" +
+                        "dbPort:" + dbPort + "-" +
+                        "dbUsername:" + dbUsername + "-" +
+                        "dbName:" + dbName + "-" +
+                        "isTrimTags:" + isTrimTags + "-" +
+                        "isAutoChangeIp:" + isAutoChangeIp + "-" +
+                        "useProxy:" + useProxy + "-" +
+                        "ProxyHost:" + ProxyHost + "-" +
+                        "ProxyPort:" + ProxyPort + "-" +
+                        "ProxyUsername:" + ProxyUsername + "-" +
+                        "ProxyPassword:" + ProxyPassword + "-" +
+                        "useFileLog:" + useFileLog + "-" +
+                        "useFileLog:" + useFileLog + "-" +
+                        "isSaveStatus:" + isSaveStatus +
+                        "excludeTypes: " + (excludeType);
     }
 }

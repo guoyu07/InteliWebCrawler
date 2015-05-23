@@ -1,419 +1,463 @@
-22/May/2015 16:26:46,941- Main: fetching http://www.cnblogs.com/fanfu1/archive/2015/05/19.html
-22/May/2015 16:26:46,959- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4238761
-22/May/2015 16:26:46,961- Main: page no content or too big: 44 @http://space.cnblogs.com/group/topic/1938/
-22/May/2015 16:26:46,961- Main: fetching http://space.cnblogs.com/group/topic/1939/
-22/May/2015 16:26:46,985- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1771101
-22/May/2015 16:26:46,985- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/07/05/1771101.html#comments
-22/May/2015 16:26:47,009- Main: page no content or too big: 4157 @http://www.cnblogs.com/fanfu1/archive/2015/05/19.html
-22/May/2015 16:26:47,010- Main: fetching http://www.cnblogs.com/fanfu1/p/4514968.html
-22/May/2015 16:26:47,032- Main: page no content or too big: 44 @http://space.cnblogs.com/group/topic/1939/
-22/May/2015 16:26:47,032- Main: fetching http://space.cnblogs.com/group/topic/1943/
-22/May/2015 16:26:47,051- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4097492
-22/May/2015 16:26:47,051- Main: fetching http://www.cnblogs.com/umlonline/p/4097485.html
-22/May/2015 16:26:47,056- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1767981
-22/May/2015 16:26:47,078- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4514968
-22/May/2015 16:26:47,108- Main: page no content or too big: 44 @http://space.cnblogs.com/group/topic/1943/
-22/May/2015 16:26:47,109- Main: fetching http://space.cnblogs.com/group/topic/1944/
-22/May/2015 16:26:47,111- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4097485
-22/May/2015 16:26:47,185- Main: page no content or too big: 44 @http://space.cnblogs.com/group/topic/1944/
-22/May/2015 16:26:47,186- Main: fetching http://space.cnblogs.com/group/topic/1945/
-22/May/2015 16:26:47,189- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4238761
-22/May/2015 16:26:47,189- Main: fetching http://www.cnblogs.com/leee/p/4231396.html
-22/May/2015 16:26:47,265- Main: page no content or too big: 44 @http://space.cnblogs.com/group/topic/1945/
-22/May/2015 16:26:47,265- Main: fetching http://space.cnblogs.com/group/topic/1946/
-22/May/2015 16:26:47,329- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1767981
-22/May/2015 16:26:47,329- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/30/1767981.html#comments
-22/May/2015 16:26:47,330- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4231396
-22/May/2015 16:26:47,343- Main: page no content or too big: 44 @http://space.cnblogs.com/group/topic/1946/
-22/May/2015 16:26:47,343- Main: fetching http://space.cnblogs.com/group/topic/1947/
-22/May/2015 16:26:47,386- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/30/KnightsWarriorIndexes.html
-22/May/2015 16:26:47,396- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4514968
-22/May/2015 16:26:47,396- Main: fetching http://www.cnblogs.com/fanfu1/archive/2015/04/24.html
-22/May/2015 16:26:47,421- Main: page no content or too big: 44 @http://space.cnblogs.com/group/topic/1947/
-22/May/2015 16:26:47,421- Main: fetching http://space.cnblogs.com/group/topic/1948/
-22/May/2015 16:26:47,435- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4097485
-22/May/2015 16:26:47,435- Main: fetching http://www.cnblogs.com/umlonline/archive/2014/09/22.html
-22/May/2015 16:26:47,459- Main: page no content or too big: 4153 @http://www.cnblogs.com/fanfu1/archive/2015/04/24.html
-22/May/2015 16:26:47,459- Main: fetching http://space.cnblogs.com/msg/send/%e6%88%91%e5%92%8c%e5%b0%8f%e8%8f%9c
-22/May/2015 16:26:47,487- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1764232
-22/May/2015 16:26:47,496- Main: page no content or too big: 44 @http://space.cnblogs.com/group/topic/1948/
-22/May/2015 16:26:47,496- Main: fetching http://space.cnblogs.com/group/topic/1949/
-22/May/2015 16:26:47,499- Main: page no content or too big: 4099 @http://www.cnblogs.com/umlonline/archive/2014/09/22.html
-22/May/2015 16:26:47,499- Main: fetching http://www.cnblogs.com/umlonline/archive/2014/07/10.html
-22/May/2015 16:26:47,564- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4231396
-22/May/2015 16:26:47,564- Main: page no content or too big: 4119 @http://www.cnblogs.com/umlonline/archive/2014/07/10.html
-22/May/2015 16:26:47,564- Main: fetching http://www.cnblogs.com/leee/p/4169167.html
-22/May/2015 16:26:47,564- Main: fetching http://www.cnblogs.com/umlonline/p/3836725.html
-22/May/2015 16:26:47,568- Main: page no content or too big: 44 @http://space.cnblogs.com/group/topic/1949/
-22/May/2015 16:26:47,568- Main: fetching http://space.cnblogs.com/group/topic/1950/
-22/May/2015 16:26:47,626- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4169167
-22/May/2015 16:26:47,637- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3836725
-22/May/2015 16:26:47,644- Main: page no content or too big: 44 @http://space.cnblogs.com/group/topic/1950/
-22/May/2015 16:26:47,644- Main: fetching http://space.cnblogs.com/group/topic/1951/
-22/May/2015 16:26:47,719- Main: page no content or too big: 44 @http://space.cnblogs.com/group/topic/1951/
-22/May/2015 16:26:47,719- Main: fetching http://space.cnblogs.com/group/topic/1952/
-22/May/2015 16:26:47,794- Main: page no content or too big: 44 @http://space.cnblogs.com/group/topic/1952/
-22/May/2015 16:26:47,794- Main: fetching http://www.cnblogs.com/leadzen/
-22/May/2015 16:26:47,805- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1764232
-22/May/2015 16:26:47,806- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/30/KnightsWarriorIndexes.html#comments
-22/May/2015 16:26:47,830- Main: this is a login page, drop it. @ http://space.cnblogs.com/msg/send/%e6%88%91%e5%92%8c%e5%b0%8f%e8%8f%9c
-22/May/2015 16:26:47,830- Main: fetching http://www.cnblogs.com/wohexiaocai/rss
-22/May/2015 16:26:47,900- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767744.html
-22/May/2015 16:26:47,924- Main: fetching http://space.cnblogs.com/group/insidedotnet/
-22/May/2015 16:26:47,944- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3836725
-22/May/2015 16:26:47,945- Main: fetching http://www.cnblogs.com/umlonline/archive/2014/06/29.html
-22/May/2015 16:26:47,969- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4169167
-22/May/2015 16:26:47,969- Main: page no content or too big: 40 @http://www.cnblogs.com/wohexiaocai/rss
-22/May/2015 16:26:47,969- Main: fetching http://www.cnblogs.com/leee/p/4141011.html
-22/May/2015 16:26:47,969- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4522046
-22/May/2015 16:26:47,970- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1767744
-22/May/2015 16:26:48,020- Main: page no content or too big: 4526 @http://www.cnblogs.com/umlonline/archive/2014/06/29.html
-22/May/2015 16:26:48,020- Main: fetching http://www.cnblogs.com/umlonline/p/3815029.html
-22/May/2015 16:26:48,028- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4141011
-22/May/2015 16:26:48,086- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3815029
-22/May/2015 16:26:48,153- Main: fetching http://anytao.cnblogs.com
-22/May/2015 16:26:48,273- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1767744
-22/May/2015 16:26:48,273- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767744.html#comments
-22/May/2015 16:26:48,274- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4522046
-22/May/2015 16:26:48,274- Main: fetching http://www.cnblogs.com/wohexiaocai/p/4354732.html
-22/May/2015 16:26:48,324- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4141011
-22/May/2015 16:26:48,324- Main: fetching http://www.cnblogs.com/leee/archive/2015/05/21.html
-22/May/2015 16:26:48,367- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4354732
-22/May/2015 16:26:48,373- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3815029
-22/May/2015 16:26:48,373- Main: fetching http://www.cnblogs.com/umlonline/p/3815025.html
-22/May/2015 16:26:48,374- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767675.html
-22/May/2015 16:26:48,431- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1767675
-22/May/2015 16:26:48,443- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3815025
-22/May/2015 16:26:48,449- Main: fetching http://www.cnblogs.com/leee/archive/2015/05/19.html
-22/May/2015 16:26:48,459- Main: fetching http://space.cnblogs.com/group/100298/
-22/May/2015 16:26:48,506- Main: fetching http://www.cnblogs.com/leee/archive/2015/05/16.html
-22/May/2015 16:26:48,560- Main: fetching http://www.cnblogs.com/leee/p/4507232.html
-22/May/2015 16:26:48,652- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4507232
-22/May/2015 16:26:48,712- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1767675
-22/May/2015 16:26:48,712- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767675.html#comments
-22/May/2015 16:26:48,736- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3815025
-22/May/2015 16:26:48,736- Main: fetching http://www.cnblogs.com/umlonline/archive/2014/06/04.html
-22/May/2015 16:26:48,761- Main: fetching http://wayfarer.cnblogs.com/
-22/May/2015 16:26:48,782- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4354732
-22/May/2015 16:26:48,782- Main: fetching http://www.cnblogs.com/wohexiaocai/p/4251581.html
-22/May/2015 16:26:48,798- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767656.html
-22/May/2015 16:26:48,851- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1767656
-22/May/2015 16:26:48,887- Main: page no content or too big: 4097 @http://www.cnblogs.com/umlonline/archive/2014/06/04.html
-22/May/2015 16:26:48,887- Main: fetching http://www.cnblogs.com/umlonline/p/3768403.html
-22/May/2015 16:26:48,897- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4507232
-22/May/2015 16:26:48,897- Main: fetching http://www.cnblogs.com/leee/archive/2015/05/11.html
-22/May/2015 16:26:48,905- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4251581
-22/May/2015 16:26:48,913- Main: fetching http://thinhunan.cnblogs.com/
-22/May/2015 16:26:48,955- Main: fetching http://www.cnblogs.com/leee/p/4494250.html
-22/May/2015 16:26:48,987- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3768403
-22/May/2015 16:26:49,008- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4494250
-22/May/2015 16:26:49,085- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1767656
-22/May/2015 16:26:49,086- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767656.html#comments
-22/May/2015 16:26:49,157- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767569.html
-22/May/2015 16:26:49,178- Main: fetching http://dahua.cnblogs.com/
-22/May/2015 16:26:49,207- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4251581
-22/May/2015 16:26:49,207- Main: fetching http://www.cnblogs.com/wohexiaocai/p/3813348.html
-22/May/2015 16:26:49,213- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1767569
-22/May/2015 16:26:49,307- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3768403
-22/May/2015 16:26:49,307- Main: fetching http://www.cnblogs.com/umlonline/archive/2014/05/27.html
-22/May/2015 16:26:49,342- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4494250
-22/May/2015 16:26:49,342- Main: fetching http://www.cnblogs.com/leee/archive/2015/05/08.html
-22/May/2015 16:26:49,349- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3813348
-22/May/2015 16:26:49,360- Main: page no content or too big: 4974 @http://www.cnblogs.com/umlonline/archive/2014/05/27.html
-22/May/2015 16:26:49,360- Main: fetching http://www.cnblogs.com/umlonline/p/3756107.html
-22/May/2015 16:26:49,396- Main: fetching http://www.cnblogs.com/leee/p/4486551.html
-22/May/2015 16:26:49,422- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3756107
-22/May/2015 16:26:49,433- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1767569
-22/May/2015 16:26:49,433- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767569.html#comments
-22/May/2015 16:26:49,491- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767528.html
-22/May/2015 16:26:49,547- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4486551
-22/May/2015 16:26:49,551- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1767528
-22/May/2015 16:26:49,628- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3813348
-22/May/2015 16:26:49,628- Main: fetching http://www.cnblogs.com/wohexiaocai/p/3731105.html
-22/May/2015 16:26:49,687- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3731105
-22/May/2015 16:26:49,715- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3756107
-22/May/2015 16:26:49,715- Main: fetching http://www.cnblogs.com/umlonline/p/3756103.html
-22/May/2015 16:26:49,783- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3756103
-22/May/2015 16:26:49,807- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1767528
-22/May/2015 16:26:49,807- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767528.html#comments
-22/May/2015 16:26:49,866- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767510.html
-22/May/2015 16:26:49,887- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4486551
-22/May/2015 16:26:49,887- Main: fetching http://www.cnblogs.com/leee/archive/2015/05/03.html
-22/May/2015 16:26:49,930- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1767510
-22/May/2015 16:26:49,936- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3731105
-22/May/2015 16:26:49,936- Main: fetching http://www.cnblogs.com/wohexiaocai/p/3632628.html
-22/May/2015 16:26:49,947- Main: fetching http://www.cnblogs.com/leee/p/4473913.html
-22/May/2015 16:26:49,995- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3632628
-22/May/2015 16:26:50,005- Main: fetching http://space.cnblogs.com/group/dahua/
-22/May/2015 16:26:50,066- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3756103
-22/May/2015 16:26:50,066- Main: fetching http://www.cnblogs.com/umlonline/p/3756095.html
-22/May/2015 16:26:50,080- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4473913
-22/May/2015 16:26:50,124- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3756095
-22/May/2015 16:26:50,258- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1767510
-22/May/2015 16:26:50,258- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767510.html#comments
-22/May/2015 16:26:50,293- Main: fetching http://cj723.cnblogs.com/
-22/May/2015 16:26:50,319- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767446.html
-22/May/2015 16:26:50,356- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3756095
-22/May/2015 16:26:50,356- Main: fetching http://www.cnblogs.com/umlonline/default.html?page=2
-22/May/2015 16:26:50,376- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1767446
-22/May/2015 16:26:50,378- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3632628
-22/May/2015 16:26:50,378- Main: fetching http://www.cnblogs.com/wohexiaocai/p/3562110.html
-22/May/2015 16:26:50,401- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4473913
-22/May/2015 16:26:50,401- Main: fetching http://www.cnblogs.com/leee/archive/2015/04/26.html
-22/May/2015 16:26:50,446- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3562110
-22/May/2015 16:26:50,456- Main: fetching http://news.csdn.net
-22/May/2015 16:26:50,466- Main: fetching http://www.cnblogs.com/leee/archive/2015/04/23.html
-22/May/2015 16:26:50,510- Main: fetching http://cloud.csdn.net
-22/May/2015 16:26:50,511- Main: fetching http://www.cnblogs.com/highend/archive/2011/08/04/aspnet_mvc3_contents.html
-22/May/2015 16:26:50,533- Main: fetching http://www.cnblogs.com/leee/p/4451374.html
-22/May/2015 16:26:50,567- Main: fetching http://mobile.csdn.net
-22/May/2015 16:26:50,574- Main: fetching http://kb.cnblogs.com/page/100216/
-22/May/2015 16:26:50,597- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4451374
-22/May/2015 16:26:50,608- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1767446
-22/May/2015 16:26:50,608- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767446.html#comments
-22/May/2015 16:26:50,624- Main: fetching http://sd.csdn.net
-22/May/2015 16:26:50,674- Main: fetching http://edu.csdn.net
-22/May/2015 16:26:50,681- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3562110
-22/May/2015 16:26:50,681- Main: fetching http://www.cnblogs.com/wohexiaocai/p/3533821.html
-22/May/2015 16:26:50,708- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767336.html
-22/May/2015 16:26:50,767- Main: fetching http://www.cnblogs.com/n-pei/archive/2011/01/20/1939741.html
-22/May/2015 16:26:50,768- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3533821
-22/May/2015 16:26:50,805- Main: fetching http://bbs.csdn.net
-22/May/2015 16:26:50,810- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1767336
-22/May/2015 16:26:50,823- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4451374
-22/May/2015 16:26:50,823- Main: fetching http://www.cnblogs.com/leee/default.html?page=2
-22/May/2015 16:26:50,856- Main: fetching http://www.cnblogs.com/zhangziqiu/archive/2009/02/27/ASPNET-MVC-1.html
-22/May/2015 16:26:50,901- Main: fetching http://www.cnblogs.com/PeunZhang/rss
-22/May/2015 16:26:50,949- Main: fetching http://www.cnblogs.com/024hi/archive/2009/03/17/asp_net_mvc_sample_contact_manager_index.html
-22/May/2015 16:26:51,012- Main: page no content or too big: 38 @http://www.cnblogs.com/PeunZhang/rss
-22/May/2015 16:26:51,012- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4518134
-22/May/2015 16:26:51,020- Main: fetching http://www.cnblogs.com/chsword/archive/2008/03/10/dotnetmvcframework.html
-22/May/2015 16:26:51,093- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1767336
-22/May/2015 16:26:51,093- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767336.html#comments
-22/May/2015 16:26:51,094- Main: fetching http://www.cnblogs.com/chsword/archive/2008/09/29/aspnetmvc_video.html
-22/May/2015 16:26:51,101- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3533821
-22/May/2015 16:26:51,101- Main: fetching http://www.cnblogs.com/wohexiaocai/p/3529641.html
-22/May/2015 16:26:51,150- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767292.html
-22/May/2015 16:26:51,207- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1767292
-22/May/2015 16:26:51,254- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3529641
-22/May/2015 16:26:51,262- Main: fetching http://www.cnblogs.com/leoo2sk/archive/2008/10/27/1320285.html
-22/May/2015 16:26:51,303- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4518134
-22/May/2015 16:26:51,303- Main: fetching http://www.cnblogs.com/lilaczhu/
-22/May/2015 16:26:51,370- Main: fetching http://blog.csdn.net/cs_wuxiang
-22/May/2015 16:26:51,377- Main: fetching http://blog.csdn.net
-22/May/2015 16:26:51,423- Main: fetching http://download.csdn.net
-22/May/2015 16:26:51,476- Main: fetching http://ask.csdn.net
-22/May/2015 16:26:51,485- Main: fetching http://www.cnblogs.com/leoo2sk/archive/2008/10/28/1321056.html
-22/May/2015 16:26:51,505- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1767292
-22/May/2015 16:26:51,505- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767292.html#comments
-22/May/2015 16:26:51,567- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767252.html
-22/May/2015 16:26:51,567- Main: fetching http://www.cnblogs.com/PeunZhang/articles/2391540.html
-22/May/2015 16:26:51,577- Main: fetching http://www.cnblogs.com/leoo2sk/archive/2008/11/01/1324168.html
-22/May/2015 16:26:51,590- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3529641
-22/May/2015 16:26:51,590- Main: fetching http://www.cnblogs.com/wohexiaocai/p/3347342.html
-22/May/2015 16:26:51,637- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1767252
-22/May/2015 16:26:51,673- Main: fetching http://www.cnblogs.com/leoo2sk/archive/2008/11/02/1324704.html
-22/May/2015 16:26:51,709- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3347342
-22/May/2015 16:26:51,729- Main: fetching http://home.cnblogs.com/u/PeunZhang/
-22/May/2015 16:26:51,769- Main: fetching http://www.cnblogs.com/leoo2sk/archive/2008/11/03/1325840.html
-22/May/2015 16:26:51,879- Main: fetching http://www.cnblogs.com/leoo2sk/archive/2008/11/05/1326655.html
-22/May/2015 16:26:51,891- Main: fetching http://www.iteye.com
-22/May/2015 16:26:51,902- Main: fetching http://www.cnblogs.com/PeunZhang/p/3407453.html
-22/May/2015 16:26:51,925- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1767252
-22/May/2015 16:26:51,925- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767252.html#comments
-22/May/2015 16:26:51,948- Main: fetching http://mall.csdn.net
-22/May/2015 16:26:51,978- Main: fetching http://www.cnblogs.com/leoo2sk/archive/2008/11/05/1327466.html
-22/May/2015 16:26:52,005- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3347342
-22/May/2015 16:26:52,005- Main: fetching http://www.cnblogs.com/wohexiaocai/p/3252347.html
-22/May/2015 16:26:52,009- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767236.html
-22/May/2015 16:26:52,036- Main: fetching http://q.cnblogs.com/tag/mvc/solved
-22/May/2015 16:26:52,046- Main: page no content or too big: 4722 @http://mall.csdn.net
-22/May/2015 16:26:52,046- Main: fetching http://huiyi.csdn.net
-22/May/2015 16:26:52,065- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3407453
-22/May/2015 16:26:52,075- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1767236
-22/May/2015 16:26:52,093- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3252347
-22/May/2015 16:26:52,204- Main: fetching http://job.csdn.net
-22/May/2015 16:26:52,453- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3407453
-22/May/2015 16:26:52,453- Main: fetching http://www.cnblogs.com/PeunZhang/archive/2012/04/09/2437563.html
-22/May/2015 16:26:52,454- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1767236
-22/May/2015 16:26:52,454- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/29/1767236.html#comments
-22/May/2015 16:26:52,457- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3252347
-22/May/2015 16:26:52,457- Main: fetching http://www.cnblogs.com/wohexiaocai/archive/2013/06/09/3127962.html
-22/May/2015 16:26:52,538- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/28/1767055.html
-22/May/2015 16:26:52,546- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=2437563
-22/May/2015 16:26:52,579- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3127962
-22/May/2015 16:26:52,597- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1767055
-22/May/2015 16:26:52,821- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=2437563
-22/May/2015 16:26:52,822- Main: fetching http://www.cnblogs.com/PeunZhang/archive/2015/05/20.html
-22/May/2015 16:26:52,857- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3127962
-22/May/2015 16:26:52,857- Main: fetching http://www.cnblogs.com/wohexiaocai/archive/2013/05/04/3059366.html
-22/May/2015 16:26:52,878- Main: fetching http://www.cnblogs.com/PeunZhang/archive/2015/03/09.html
-22/May/2015 16:26:52,880- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1767055
-22/May/2015 16:26:52,880- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/28/1767055.html#comments
-22/May/2015 16:26:52,936- Main: fetching http://q.cnblogs.com/tag/mvc
-22/May/2015 16:26:52,937- Main: fetching http://www.cnblogs.com/PeunZhang/articles/4322837.html
-22/May/2015 16:26:52,942- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3059366
-22/May/2015 16:26:52,965- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/28/1766936.html
-22/May/2015 16:26:53,031- Main: fetching http://i.cnblogs.com/EditArticles.aspx?postid=4322837
-22/May/2015 16:26:53,055- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1766936
-22/May/2015 16:26:53,129- Main: fetching http://www.cnblogs.com/qleelulu/archive/2008/10/05/1303997.html
-22/May/2015 16:26:53,151- Main: fetching http://cto.csdn.net
-22/May/2015 16:26:53,217- Main: fetching http://www.cnblogs.com/leoo2sk/category/167192.html
-22/May/2015 16:26:53,229- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3059366
-22/May/2015 16:26:53,229- Main: fetching http://www.cnblogs.com/wohexiaocai/archive/2015/05/22.html
-22/May/2015 16:26:53,278- Main: fetching http://www.cnblogs.com/zhangziqiu/category/177895.html
-22/May/2015 16:26:53,283- Main: fetching http://www.cnblogs.com/wohexiaocai/archive/2015/04/24.html
-22/May/2015 16:26:53,304- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditArticles.aspx?postid=4322837
-22/May/2015 16:26:53,304- Main: fetching http://www.cnblogs.com/PeunZhang/archive/2015/03/03.html
-22/May/2015 16:26:53,338- Main: fetching http://kb.cnblogs.com/tag/MVC/
-22/May/2015 16:26:53,338- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1766936
-22/May/2015 16:26:53,338- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/28/1766936.html#comments
-22/May/2015 16:26:53,348- Main: fetching http://www.cnblogs.com/wohexiaocai/p/4454859.html
-22/May/2015 16:26:53,362- Main: fetching http://www.cnblogs.com/PeunZhang/archive/2014/12/29.html
-22/May/2015 16:26:53,396- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/28/1766927.html
-22/May/2015 16:26:53,405- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4454859
-22/May/2015 16:26:53,418- Main: fetching http://www.cnblogs.com/PeunZhang/p/4185020.html
-22/May/2015 16:26:53,427- Main: fetching http://kb.cnblogs.com/tag/mvc/
-22/May/2015 16:26:53,448- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1766927
-22/May/2015 16:26:53,454- Main: fetching http://ems.csdn.net
-22/May/2015 16:26:53,518- Main: fetching http://www.cnblogs.com/JeffreyZhao/archive/2008/02/13/mix08-asp-net-mvc-framework-road-map-update.html
-22/May/2015 16:26:53,547- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4185020
-22/May/2015 16:26:53,581- Main: fetching http://www.cnblogs.com/JeffreyZhao/archive/2008/04/27/try-to-build-an-updatepanel-for-asp-dot-net-mvc.html
-22/May/2015 16:26:53,614- Main: fetching http://aws.csdn.net
-22/May/2015 16:26:53,626- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4454859
-22/May/2015 16:26:53,626- Main: fetching http://www.cnblogs.com/wohexiaocai/archive/2015/03/20.html
-22/May/2015 16:26:53,683- Main: fetching http://www.cnblogs.com/wohexiaocai/archive/2015/01/27.html
-22/May/2015 16:26:53,698- Main: fetching http://www.cnblogs.com/JeffreyZhao/archive/2008/11/07/TechED-2008-CS276.html
-22/May/2015 16:26:53,720- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1766927
-22/May/2015 16:26:53,720- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/28/1766927.html#comments
-22/May/2015 16:26:53,736- Main: fetching http://www.cnblogs.com/wohexiaocai/archive/2014/11/04.html
-22/May/2015 16:26:53,758- Main: fetching http://www.cnblogs.com/JeffreyZhao/archive/2009/02/02/extend-asp-net-mvc-for-asynchronous-action.html
-22/May/2015 16:26:53,795- Main: fetching http://www.cnblogs.com/wohexiaocai/p/4073599.html
-22/May/2015 16:26:53,802- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4185020
-22/May/2015 16:26:53,802- Main: fetching http://www.cnblogs.com/PeunZhang/archive/2014/11/13.html
-22/May/2015 16:26:53,809- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/28/1766815.html
-22/May/2015 16:26:53,826- Main: fetching http://www.cnblogs.com/JeffreyZhao/archive/2009/02/04/extend-asp-net-mvc-for-asynchronous-action-2.html
-22/May/2015 16:26:53,862- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4073599
-22/May/2015 16:26:53,864- Main: fetching http://www.cnblogs.com/PeunZhang/p/4089894.html
-22/May/2015 16:26:53,870- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1766815
-22/May/2015 16:26:53,889- Main: fetching http://www.cnblogs.com/JeffreyZhao/archive/2009/02/27/mvc-use-strong-type-everywhere.html
-22/May/2015 16:26:53,951- Main: fetching http://www.cnblogs.com/JeffreyZhao/archive/2009/02/23/mvc-unit-test-best-practices.html
-22/May/2015 16:26:54,018- Main: fetching http://news.cnblogs.com/n/45346/
-22/May/2015 16:26:54,025- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4089894
-22/May/2015 16:26:54,134- Main: fetching http://www.cnblogs.com/QLeelulu/
-22/May/2015 16:26:54,194- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1766815
-22/May/2015 16:26:54,194- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/28/1766815.html#comments
-22/May/2015 16:26:54,227- Main: fetching http://www.cnblogs.com/zhangziqiu/
-22/May/2015 16:26:54,233- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4073599
-22/May/2015 16:26:54,233- Main: fetching http://www.cnblogs.com/wohexiaocai/archive/2014/07/29.html
-22/May/2015 16:26:54,282- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/28/1766799.html
-22/May/2015 16:26:54,287- Main: fetching http://www.cnblogs.com/wohexiaocai/p/3875216.html
-22/May/2015 16:26:54,298- Main: fetching http://www.cnblogs.com/n-pei/
-22/May/2015 16:26:54,334- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4089894
-22/May/2015 16:26:54,334- Main: fetching http://www.cnblogs.com/PeunZhang/archive/2014/10/14.html
-22/May/2015 16:26:54,350- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3875216
-22/May/2015 16:26:54,364- Main: fetching http://www.cnblogs.com/chsword/
-22/May/2015 16:26:54,366- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1766799
-22/May/2015 16:26:54,379- Main: fetching http://hadoop.csdn.net
-22/May/2015 16:26:54,396- Main: fetching http://www.cnblogs.com/PeunZhang/p/4024108.html
-22/May/2015 16:26:54,496- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4024108
-22/May/2015 16:26:54,510- Main: fetching http://www.cnblogs.com/leoo2sk/
-22/May/2015 16:26:54,624- Main: fetching http://q.cnblogs.com/cate/1123/
-22/May/2015 16:26:54,654- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3875216
-22/May/2015 16:26:54,654- Main: fetching http://www.cnblogs.com/wohexiaocai/archive/2014/07/21.html
-22/May/2015 16:26:54,680- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1766799
-22/May/2015 16:26:54,680- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/28/1766799.html#comments
-22/May/2015 16:26:54,713- Main: fetching http://www.cnblogs.com/wohexiaocai/p/3858104.html
-22/May/2015 16:26:54,725- Main: fetching http://openstack.csdn.net
-22/May/2015 16:26:54,776- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/28/1766774.html
-22/May/2015 16:26:54,776- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3858104
-22/May/2015 16:26:54,796- Main: page no content or too big: 33 @http://q.cnblogs.com/cate/1123/
-22/May/2015 16:26:54,796- Main: fetching http://q.cnblogs.com/q/5823/
-22/May/2015 16:26:54,825- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4024108
-22/May/2015 16:26:54,825- Main: fetching http://www.cnblogs.com/PeunZhang/archive/2014/09/12.html
-22/May/2015 16:26:54,872- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1766774
-22/May/2015 16:26:54,885- Main: fetching http://www.cnblogs.com/PeunZhang/p/3968602.html
-22/May/2015 16:26:54,948- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3968602
-22/May/2015 16:26:55,004- Main: fetching http://q.cnblogs.com/q/4718/
-22/May/2015 16:26:55,010- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3858104
-22/May/2015 16:26:55,010- Main: fetching http://www.cnblogs.com/wohexiaocai/archive/2014/06/29.html
-22/May/2015 16:26:55,065- Main: fetching http://docker.csdn.net
-22/May/2015 16:26:55,101- Main: fetching http://www.cnblogs.com/wohexiaocai/p/3815707.html
-22/May/2015 16:26:55,145- Main: fetching http://q.cnblogs.com/q/4315/
-22/May/2015 16:26:55,173- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1766774
-22/May/2015 16:26:55,173- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/28/1766774.html#comments
-22/May/2015 16:26:55,181- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3815707
-22/May/2015 16:26:55,249- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3968602
-22/May/2015 16:26:55,249- Main: fetching http://www.cnblogs.com/PeunZhang/archive/2014/07/28.html
-22/May/2015 16:26:55,258- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/28/1766758.html
-22/May/2015 16:26:55,332- Main: fetching http://www.cnblogs.com/PeunZhang/p/3835717.html
-22/May/2015 16:26:55,342- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1766758
-22/May/2015 16:26:55,402- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3835717
-22/May/2015 16:26:55,440- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3815707
-22/May/2015 16:26:55,440- Main: fetching http://www.cnblogs.com/wohexiaocai/archive/2014/06/28.html
-22/May/2015 16:26:55,493- Main: fetching http://www.cnblogs.com/wohexiaocai/archive/2014/06/19.html
-22/May/2015 16:26:55,549- Main: fetching http://www.cnblogs.com/wohexiaocai/p/3798177.html
-22/May/2015 16:26:55,609- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3798177
-22/May/2015 16:26:55,695- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3835717
-22/May/2015 16:26:55,695- Main: fetching http://www.cnblogs.com/PeunZhang/archive/2014/04/26.html
-22/May/2015 16:26:55,756- Main: fetching http://www.cnblogs.com/PeunZhang/p/3685980.html
-22/May/2015 16:26:55,767- Main: fetching http://q.cnblogs.com/q/4011/
-22/May/2015 16:26:55,774- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1766758
-22/May/2015 16:26:55,775- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/28/1766758.html#comments
-22/May/2015 16:26:55,846- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3685980
-22/May/2015 16:26:55,881- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3798177
-22/May/2015 16:26:55,882- Main: fetching http://www.cnblogs.com/wohexiaocai/default.html?page=2
-22/May/2015 16:26:55,883- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/28/1766746.html
-22/May/2015 16:26:55,919- Main: fetching http://q.cnblogs.com/q/5750/
-22/May/2015 16:26:55,941- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1766746
-22/May/2015 16:26:55,982- Main: fetching http://blog.csdn.net/v_JULY_v
-22/May/2015 16:26:56,033- Main: fetching http://q.cnblogs.com/q/4070/
-22/May/2015 16:26:56,047- Main: fetching http://space.cnblogs.com/msg/send/DM%e5%bc%a0%e6%9c%8b%e9%a3%9e
-22/May/2015 16:26:56,086- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3685980
-22/May/2015 16:26:56,086- Main: fetching http://www.cnblogs.com/PeunZhang/archive/2014/03/12.html
-22/May/2015 16:26:56,146- Main: fetching http://www.cnblogs.com/PeunZhang/p/3592096.html
-22/May/2015 16:26:56,173- Main: fetching http://q.cnblogs.com/q/5340/
-22/May/2015 16:26:56,209- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1766746
-22/May/2015 16:26:56,209- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/28/1766746.html#comments
-22/May/2015 16:26:56,245- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3592096
-22/May/2015 16:26:56,291- Main: fetching http://q.cnblogs.com/q/5137/
-22/May/2015 16:26:56,295- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/28/1766731.html
-22/May/2015 16:26:56,356- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1766731
-22/May/2015 16:26:56,361- Main: fetching http://swift.csdn.net
-22/May/2015 16:26:56,464- Main: this is a login page, drop it. @ http://space.cnblogs.com/msg/send/DM%e5%bc%a0%e6%9c%8b%e9%a3%9e
-22/May/2015 16:26:56,465- Main: fetching http://www.cnblogs.com/hxsyl/rss
-22/May/2015 16:26:56,499- Main: fetching http://q.cnblogs.com/q/3617/
-22/May/2015 16:26:56,561- Main: page no content or too big: 34 @http://www.cnblogs.com/hxsyl/rss
-22/May/2015 16:26:56,561- Main: fetching http://download.csdn.net/detail/huoxingshiyilang/8727423
-22/May/2015 16:26:56,588- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3592096
-22/May/2015 16:26:56,588- Main: fetching http://www.cnblogs.com/PeunZhang/archive/2014/03/06.html
-22/May/2015 16:26:56,605- Main: fetching http://download.csdn.net/detail/huoxingshiyilang/8727217
-22/May/2015 16:26:56,631- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1766731
-22/May/2015 16:26:56,631- Main: fetching http://www.cnblogs.com/KnightsWarrior/archive/2010/06/28/1766731.html#comments
-22/May/2015 16:26:56,639- Main: fetching http://q.cnblogs.com/q/2800/
-22/May/2015 16:26:56,649- Main: fetching http://www.cnblogs.com/PeunZhang/p/3584201.html
-22/May/2015 16:26:56,651- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4521778
-22/May/2015 16:26:56,712- Main: fetching http://www.cnblogs.com/KnightsWarrior/default.aspx?page=1
-22/May/2015 16:26:56,827- Main: fetching http://home.cnblogs.com/group/aspnetmvc/
-22/May/2015 16:26:56,843- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3584201
-22/May/2015 16:26:56,870- Main: fetching http://spark.csdn.net
-22/May/2015 16:26:56,879- Main: fetching http://www.cnblogs.com/KnightsWarrior/default.aspx?page=3
-22/May/2015 16:26:56,901- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4521778
-22/May/2015 16:26:56,901- Main: fetching http://www.cnblogs.com/hxsyl/archive/2015/05/22.html
-22/May/2015 16:26:56,959- Main: fetching http://www.cnblogs.com/hxsyl/archive/2015/05/21.html
-22/May/2015 16:26:56,983- Main: fetching http://www.cnblogs.com/legendxian/archive/2009/12/29/1634953.html
-22/May/2015 16:26:57,031- Main: fetching http://www.cnblogs.com/hxsyl/p/4518506.html
-22/May/2015 16:26:57,049- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1634953
-22/May/2015 16:26:57,119- Main: fetching success no: 2000
-22/May/2015 16:26:57,120- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4518506
-22/May/2015 16:26:57,239- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3584201
-22/May/2015 16:26:57,239- Main: fetching http://www.cnblogs.com/PeunZhang/archive/2014/03/05.html
-22/May/2015 16:26:57,341- Main: ===============================
-22/May/2015 16:26:57,342- Main: -- Page fetch done. exiting  --
-22/May/2015 16:26:57,342- Main: ===============================
-22/May/2015 16:26:57,393- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1634953
-22/May/2015 16:26:57,393- Main: fetching http://www.cnblogs.com/legendxian/archive/2013/08/14.html
-22/May/2015 16:26:57,437- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4518506
-22/May/2015 16:26:57,438- Main: fetching http://www.cnblogs.com/hxsyl/archive/2015/05/19.html
-22/May/2015 16:26:57,449- Main: page no content or too big: 3969 @http://www.cnblogs.com/legendxian/archive/2013/08/14.html
-22/May/2015 16:26:57,450- Main: fetching http://www.cnblogs.com/legendxian/p/3255432.html
+23/May/2015 14:43:01,868- Main: fetching http://q.cnblogs.com/q/72315/#a_160942#span_160942
+23/May/2015 14:43:01,870- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/yangda/
+23/May/2015 14:43:01,878- Main: page no content or too big: 35 @http://home.cnblogs.com/u/yangda/
+23/May/2015 14:43:01,878- Main: fetching http://home.cnblogs.com/u/556996/
+23/May/2015 14:43:01,969- Main: fetching http://www.cnblogs.com/Slxj/tag/%e5%87%bd%e6%95%b0%e5%a4%a7%e5%85%a8/
+23/May/2015 14:43:01,990- Main: fetching passport.cnblogs.com/(X(1)S(dpto1cypcqyk2u3fq4z50fi5))/BotDetectCaptcha.ashx?get=sound&c=c_register_ctl00_holderleft_registercaptcha&t=fba90f0fcb1244d2af4208e10fc5c619&s=A4G8byo65OQ5P5TLjhPpIX7QNlNXkB9geG9AWuQLlrVI4ffW87TAaKdbWRUJjSUw4aPGG5E14tmp5NvuWf3YUg%3d%3d
+23/May/2015 14:43:01,999- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/556996/
+23/May/2015 14:43:01,999- Main: page no content or too big: 35 @http://home.cnblogs.com/u/556996/
+23/May/2015 14:43:01,999- Main: fetching http://home.cnblogs.com/u/yesoili/
+23/May/2015 14:43:02,013- Main: fetching home.cnblogs.com/u/mygxl/
+23/May/2015 14:43:02,015- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4514764
+23/May/2015 14:43:02,015- Main: fetching http://www.cnblogs.com/vipyidian/archive/2015/04/25.html
+23/May/2015 14:43:02,035- Main: fetching http://www.cnblogs.com/youxia/p/linux018.html
+23/May/2015 14:43:02,060- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4457700
+23/May/2015 14:43:02,060- Main: fetching http://www.cnblogs.com/Vincenter/archive/2015/04/13.html
+23/May/2015 14:43:02,061- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://passport.cnblogs.com/(X(1)S(dpto1cypcqyk2u3fq4z50fi5))/BotDetectCaptcha.ashx?get=sound&c=c_register_ctl00_holderleft_registercaptcha&t=fba90f0fcb1244d2af4208e10fc5c619&s=A4G8byo65OQ5P5TLjhPpIX7QNlNXkB9geG9AWuQLlrVI4ffW87TAaKdbWRUJjSUw4aPGG5E14tmp5NvuWf3YUg%3d%3d
+23/May/2015 14:43:02,062- Main: page no content or too big: 264 @passport.cnblogs.com/(X(1)S(dpto1cypcqyk2u3fq4z50fi5))/BotDetectCaptcha.ashx?get=sound&c=c_register_ctl00_holderleft_registercaptcha&t=fba90f0fcb1244d2af4208e10fc5c619&s=A4G8byo65OQ5P5TLjhPpIX7QNlNXkB9geG9AWuQLlrVI4ffW87TAaKdbWRUJjSUw4aPGG5E14tmp5NvuWf3YUg%3d%3d
+23/May/2015 14:43:02,062- Main: fetching q.cnblogs.com/u/ScriptZhang/question
+23/May/2015 14:43:02,071- Main: page no content or too big: 4234 @http://www.cnblogs.com/vipyidian/archive/2015/04/25.html
+23/May/2015 14:43:02,071- Main: fetching http://www.cnblogs.com/vipyidian/p/4455907.html
+23/May/2015 14:43:02,080- Main: fetching http://job.cnblogs.com/cate-front_end_engineer/
+23/May/2015 14:43:02,083- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/yesoili/
+23/May/2015 14:43:02,084- Main: page no content or too big: 36 @http://home.cnblogs.com/u/yesoili/
+23/May/2015 14:43:02,084- Main: fetching http://home.cnblogs.com/u/suixue/
+23/May/2015 14:43:02,100- Main: fetching http://www.cnblogs.com/shijiayi/
+23/May/2015 14:43:02,117- Main: page no content or too big: 4686 @http://www.cnblogs.com/Vincenter/archive/2015/04/13.html
+23/May/2015 14:43:02,117- Main: fetching http://www.cnblogs.com/Vincenter/p/4422815.html
+23/May/2015 14:43:02,148- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/mygxl/
+23/May/2015 14:43:02,148- Main: page no content or too big: 27 @home.cnblogs.com/u/mygxl/
+23/May/2015 14:43:02,148- Main: fetching home.cnblogs.com/u/jesse2013/
+23/May/2015 14:43:02,156- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4455907
+23/May/2015 14:43:02,168- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/suixue/
+23/May/2015 14:43:02,168- Main: page no content or too big: 35 @http://home.cnblogs.com/u/suixue/
+23/May/2015 14:43:02,168- Main: fetching http://home.cnblogs.com/u/758691/
+23/May/2015 14:43:02,169- Main: fetching http://www.cnblogs.com/youxia/p/linux026.html
+23/May/2015 14:43:02,176- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4422815
+23/May/2015 14:43:02,235- Main: fetching https://www.upyun.com/?md=cnblogs
+23/May/2015 14:43:02,237- Main: res getInputStream error Server returned HTTP response code: 504 for URL: http://https://www.upyun.com/?md=cnblogs
+23/May/2015 14:43:02,237- Main: page no content or too big: 35 @https://www.upyun.com/?md=cnblogs
+23/May/2015 14:43:02,237- Main: fetching http://zt.cnblogs.com/tingyun/
+23/May/2015 14:43:02,242- Main: fetching home.cnblogs.com/u/chenmh/
+23/May/2015 14:43:02,274- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/758691/
+23/May/2015 14:43:02,275- Main: page no content or too big: 35 @http://home.cnblogs.com/u/758691/
+23/May/2015 14:43:02,275- Main: fetching http://home.cnblogs.com/u/smallfa/
+23/May/2015 14:43:02,342- Main: fetching q.cnblogs.com/u/ScriptZhang/answered
+23/May/2015 14:43:02,346- Main: fetching home.cnblogs.com/u/WhyEngine/
+23/May/2015 14:43:02,361- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/smallfa/
+23/May/2015 14:43:02,361- Main: page no content or too big: 36 @http://home.cnblogs.com/u/smallfa/
+23/May/2015 14:43:02,361- Main: fetching http://home.cnblogs.com/u/appium/
+23/May/2015 14:43:02,412- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4422815
+23/May/2015 14:43:02,412- Main: fetching http://www.cnblogs.com/Vincenter/p/4421097.html
+23/May/2015 14:43:02,427- Main: fetching http://www.cnblogs.com/Slxj/tag/%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%87%bd%e6%95%b0/
+23/May/2015 14:43:02,436- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4455907
+23/May/2015 14:43:02,436- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4523726
+23/May/2015 14:43:02,444- Main: fetching home.cnblogs.com/u/Ray-liang/
+23/May/2015 14:43:02,461- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/appium/
+23/May/2015 14:43:02,462- Main: page no content or too big: 35 @http://home.cnblogs.com/u/appium/
+23/May/2015 14:43:02,462- Main: fetching http://home.cnblogs.com/u/kaixinguo/
+23/May/2015 14:43:02,465- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4421097
+23/May/2015 14:43:02,496- Main: fetching http://q.cnblogs.com/q/72311/#a_160941#span_160941
+23/May/2015 14:43:02,523- Main: fetching kb.cnblogs.com/list/1008/6/
+23/May/2015 14:43:02,527- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/Ray-liang/
+23/May/2015 14:43:02,527- Main: page no content or too big: 31 @home.cnblogs.com/u/Ray-liang/
+23/May/2015 14:43:02,527- Main: fetching home.cnblogs.com/u/xiaodiejinghong/
+23/May/2015 14:43:02,542- Main: fetching home.cnblogs.com/u/jeffery_bo/
+23/May/2015 14:43:02,547- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/kaixinguo/
+23/May/2015 14:43:02,547- Main: page no content or too big: 38 @http://home.cnblogs.com/u/kaixinguo/
+23/May/2015 14:43:02,547- Main: fetching http://home.cnblogs.com/u/754751/
+23/May/2015 14:43:02,580- Main: fetching q.cnblogs.com/u/lizhipeng888/
+23/May/2015 14:43:02,607- Main: fetching news.cnblogs.com/n/tag/Trinity/
+23/May/2015 14:43:02,626- Main: fetching job.cnblogs.com/enterprise/31210/
+23/May/2015 14:43:02,659- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/754751/
+23/May/2015 14:43:02,659- Main: page no content or too big: 35 @http://home.cnblogs.com/u/754751/
+23/May/2015 14:43:02,659- Main: fetching http://group.cnblogs.com/tag/女程序员/
+23/May/2015 14:43:02,678- Main: fetching home.cnblogs.com/u/Henllyee/
+23/May/2015 14:43:02,685- Main: Bad Url: http://www.cnblogs.com/images/cnblogs_com/Terrylee/WindowsLiveWriter/Silverlight29_D130/TerryLee_Silverlight2_0045_2.gif
+23/May/2015 14:43:02,685- Main: Bad Url: http://www.cnblogs.com/images/cnblogs_com/Terrylee/WindowsLiveWriter/Silverlight29_D130/TerryLee_Silverlight2_0046_2.gif
+23/May/2015 14:43:02,685- Main: fetching kb.cnblogs.com/page/42890/
+23/May/2015 14:43:02,701- Main: fetching http://group.cnblogs.com/tag/工作/
+23/May/2015 14:43:02,703- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4523726
+23/May/2015 14:43:02,703- Main: fetching http://space.cnblogs.com/msg/send/%e8%a5%bf%e5%8c%97%e9%87%8e%e7%8b%bc
+23/May/2015 14:43:02,713- Main: fetching kb.cnblogs.com/page/205060/
+23/May/2015 14:43:02,744- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4421097
+23/May/2015 14:43:02,744- Main: fetching http://www.cnblogs.com/Vincenter/archive/2015/04/10.html
+23/May/2015 14:43:02,750- Main: fetching http://group.cnblogs.com/tag/生活/
+23/May/2015 14:43:02,757- Main: Bad Url: http://www.cnblogs.com/images/cnblogs_com/Terrylee/WindowsLiveWriter/Silverlight28_B997/TerryLee_Silverlight2_0042_2.gif
+23/May/2015 14:43:02,774- Main: fetching kb.cnblogs.com/page/42889/
+23/May/2015 14:43:02,793- Main: fetching http://group.cnblogs.com/tag/俱乐部/
+23/May/2015 14:43:02,795- Main: page no content or too big: 4213 @http://www.cnblogs.com/Vincenter/archive/2015/04/10.html
+23/May/2015 14:43:02,795- Main: fetching http://www.cnblogs.com/Vincenter/p/4414468.html
+23/May/2015 14:43:02,797- Main: fetching job.cnblogs.com/offer/45806/
+23/May/2015 14:43:02,801- Main: fetching news.cnblogs.com/n/521527/
+23/May/2015 14:43:02,829- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://group.cnblogs.com/tag/俱乐部/
+23/May/2015 14:43:02,829- Main: page no content or too big: 35 @http://group.cnblogs.com/tag/俱乐部/
+23/May/2015 14:43:02,829- Main: fetching http://msg.cnblogs.com/msg/send/%e7%99%be%e5%ba%a6%e7%a5%96%e5%ae%97/
+23/May/2015 14:43:02,851- Main: fetching http://q.cnblogs.com/q/63162/
+23/May/2015 14:43:02,865- Main: fetching home.cnblogs.com/u/145819/
+23/May/2015 14:43:02,928- Main: fetching kb.cnblogs.com/list/1008/7/
+23/May/2015 14:43:02,936- Main: fetching http://q.cnblogs.com/q/72304/#a_160940#span_160940
+23/May/2015 14:43:02,974- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/145819/
+23/May/2015 14:43:02,975- Main: page no content or too big: 28 @home.cnblogs.com/u/145819/
+23/May/2015 14:43:02,975- Main: fetching home.cnblogs.com/u/must123/
+23/May/2015 14:43:02,998- Main: this is a login page, drop it. @ http://space.cnblogs.com/msg/send/%e8%a5%bf%e5%8c%97%e9%87%8e%e7%8b%bc
+23/May/2015 14:43:02,998- Main: fetching http://www.cnblogs.com/androidsuperman/rss
+23/May/2015 14:43:03,021- Main: fetching http://www.cnblogs.com/Slxj/tag/%e6%95%b0%e5%ad%a6%e5%87%bd%e6%95%b0/
+23/May/2015 14:43:03,042- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4414468
+23/May/2015 14:43:03,054- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/must123/
+23/May/2015 14:43:03,055- Main: page no content or too big: 29 @home.cnblogs.com/u/must123/
+23/May/2015 14:43:03,055- Main: fetching home.cnblogs.com/u/mengzhiang/
+23/May/2015 14:43:03,058- Main: fetching www.cnblogs.com/cate/k2/
+23/May/2015 14:43:03,059- Main: fetching q.cnblogs.com/u/ScriptZhang/bestanswer
+23/May/2015 14:43:03,067- Main: fetching home.cnblogs.com/u/hjf1223/
+23/May/2015 14:43:03,087- Main: res content type error: application/xml @http://www.cnblogs.com/androidsuperman/rss
+23/May/2015 14:43:03,088- Main: page no content or too big: 44 @http://www.cnblogs.com/androidsuperman/rss
+23/May/2015 14:43:03,088- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4523725
+23/May/2015 14:43:03,096- Main: fetching http://www.cnblogs.com/youxia/archive/2015/04/27.html
+23/May/2015 14:43:03,123- Main: this is a login page, drop it. @ http://msg.cnblogs.com/msg/send/%e7%99%be%e5%ba%a6%e7%a5%96%e5%ae%97/
+23/May/2015 14:43:03,123- Main: fetching home.cnblogs.com/u/622499/detail/
+23/May/2015 14:43:03,136- Main: fetching www.cnblogs.com/AboutUS.aspx
+23/May/2015 14:43:03,159- Main: fetching http://www.cnblogs.com/shijiayi/p/4522342.html
+23/May/2015 14:43:03,186- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/mengzhiang/
+23/May/2015 14:43:03,187- Main: page no content or too big: 32 @home.cnblogs.com/u/mengzhiang/
+23/May/2015 14:43:03,187- Main: fetching http://msg.cnblogs.com/msg/send/aou/
+23/May/2015 14:43:03,191- Main: page no content or too big: 2159 @www.cnblogs.com/AboutUS.aspx
+23/May/2015 14:43:03,192- Main: fetching www.cnblogs.com/ContactUs.aspx
+23/May/2015 14:43:03,232- Main: page no content or too big: 2183 @www.cnblogs.com/ContactUs.aspx
+23/May/2015 14:43:03,232- Main: fetching www.cnblogs.com/about/ad.aspx
+23/May/2015 14:43:03,251- Main: fetching http://www.cnblogs.com/youxia/p/linux028.html
+23/May/2015 14:43:03,261- Main: fetching home.cnblogs.com/u/JerryWeng/
+23/May/2015 14:43:03,272- Main: page no content or too big: 2143 @www.cnblogs.com/about/ad.aspx
+23/May/2015 14:43:03,272- Main: fetching http://www.cnblogs.com/liulun/rss
+23/May/2015 14:43:03,318- Main: fetching http://home.cnblogs.com/u/ScriptZhang/
+23/May/2015 14:43:03,364- Main: res content type error: application/xml @http://www.cnblogs.com/liulun/rss
+23/May/2015 14:43:03,365- Main: page no content or too big: 35 @http://www.cnblogs.com/liulun/rss
+23/May/2015 14:43:03,365- Main: fetching http://www.cnblogs.com/fucker/
+23/May/2015 14:43:03,369- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4523725
+23/May/2015 14:43:03,369- Main: fetching http://www.cnblogs.com/androidsuperman/archive/2015/05/23.html
+23/May/2015 14:43:03,371- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4414468
+23/May/2015 14:43:03,371- Main: fetching http://www.cnblogs.com/Vincenter/archive/2015/04/02.html
+23/May/2015 14:43:03,405- Main: fetching http://www.cnblogs.com/Slxj/tag/%e6%97%a5%e6%9c%9f%e5%87%bd%e6%95%b0/
+23/May/2015 14:43:03,427- Main: fetching http://www.cnblogs.com/liulun/category/225790.html
+23/May/2015 14:43:03,455- Main: page no content or too big: 4879 @http://www.cnblogs.com/androidsuperman/archive/2015/05/23.html
+23/May/2015 14:43:03,455- Main: page no content or too big: 4701 @http://www.cnblogs.com/Vincenter/archive/2015/04/02.html
+23/May/2015 14:43:03,456- Main: fetching http://www.cnblogs.com/Vincenter/p/4387407.html
+23/May/2015 14:43:03,456- Main: fetching http://www.cnblogs.com/androidsuperman/p/bb5fc8aba2bf87eb38204f19ecc5be8f.html
+23/May/2015 14:43:03,473- Main: fetching http://q.cnblogs.com/q/72304/#a_160939#span_160939
+23/May/2015 14:43:03,486- Main: fetching kb.cnblogs.com/list/1008/8/
+23/May/2015 14:43:03,503- Main: this is a login page, drop it. @ http://msg.cnblogs.com/msg/send/aou/
+23/May/2015 14:43:03,504- Main: fetching home.cnblogs.com/u/aoublog/detail/
+23/May/2015 14:43:03,506- Main: fetching q.cnblogs.com/u/871231zcy/
+23/May/2015 14:43:03,507- Main: this is a login page, drop it. @ home.cnblogs.com/u/622499/detail/
+23/May/2015 14:43:03,507- Main: fetching http://ing.cnblogs.com/u/622499/
+23/May/2015 14:43:03,524- Main: fetching news.cnblogs.com/n/521527#comment
+23/May/2015 14:43:03,544- Main: fetching job.cnblogs.com/offer/city/150-2.html
+23/May/2015 14:43:03,545- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4387407
+23/May/2015 14:43:03,572- Main: Bad Url: http://www.cnblogs.com/images/cnblogs_com/Terrylee/WindowsLiveWriter/Silverlight27_A002/TerryLee_Silverlight2_0039_2.gif
+23/May/2015 14:43:03,573- Main: fetching kb.cnblogs.com/page/42888/
+23/May/2015 14:43:03,580- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4523805
+23/May/2015 14:43:03,613- Main: fetching kb.cnblogs.com/page/515942/
+23/May/2015 14:43:03,689- Main: fetching kb.cnblogs.com/page/42887/
+23/May/2015 14:43:03,704- Main: fetching news.cnblogs.com/n/tag/Windows%2010/
+23/May/2015 14:43:03,753- Main: fetching kb.cnblogs.com/list/1008/9/
+23/May/2015 14:43:03,769- Main: fetching http://q.cnblogs.com/q/72311/#a_160938#span_160938
+23/May/2015 14:43:03,779- Main: this is a login page, drop it. @ http://ing.cnblogs.com/u/622499/
+23/May/2015 14:43:03,779- Main: fetching http://q.cnblogs.com/u/622499/
+23/May/2015 14:43:03,817- Main: this is a login page, drop it. @ home.cnblogs.com/u/aoublog/detail/
+23/May/2015 14:43:03,818- Main: fetching http://ing.cnblogs.com/u/aoublog/
+23/May/2015 14:43:03,843- Main: fetching q.cnblogs.com/q/63022/
+23/May/2015 14:43:03,851- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4523805
+23/May/2015 14:43:03,852- Main: fetching http://www.cnblogs.com/androidsuperman/archive/2015/05/18.html
+23/May/2015 14:43:03,856- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4387407
+23/May/2015 14:43:03,856- Main: fetching http://www.cnblogs.com/Vincenter/p/4385785.html
+23/May/2015 14:43:03,862- Main: fetching http://www.cnblogs.com/Slxj/tag/%e9%80%bb%e8%be%91%e8%bf%90%e7%ae%97%e5%87%bd%e6%95%b0/
+23/May/2015 14:43:03,876- Main: fetching job.cnblogs.com/offer/city/150-3.html
+23/May/2015 14:43:03,897- Main: fetching http://www.cnblogs.com/ScriptZhang/admin/EditPosts.aspx
+23/May/2015 14:43:03,906- Main: page no content or too big: 4369 @http://www.cnblogs.com/androidsuperman/archive/2015/05/18.html
+23/May/2015 14:43:03,906- Main: fetching http://www.cnblogs.com/androidsuperman/p/6c7d85e7999c99cd9a12a5d8105f7bdc.html
+23/May/2015 14:43:03,907- Main: fetching home.cnblogs.com/u/panshenjia/
+23/May/2015 14:43:03,911- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4385785
+23/May/2015 14:43:03,931- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4458430
+23/May/2015 14:43:03,979- Main: fetching http://www.cnblogs.com/services/metaweblog.aspx
+23/May/2015 14:43:03,985- Main: fetching http://www.cnblogs.com/shijiayi/p/4522342.html#commentform
+23/May/2015 14:43:03,997- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/panshenjia/
+23/May/2015 14:43:03,997- Main: page no content or too big: 32 @home.cnblogs.com/u/panshenjia/
+23/May/2015 14:43:03,997- Main: fetching home.cnblogs.com/u/731132/
+23/May/2015 14:43:04,024- Main: fetching http://www.cnblogs.com/homeLu/
+23/May/2015 14:43:04,041- Main: this is a login page, drop it. @ http://ing.cnblogs.com/u/aoublog/
+23/May/2015 14:43:04,042- Main: fetching http://q.cnblogs.com/u/aoublog/
+23/May/2015 14:43:04,065- Main: fetching home.cnblogs.com/u/622499/followees/
+23/May/2015 14:43:04,102- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/731132/
+23/May/2015 14:43:04,103- Main: page no content or too big: 28 @home.cnblogs.com/u/731132/
+23/May/2015 14:43:04,103- Main: fetching home.cnblogs.com/u/140195/
+23/May/2015 14:43:04,113- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4513090
+23/May/2015 14:43:04,116- Main: Bad Url: http://files.cnblogs.com/ryanding/JSONP.rar
+23/May/2015 14:43:04,158- Main: fetching http://www.cnblogs.com/Slxj/tag/%e5%85%b6%e4%bb%96%e5%87%bd%e6%95%b0/
+23/May/2015 14:43:04,198- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4458430
+23/May/2015 14:43:04,198- Main: fetching http://www.cnblogs.com/youxia/archive/2015/04/24.html
+23/May/2015 14:43:04,204- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4385785
+23/May/2015 14:43:04,204- Main: fetching http://www.cnblogs.com/Vincenter/archive/2015/03/31.html
+23/May/2015 14:43:04,227- Main: fetching http://q.cnblogs.com/q/72312/#a_160937#span_160937
+23/May/2015 14:43:04,242- Main: fetching kb.cnblogs.com/list/1008/10/
+23/May/2015 14:43:04,249- Main: fetching http://www.cnblogs.com/youxia/p/linux027.html
+23/May/2015 14:43:04,256- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/140195/
+23/May/2015 14:43:04,257- Main: page no content or too big: 28 @home.cnblogs.com/u/140195/
+23/May/2015 14:43:04,257- Main: fetching home.cnblogs.com/u/ziranquliu/
+23/May/2015 14:43:04,262- Main: page no content or too big: 4230 @http://www.cnblogs.com/Vincenter/archive/2015/03/31.html
+23/May/2015 14:43:04,262- Main: fetching http://www.cnblogs.com/Vincenter/p/4380359.html
+23/May/2015 14:43:04,271- Main: fetching q.cnblogs.com/tag/eclipse/unsolved
+23/May/2015 14:43:04,287- Main: fetching http://www.cnblogs.com/aoublog/
+23/May/2015 14:43:04,289- Main: this is a login page, drop it. @ http://www.cnblogs.com/ScriptZhang/admin/EditPosts.aspx
+23/May/2015 14:43:04,289- Main: fetching http://space.cnblogs.com/msg/send/ScriptZhang
+23/May/2015 14:43:04,290- Main: fetching news.cnblogs.com/n/521500/
+23/May/2015 14:43:04,312- Main: fetching job.cnblogs.com/offer/45782/
+23/May/2015 14:43:04,317- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4380359
+23/May/2015 14:43:04,324- Main: this is a login page, drop it. @ home.cnblogs.com/u/622499/followees/
+23/May/2015 14:43:04,324- Main: fetching home.cnblogs.com/u/622499/followers/
+23/May/2015 14:43:04,352- Main: fetching kb.cnblogs.com/page/43981/
+23/May/2015 14:43:04,357- Main: fetching home.cnblogs.com/u/aoublog/followees/
+23/May/2015 14:43:04,360- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4513090
+23/May/2015 14:43:04,360- Main: fetching http://www.cnblogs.com/androidsuperman/archive/2015/05/17.html
+23/May/2015 14:43:04,362- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/ziranquliu/
+23/May/2015 14:43:04,363- Main: page no content or too big: 32 @home.cnblogs.com/u/ziranquliu/
+23/May/2015 14:43:04,363- Main: fetching home.cnblogs.com/u/blog-Aevin/
+23/May/2015 14:43:04,402- Main: fetching success no: 2000
+23/May/2015 14:43:04,402- Main: fetching kb.cnblogs.com/page/514557/
+23/May/2015 14:43:04,416- Main: page no content or too big: 4357 @http://www.cnblogs.com/androidsuperman/archive/2015/05/17.html
+23/May/2015 14:43:04,416- Main: fetching http://www.cnblogs.com/androidsuperman/p/8a2c1afc8eaaa464c216c3b94e1ea5a2.html
+23/May/2015 14:43:04,475- Main: fetching news.cnblogs.com/n/521500#comment
+23/May/2015 14:43:04,486- Main: fetching q.cnblogs.com/tag/%E5%BF%AB%E6%8D%B7%E9%94%AE/unsolved
+23/May/2015 14:43:04,491- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4509381
+23/May/2015 14:43:04,512- Main: fetching kb.cnblogs.com/list/1008/11/
+23/May/2015 14:43:04,514- Main: fetching job.cnblogs.com/enterprise/31201/
+23/May/2015 14:43:04,531- Main: fetching http://q.cnblogs.com/q/72313/#a_160936#span_160936
+23/May/2015 14:43:04,548- Main: fetching kb.cnblogs.com/page/42901/
+23/May/2015 14:43:04,579- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4380359
+23/May/2015 14:43:04,579- Main: fetching passport.cnblogs.com/(X(1)S(vgkjpisqpocisbqnvnbsdges))/BotDetectCaptcha.ashx?get=sound&c=c_register_ctl00_holderleft_registercaptcha&t=ad3e83f44f2c4a8c84ed27a81ce95258&s=v%2bs8vHGgidesFzgD68ge1e2o%2ffaM82acFwbwHBMUQ4%2fmZR6B7%2b%2fcmN%2fHkG4whQ75x4imxlxZ%2b8%2fFl1yBqIUZ3Q%3d%3d
+23/May/2015 14:43:04,593- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/blog-Aevin/
+23/May/2015 14:43:04,593- Main: page no content or too big: 32 @home.cnblogs.com/u/blog-Aevin/
+23/May/2015 14:43:04,593- Main: fetching home.cnblogs.com/u/KingsWang/
+23/May/2015 14:43:04,610- Main: this is a login page, drop it. @ home.cnblogs.com/u/622499/followers/
+23/May/2015 14:43:04,611- Main: fetching home.cnblogs.com/u/622499/feed/question/
+23/May/2015 14:43:04,615- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://passport.cnblogs.com/(X(1)S(vgkjpisqpocisbqnvnbsdges))/BotDetectCaptcha.ashx?get=sound&c=c_register_ctl00_holderleft_registercaptcha&t=ad3e83f44f2c4a8c84ed27a81ce95258&s=v%2bs8vHGgidesFzgD68ge1e2o%2ffaM82acFwbwHBMUQ4%2fmZR6B7%2b%2fcmN%2fHkG4whQ75x4imxlxZ%2b8%2fFl1yBqIUZ3Q%3d%3d
+23/May/2015 14:43:04,615- Main: page no content or too big: 280 @passport.cnblogs.com/(X(1)S(vgkjpisqpocisbqnvnbsdges))/BotDetectCaptcha.ashx?get=sound&c=c_register_ctl00_holderleft_registercaptcha&t=ad3e83f44f2c4a8c84ed27a81ce95258&s=v%2bs8vHGgidesFzgD68ge1e2o%2ffaM82acFwbwHBMUQ4%2fmZR6B7%2b%2fcmN%2fHkG4whQ75x4imxlxZ%2b8%2fFl1yBqIUZ3Q%3d%3d
+23/May/2015 14:43:04,615- Main: fetching q.cnblogs.com/u/450438/question
+23/May/2015 14:43:04,627- Main: this is a login page, drop it. @ home.cnblogs.com/u/aoublog/followees/
+23/May/2015 14:43:04,627- Main: fetching home.cnblogs.com/u/aoublog/followers/
+23/May/2015 14:43:04,635- Main: fetching http://www.cnblogs.com/Slxj/archive/2011/10/20/2218935.html
+23/May/2015 14:43:04,700- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/KingsWang/
+23/May/2015 14:43:04,700- Main: page no content or too big: 31 @home.cnblogs.com/u/KingsWang/
+23/May/2015 14:43:04,700- Main: fetching home.cnblogs.com/u/LiCL/
+23/May/2015 14:43:04,711- Main: fetching q.cnblogs.com/u/450438/answered
+23/May/2015 14:43:04,715- Main: this is a login page, drop it. @ http://space.cnblogs.com/msg/send/ScriptZhang
+23/May/2015 14:43:04,715- Main: fetching http://www.cnblogs.com/ScriptZhang/gallery.html
+23/May/2015 14:43:04,729- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4454839
+23/May/2015 14:43:04,740- Main: fetching home.cnblogs.com/u/622499/feed/blog/
+23/May/2015 14:43:04,749- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4509381
+23/May/2015 14:43:04,749- Main: fetching http://www.cnblogs.com/androidsuperman/archive/2015/05/14.html
+23/May/2015 14:43:04,767- Main: fetching http://www.cnblogs.com/ScriptZhang/rss
+23/May/2015 14:43:04,801- Main: page no content or too big: 4358 @http://www.cnblogs.com/androidsuperman/archive/2015/05/14.html
+23/May/2015 14:43:04,801- Main: fetching http://www.cnblogs.com/androidsuperman/p/54ab5c63273bc118c1cccd6945218c1e.html
+23/May/2015 14:43:04,803- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4516625
+23/May/2015 14:43:04,829- Main: fetching http://www.cnblogs.com/songliquan/
+23/May/2015 14:43:04,841- Main: this is a login page, drop it. @ home.cnblogs.com/u/aoublog/followers/
+23/May/2015 14:43:04,841- Main: fetching home.cnblogs.com/u/aoublog/feed/question/
+23/May/2015 14:43:04,842- Main: fetching home.cnblogs.com/u/xiaokang088/
+23/May/2015 14:43:04,845- Main: fetching home.cnblogs.com/u/622499/
+23/May/2015 14:43:04,857- Main: res content type error: application/xml @http://www.cnblogs.com/ScriptZhang/rss
+23/May/2015 14:43:04,858- Main: page no content or too big: 40 @http://www.cnblogs.com/ScriptZhang/rss
+23/May/2015 14:43:04,858- Main: fetching http://www.cnblogs.com/ScriptZhang/archive/2010/08/20/1804926.html
+23/May/2015 14:43:04,864- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4504810
+23/May/2015 14:43:04,870- Main: fetching www.cnblogs.com/cate/python/
+23/May/2015 14:43:04,922- Main: fetching home.cnblogs.com/u/aoublog/feed/blog/
+23/May/2015 14:43:04,951- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4454839
+23/May/2015 14:43:04,951- Main: fetching http://www.cnblogs.com/youxia/archive/2015/04/22.html
+23/May/2015 14:43:04,958- Main: fetching www.cnblogs.com/cate/codelife/
+23/May/2015 14:43:04,962- Main: fetching http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fhome.cnblogs.com%2fu%2f622499%2f
+23/May/2015 14:43:04,975- Main: fetching home.cnblogs.com/u/lztkdr/
+23/May/2015 14:43:04,979- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1804926
+23/May/2015 14:43:05,010- Main: fetching http://www.cnblogs.com/youxia/p/java002.html
+23/May/2015 14:43:05,039- Main: fetching home.cnblogs.com/u/aoublog/
+23/May/2015 14:43:05,073- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/lztkdr/
+23/May/2015 14:43:05,073- Main: page no content or too big: 28 @home.cnblogs.com/u/lztkdr/
+23/May/2015 14:43:05,073- Main: fetching q.cnblogs.com/u/jirigala/question
+23/May/2015 14:43:05,085- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4516625
+23/May/2015 14:43:05,085- Main: fetching http://space.cnblogs.com/msg/send/jiulang
+23/May/2015 14:43:05,105- Main: fetching www.cnblogs.com/cate/job/
+23/May/2015 14:43:05,177- Main: fetching home.cnblogs.com/u/760896/
+23/May/2015 14:43:05,195- Main: fetching www.cnblogs.com/cate/ruby/
+23/May/2015 14:43:05,214- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4504810
+23/May/2015 14:43:05,214- Main: fetching http://www.cnblogs.com/androidsuperman/archive/2015/05/13.html
+23/May/2015 14:43:05,246- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1804926
+23/May/2015 14:43:05,246- Main: fetching http://www.cnblogs.com/ScriptZhang/archive/2010/08/20/1804926.html#comments
+23/May/2015 14:43:05,268- Main: page no content or too big: 4378 @http://www.cnblogs.com/androidsuperman/archive/2015/05/13.html
+23/May/2015 14:43:05,268- Main: fetching http://www.cnblogs.com/androidsuperman/p/33953546236c83cbe49471dffa86c77b.html
+23/May/2015 14:43:05,283- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/760896/
+23/May/2015 14:43:05,283- Main: page no content or too big: 28 @home.cnblogs.com/u/760896/
+23/May/2015 14:43:05,283- Main: fetching home.cnblogs.com/u/RTdo/
+23/May/2015 14:43:05,335- Main: fetching q.cnblogs.com/u/jirigala/answered
+23/May/2015 14:43:05,343- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4501744
+23/May/2015 14:43:05,356- Main: fetching http://www.cnblogs.com/ScriptZhang/tag/%e5%a6%82%e4%bd%95%e5%bc%80%e5%8f%91%e4%b8%80%e4%b8%aa%e5%ad%a6%e7%94%9f%e6%88%90%e7%bb%a9%e7%ae%a1%e7%90%86%e7%b3%b8%e7%bb%9f(11)/
+23/May/2015 14:43:05,370- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/RTdo/
+23/May/2015 14:43:05,371- Main: page no content or too big: 26 @home.cnblogs.com/u/RTdo/
+23/May/2015 14:43:05,371- Main: fetching home.cnblogs.com/u/622189/
+23/May/2015 14:43:05,379- Main: this is a login page, drop it. @ http://space.cnblogs.com/msg/send/jiulang
+23/May/2015 14:43:05,379- Main: fetching http://www.cnblogs.com/kewei/rss
+23/May/2015 14:43:05,388- Main: fetching q.cnblogs.com/u/450438/bestanswer
+23/May/2015 14:43:05,439- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=2218935
+23/May/2015 14:43:05,478- Main: res content type error: application/xml @http://www.cnblogs.com/kewei/rss
+23/May/2015 14:43:05,479- Main: page no content or too big: 34 @http://www.cnblogs.com/kewei/rss
+23/May/2015 14:43:05,479- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4522974
+23/May/2015 14:43:05,480- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/622189/
+23/May/2015 14:43:05,481- Main: page no content or too big: 28 @home.cnblogs.com/u/622189/
+23/May/2015 14:43:05,481- Main: fetching home.cnblogs.com/u/alan-doom/
+23/May/2015 14:43:05,522- Main: fetching http://q.cnblogs.com/q/72304/#a_160934#span_160934
+23/May/2015 14:43:05,547- Main: fetching kb.cnblogs.com/list/1008/17/
+23/May/2015 14:43:05,554- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4501744
+23/May/2015 14:43:05,554- Main: fetching http://www.cnblogs.com/androidsuperman/archive/2015/05/09.html
+23/May/2015 14:43:05,561- Main: fetching http://passport.cnblogs.com/register.aspx?ReturnUrl=http%3a%2f%2fhome.cnblogs.com%2fu%2faoublog%2f
+23/May/2015 14:43:05,579- Main: fetching q.cnblogs.com/u/Hexllo/
+23/May/2015 14:43:05,603- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/alan-doom/
+23/May/2015 14:43:05,604- Main: page no content or too big: 31 @home.cnblogs.com/u/alan-doom/
+23/May/2015 14:43:05,604- Main: fetching http://home.cnblogs.com/u/luhuimin/
+23/May/2015 14:43:05,605- Main: page no content or too big: 4355 @http://www.cnblogs.com/androidsuperman/archive/2015/05/09.html
+23/May/2015 14:43:05,605- Main: fetching http://www.cnblogs.com/androidsuperman/p/0bdb7806bd5ff9c3edbdef9a913eae6f.html
+23/May/2015 14:43:05,606- Main: fetching news.cnblogs.com/n/521446/
+23/May/2015 14:43:05,625- Main: fetching job.cnblogs.com/offer/45781/
+23/May/2015 14:43:05,655- Main: fetching kb.cnblogs.com/page/42900/
+23/May/2015 14:43:05,684- Main: fetching kb.cnblogs.com/page/514330/
+23/May/2015 14:43:05,688- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=2218935
+23/May/2015 14:43:05,689- Main: fetching http://www.cnblogs.com/Slxj/archive/2011/10/20/2218935.html#comments
+23/May/2015 14:43:05,708- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/luhuimin/
+23/May/2015 14:43:05,708- Main: page no content or too big: 37 @http://home.cnblogs.com/u/luhuimin/
+23/May/2015 14:43:05,708- Main: fetching http://group.cnblogs.com/topic/70087.html
+23/May/2015 14:43:05,732- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4489581
+23/May/2015 14:43:05,737- Main: fetching kb.cnblogs.com/page/42899/
+23/May/2015 14:43:05,760- Main: fetching news.cnblogs.com/n/521446#comment
+23/May/2015 14:43:05,777- Main: fetching job.cnblogs.com/offer/45780/
+23/May/2015 14:43:05,787- Main: fetching home.cnblogs.com/u/tutoo/
+23/May/2015 14:43:05,805- Main: fetching kb.cnblogs.com/list/1008/byviews/
+23/May/2015 14:43:05,809- Main: fetching http://home.cnblogs.com/u/lixiong-iOS/
+23/May/2015 14:43:05,812- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4522974
+23/May/2015 14:43:05,813- Main: fetching http://space.cnblogs.com/msg/send/%e4%b8%80%e7%a0%81
+23/May/2015 14:43:05,829- Main: fetching http://q.cnblogs.com/q/72232/#a_160929#span_160929
+23/May/2015 14:43:05,865- Main: fetching q.cnblogs.com/u/licheng127/
+23/May/2015 14:43:05,943- Main: fetching http://home.cnblogs.com/u/billtsui/
+23/May/2015 14:43:05,949- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4489581
+23/May/2015 14:43:05,949- Main: fetching http://www.cnblogs.com/androidsuperman/archive/2015/05/04.html
+23/May/2015 14:43:05,967- Main: fetching http://www.cnblogs.com/Slxj/tag/%e8%a1%8c%e5%88%97%e8%bd%ac%e6%8d%a2/
+23/May/2015 14:43:05,995- Main: fetching http://home.cnblogs.com/u/450438/
+23/May/2015 14:43:05,999- Main: page no content or too big: 4848 @http://www.cnblogs.com/androidsuperman/archive/2015/05/04.html
+23/May/2015 14:43:05,999- Main: fetching http://www.cnblogs.com/androidsuperman/p/4477724.html
+23/May/2015 14:43:06,006- Main: fetching http://www.cnblogs.com/ScriptZhang/archive/2010/05/26/1744094.html
+23/May/2015 14:43:06,016- Main: fetching q.cnblogs.com/u/jirigala/bestanswer
+23/May/2015 14:43:06,031- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/billtsui/
+23/May/2015 14:43:06,031- Main: page no content or too big: 37 @http://home.cnblogs.com/u/billtsui/
+23/May/2015 14:43:06,031- Main: fetching http://home.cnblogs.com/u/383027/
+23/May/2015 14:43:06,048- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4444613
+23/May/2015 14:43:06,054- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4477724
+23/May/2015 14:43:06,122- Main: this is a login page, drop it. @ http://space.cnblogs.com/msg/send/%e4%b8%80%e7%a0%81
+23/May/2015 14:43:06,122- Main: fetching http://www.cnblogs.com/yoyaprogrammer/rss
+23/May/2015 14:43:06,132- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/383027/
+23/May/2015 14:43:06,132- Main: page no content or too big: 35 @http://home.cnblogs.com/u/383027/
+23/May/2015 14:43:06,132- Main: fetching http://home.cnblogs.com/u/whitehouse/
+23/May/2015 14:43:06,143- Main: fetching http://www.cnblogs.com/songliquan/p/4522263.html
+23/May/2015 14:43:06,214- Main: res content type error: application/xml @http://www.cnblogs.com/yoyaprogrammer/rss
+23/May/2015 14:43:06,214- Main: page no content or too big: 43 @http://www.cnblogs.com/yoyaprogrammer/rss
+23/May/2015 14:43:06,214- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4523158
+23/May/2015 14:43:06,241- Main: fetching http://home.cnblogs.com/u/jiaoshiyao/
+23/May/2015 14:43:06,288- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4444613
+23/May/2015 14:43:06,288- Main: fetching http://www.cnblogs.com/youxia/archive/2015/04/19.html
+23/May/2015 14:43:06,290- Main: Bad Url: http://files.cnblogs.com/youxia/Gnu-C%E8%AF%AD%E8%A8%80%E6%89%8B%E5%86%8C.pdf
+23/May/2015 14:43:06,306- Main: fetching q.cnblogs.com/q/67457/
+23/May/2015 14:43:06,318- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1744094
+23/May/2015 14:43:06,334- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/jiaoshiyao/
+23/May/2015 14:43:06,335- Main: page no content or too big: 39 @http://home.cnblogs.com/u/jiaoshiyao/
+23/May/2015 14:43:06,335- Main: fetching http://home.cnblogs.com/u/cs_clinging/
+23/May/2015 14:43:06,340- Main: fetching http://www.cnblogs.com/youxia/p/java001.html
+23/May/2015 14:43:06,346- Main: fetching passport.cnblogs.com/(X(1)S(sjne04k44yj1xr1nzqns0hx2))/BotDetectCaptcha.ashx?get=sound&c=c_register_ctl00_holderleft_registercaptcha&t=1a7400259844409989c370ca454002b0&s=o9%2ba1GVog8Po57EzHv7GVT5sdhutTadspiGB9Kl46orUEs41MJ1J38Geih7uZvJ%2bNtsjACRSQxkZdfOu0bZoHA%3d%3d
+23/May/2015 14:43:06,367- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4477724
+23/May/2015 14:43:06,367- Main: fetching http://www.cnblogs.com/androidsuperman/p/ed5b7e634f5f260286fe024e7389239e.html
+23/May/2015 14:43:06,380- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://passport.cnblogs.com/(X(1)S(sjne04k44yj1xr1nzqns0hx2))/BotDetectCaptcha.ashx?get=sound&c=c_register_ctl00_holderleft_registercaptcha&t=1a7400259844409989c370ca454002b0&s=o9%2ba1GVog8Po57EzHv7GVT5sdhutTadspiGB9Kl46orUEs41MJ1J38Geih7uZvJ%2bNtsjACRSQxkZdfOu0bZoHA%3d%3d
+23/May/2015 14:43:06,380- Main: page no content or too big: 268 @passport.cnblogs.com/(X(1)S(sjne04k44yj1xr1nzqns0hx2))/BotDetectCaptcha.ashx?get=sound&c=c_register_ctl00_holderleft_registercaptcha&t=1a7400259844409989c370ca454002b0&s=o9%2ba1GVog8Po57EzHv7GVT5sdhutTadspiGB9Kl46orUEs41MJ1J38Geih7uZvJ%2bNtsjACRSQxkZdfOu0bZoHA%3d%3d
+23/May/2015 14:43:06,380- Main: fetching q.cnblogs.com/u/719001/question
+23/May/2015 14:43:06,390- Main: fetching http://www.cnblogs.com/Slxj/tag/%e4%ba%a4%e5%8f%89%e8%a1%a8/
+23/May/2015 14:43:06,420- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/cs_clinging/
+23/May/2015 14:43:06,420- Main: page no content or too big: 40 @http://home.cnblogs.com/u/cs_clinging/
+23/May/2015 14:43:06,420- Main: fetching http://home.cnblogs.com/u/paktc/
+23/May/2015 14:43:06,456- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4477677
+23/May/2015 14:43:06,459- Main: fetching http://q.cnblogs.com/q/72304/#a_160928#span_160928
+23/May/2015 14:43:06,488- Main: fetching kb.cnblogs.com/tag/%e6%9e%b6%e6%9e%84/
+23/May/2015 14:43:06,494- Main: fetching home.cnblogs.com/u/huxi/
+23/May/2015 14:43:06,506- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/paktc/
+23/May/2015 14:43:06,507- Main: page no content or too big: 34 @http://home.cnblogs.com/u/paktc/
+23/May/2015 14:43:06,507- Main: fetching http://home.cnblogs.com/u/-404/
+23/May/2015 14:43:06,540- Main: fetching q.cnblogs.com/q/63029/
+23/May/2015 14:43:06,544- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4523158
+23/May/2015 14:43:06,544- Main: fetching news.cnblogs.com/n/521653/
+23/May/2015 14:43:06,546- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1744094
+23/May/2015 14:43:06,546- Main: fetching http://www.cnblogs.com/ScriptZhang/archive/2010/05/26/1744094.html#comments
+23/May/2015 14:43:06,557- Main: fetching news.cnblogs.com/n/521430/
+23/May/2015 14:43:06,577- Main: fetching job.cnblogs.com/offer/45779/
+23/May/2015 14:43:06,599- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/-404/
+23/May/2015 14:43:06,599- Main: page no content or too big: 33 @http://home.cnblogs.com/u/-404/
+23/May/2015 14:43:06,599- Main: fetching http://home.cnblogs.com/u/landv/
+23/May/2015 14:43:06,605- Main: fetching kb.cnblogs.com/page/42898/
+23/May/2015 14:43:06,628- Main: fetching kb.cnblogs.com/page/193562/
+23/May/2015 14:43:06,629- Main: fetching news.cnblogs.com/n/topic_419.htm
+23/May/2015 14:43:06,660- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4477677
+23/May/2015 14:43:06,660- Main: fetching http://www.cnblogs.com/androidsuperman/archive/2015/05/03.html
+23/May/2015 14:43:06,688- Main: fetching http://home.cnblogs.com/u/mishengqiang/
+23/May/2015 14:43:06,702- Main: fetching kb.cnblogs.com/page/42897/
+23/May/2015 14:43:06,711- Main: fetching news.cnblogs.com/n/521430#comment
+23/May/2015 14:43:06,711- Main: page no content or too big: 4324 @http://www.cnblogs.com/androidsuperman/archive/2015/05/03.html
+23/May/2015 14:43:06,711- Main: fetching http://www.cnblogs.com/androidsuperman/p/4474604.html
+23/May/2015 14:43:06,712- Main: fetching job.cnblogs.com/offer/45778/
+23/May/2015 14:43:06,729- Main: fetching q.cnblogs.com/tag/spring.net/unsolved
+23/May/2015 14:43:06,733- Main: fetching news.cnblogs.com/n/521653#comment
+23/May/2015 14:43:06,739- Main: fetching home.cnblogs.com/u/wentingtu/
+23/May/2015 14:43:06,768- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4474604
+23/May/2015 14:43:06,774- Main: fetching news.cnblogs.com/n/tag/%E6%90%BA%E7%A8%8B/
+23/May/2015 14:43:06,776- Main: fetching kb.cnblogs.com/tag/%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1/
+23/May/2015 14:43:06,777- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/mishengqiang/
+23/May/2015 14:43:06,777- Main: page no content or too big: 41 @http://home.cnblogs.com/u/mishengqiang/
+23/May/2015 14:43:06,777- Main: fetching http://home.cnblogs.com/u/luozongwang/
+23/May/2015 14:43:06,794- Main: fetching http://q.cnblogs.com/q/72283/#a_160927#span_160927
+23/May/2015 14:43:06,885- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/luozongwang/
+23/May/2015 14:43:06,886- Main: page no content or too big: 40 @http://home.cnblogs.com/u/luozongwang/
+23/May/2015 14:43:06,886- Main: fetching http://home.cnblogs.com/u/610245/
+23/May/2015 14:43:06,912- Main: fetching http://www.cnblogs.com/Slxj/tag/%e8%a1%a8%e7%9a%84%e5%80%bc%e8%bd%ac%e6%8d%a2%e6%88%90%e5%ad%97%e6%ae%b5/
+23/May/2015 14:43:06,947- Main: fetching q.cnblogs.com/u/719001/answered
+23/May/2015 14:43:06,959- Main: fetching http://www.cnblogs.com/ScriptZhang/tag/%e5%ad%a6%e7%94%9f%e6%88%90%e7%bb%a9%e7%ae%a1%e7%90%86%e7%b3%b8%e7%bb%9f/
+23/May/2015 14:43:06,971- Main: fetching q.cnblogs.com/tag/%E7%A8%8B%E5%BA%8F%E5%91%98/unsolved
+23/May/2015 14:43:06,998- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/610245/
+23/May/2015 14:43:06,998- Main: page no content or too big: 35 @http://home.cnblogs.com/u/610245/
+23/May/2015 14:43:06,998- Main: fetching http://home.cnblogs.com/u/449572/
+23/May/2015 14:43:07,001- Main: Bad Url: http://files.cnblogs.com/youxia/Linux%E6%B1%87%E7%BC%96%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97.pdf
+23/May/2015 14:43:07,002- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4437714
+23/May/2015 14:43:07,024- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4474604
+23/May/2015 14:43:07,024- Main: fetching http://www.cnblogs.com/androidsuperman/default.html?page=2
+23/May/2015 14:43:07,052- Main: fetching news.cnblogs.com/n/tag/%E8%89%BA%E9%BE%99/
+23/May/2015 14:43:07,056- Main: fetching www.cnblogs.com/cate/wpf/
+23/May/2015 14:43:07,097- Main: fetching http://www.cnblogs.com/songliquan/p/4522263.html#commentform
+23/May/2015 14:43:07,109- Main: fetching http://space.cnblogs.com/msg/send/cumtchw
+23/May/2015 14:43:07,166- Main: fetching news.cnblogs.com/n/521642/
+23/May/2015 14:43:07,215- Main: fetching q.cnblogs.com/u/tanggu/
+23/May/2015 14:43:07,238- Main: fetching http://www.cnblogs.com/ScriptZhang/archive/2010/05/26/1743884.html
+23/May/2015 14:43:07,248- Main: fetching q.cnblogs.com/u/719001/bestanswer
+23/May/2015 14:43:07,251- Main: fetching http://group.cnblogs.com/topic/72430.html
+23/May/2015 14:43:07,255- Main: fetching www.cnblogs.com/cate/infosec/
+23/May/2015 14:43:07,272- Main: fetching http://www.cnblogs.com/Slxj/archive/2011/10/19/2217612.html
+23/May/2015 14:43:07,278- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=4437714
+23/May/2015 14:43:07,278- Main: fetching http://www.cnblogs.com/youxia/archive/2015/04/13.html
+23/May/2015 14:43:07,319- Main: fetching http://msg.cnblogs.com/msg/send/xaoxong/
+23/May/2015 14:43:07,325- Main: ===============================
+23/May/2015 14:43:07,325- Main: -- Page fetch done. exiting  --
+23/May/2015 14:43:07,325- Main: ===============================
+23/May/2015 14:43:07,435- Main: this is a login page, drop it. @ http://space.cnblogs.com/msg/send/cumtchw
+23/May/2015 14:43:07,435- Main: fetching http://www.cnblogs.com/cumtchw/rss
+23/May/2015 14:43:07,530- Main: res content type error: application/xml @http://www.cnblogs.com/cumtchw/rss
+23/May/2015 14:43:07,530- Main: page no content or too big: 36 @http://www.cnblogs.com/cumtchw/rss
+23/May/2015 14:43:07,531- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=4523714
+23/May/2015 14:43:07,628- Main: this is a login page, drop it. @ http://msg.cnblogs.com/msg/send/xaoxong/
+23/May/2015 14:43:07,628- Main: fetching home.cnblogs.com/u/639531/detail/

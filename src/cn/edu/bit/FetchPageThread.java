@@ -3,10 +3,7 @@ package cn.edu.bit;
 import java.io.*;
 import java.net.*;
 import java.nio.charset.Charset;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
@@ -94,7 +91,7 @@ public class FetchPageThread implements Runnable{
             }
             Main.doneLogger.info(FileUtils.shortMd5(url));
             // if it is to short, drop it
-            if (pageStr.length() <= 5000 || pageStr.length() > 5 * 1000 * 1000) {
+            if (pageStr.length() <= 500 || pageStr.length() > 5 * 1000 * 1000) {
                 Main.mainLogger.info("page no content or too big: " + pageStr.length() + " @" + url);
                 continue;
             }
@@ -127,6 +124,8 @@ public class FetchPageThread implements Runnable{
                         for (Map.Entry<String, String> hashUrlMap : Main.hashUrlMap.entrySet()) {
                             Main.mapLogger.info(hashUrlMap.getKey() + " " + hashUrlMap.getValue());
                         }
+                        Calendar cal = Calendar.getInstance();
+                        System.out.println("End at :: " + cal.getTime());
                         System.out.println("map logging done");
                     }
                 }
@@ -166,7 +165,10 @@ public class FetchPageThread implements Runnable{
          * @date 2015-04-01 add proxy
          */
         Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("10.4.20.2", 3128));
+        // Proxy proxy = null; //new Proxy(Proxy.Type.HTTP, new InetSocketAddress("10.4.20.2", 3128));
 
+        // for some href is not start with http protocol, so add it manually
+        if (!urlStr.startsWith("http://")) urlStr = "http://" + urlStr;
         try {
             url = new URL(urlStr);
         } catch (MalformedURLException e) {
@@ -222,7 +224,7 @@ public class FetchPageThread implements Runnable{
         try {
             res = conn.getInputStream();
         } catch (IOException e) {
-            System.out.println("res getInputStream error " + e.getMessage());
+            Main.mainLogger.info("res getInputStream error " + e.getMessage());
             return "";
         }
         // build string

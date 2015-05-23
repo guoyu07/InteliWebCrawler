@@ -65,11 +65,14 @@ public class HtmlParserThread implements Runnable {
             // String fileName = FileUtils.nowTime() + "-" + Thread.currentThread().getName() + ".html";
             String fileName = FileUtils.shortMd5(parentUrl) + ".html";
             // System.out.println( "new file: " + fileName);
-            fu.setName(fileName);
-            fu.setContent(pageStr.substring(urlIndex + System.getProperty("line.separator").length()));
-            fu.saveToFile();
-            Main.fetchedCountPlus();
-            fu.close();
+
+            synchronized (this.getClass()) {
+                fu.setName(fileName);
+                fu.setContent(pageStr.substring(urlIndex + System.getProperty("line.separator").length()));
+                fu.saveToFile();
+                Main.fetchedCountPlus();
+                fu.close();
+            }
 
 
             doc = Jsoup.parse(pageStr);
@@ -96,7 +99,7 @@ public class HtmlParserThread implements Runnable {
                 Main.urlFetched.add(hashUrl);
                 // Main.mapLogger.info(hashUrl + "   " + parentUrl);
                 // add to hashUrlMap, log when exit
-                Main.hashUrlMap.put(hashUrl, parentUrl);
+                Main.hashUrlMap.put(hashUrl, hrefStr);
                 // }
             }
             // add to urlQueue
@@ -218,12 +221,21 @@ public class HtmlParserThread implements Runnable {
         // 登录页面则跳过
         if (href.contains("signin") || href.contains("login")) return false;
 
-        final String[] postfix = {"jpg", "jpeg", "pdf", "apk", "zip", "rar", "7z", "tar", "gz", "2z", "", "gif", "ttf", "swf", "doc"};
-        final List<String> postfixList = Arrays.asList(postfix);
+        // final String[] postfix = {"jpg", "jpeg", "pdf", "apk", "zip", "rar", "7z", "tar", "gz", "2z", "", "gif", "ttf", "swf", "doc"};
+        final List<String> postfixList = Main.config.excludeType;
+
+        // @todo url like q.cnblogs.com/u/554118/bestanswer is good
         int suffixIndex = href.lastIndexOf(".");
         if (suffixIndex != -1) {
-            String suffix = href.substring(suffixIndex+1);
-            return href.startsWith("http://") && !(postfixList.contains(suffix));
+            String suffix = href.substring(suffixIndex+1).toLowerCase();
+            // Boolean isUrlOk = href.startsWith("http://") && !(postfixList.contains(suffix));
+            // remove protocol limit for some a-tag's href has not protocol part
+            // @2015-05-23
+            Boolean isUrlOk = !(postfixList.contains(suffix));
+            if (!isUrlOk) {
+                Main.mainLogger.info("Bad Url: " + href);
+            }
+            return isUrlOk;
         }
         return true;
     }

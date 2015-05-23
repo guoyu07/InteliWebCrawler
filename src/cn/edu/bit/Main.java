@@ -24,7 +24,7 @@ public class Main {
     public final static int THREAD_SIZE = 100;
 
     // 最大爬取网页数量
-    public final static int FULL_PAGE_SIZE = config.pagesToFetch;
+    public final static int FULL_PAGE_SIZE = config.pagesToFetch+100;
 
     // 当前线程数
     public static int currentThreadNum = 0;
