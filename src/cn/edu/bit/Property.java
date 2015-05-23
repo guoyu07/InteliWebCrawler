@@ -15,7 +15,7 @@ import java.util.Properties;
  */
 public class Property {
 
-    private static final String configFile = "conf/config.property";
+    private static final String configFile = "conf/config.properties";
     private static Property prop;
     private static Properties props;
 
@@ -43,6 +43,7 @@ public class Property {
 
     public boolean isSaveStatus;
     public boolean isResume;
+    public boolean isResumeFromOneFile;
 
     public List<String> excludeType;
 
@@ -71,14 +72,15 @@ public class Property {
             useFileLog    = Boolean.parseBoolean(props.getProperty("useFileLog", "1"));
             isSaveStatus    = Boolean.parseBoolean(props.getProperty("isSaveStatus", "1"));
             isResume        = Boolean.parseBoolean(props.getProperty("isResume", "1"));
+            isResumeFromOneFile        = Boolean.parseBoolean(props.getProperty("isResumeFromOneFile", "1"));
 
             String excludeTypeStr = props.getProperty("excludeType", "");
             excludeType = Arrays.asList(excludeTypeStr.split(","));
 
         } catch (FileNotFoundException e) {
-            System.out.println("=============\r\nFile config.property not found\rr\n=============");
+            System.out.println("=============\r\nFile config.properties not found\rr\n=============");
         } catch (IOException e) {
-            System.out.println("=============\r\nLoad from props from config.property failed\rr\n=============");
+            System.out.println("=============\r\nLoad from props from config.properties failed\rr\n=============");
         }
     }
 

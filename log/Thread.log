@@ -1,10 +1,94 @@
-23/May/2015 22:52:09,130- Main: fetching home.cnblogs.com/u/hard-work/detail/
-23/May/2015 22:52:09,166- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/loveyx/
-23/May/2015 22:52:09,166- Main: page no content or too big: 35 @http://home.cnblogs.com/u/loveyx/
-23/May/2015 22:52:09,166- Main: fetching http://home.cnblogs.com/u/zl2613/
-23/May/2015 22:52:09,369- Main: this is a login page, drop it. @ home.cnblogs.com/u/xhk-yjp/detail/
-23/May/2015 22:52:09,369- Main: fetching http://ing.cnblogs.com/u/xhk-yjp/
-23/May/2015 22:52:09,447- Main: this is a login page, drop it. @ home.cnblogs.com/u/hard-work/detail/
-23/May/2015 22:52:09,447- Main: fetching http://ing.cnblogs.com/u/hard-work/
-23/May/2015 22:52:09,578- Main: this is a login page, drop it. @ http://ing.cnblogs.com/u/xhk-yjp/
-23/May/2015 22:52:09,578- Main: fetching http://q.cnblogs.com/u/xhk-yjp/
+23/May/2015 23:34:01,315- Main: fetching http://www.cnblogs.com/paktc/default.html?page=2
+23/May/2015 23:34:01,321- Main: fetching q.cnblogs.com/tag/arm/unsolved
+23/May/2015 23:34:01,340- Main: res content type error: image/png @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252159259856.png
+23/May/2015 23:34:01,340- Main: page content too short or too big: 84chars @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252159259856.png
+23/May/2015 23:34:01,340- Main: fetching http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252200042314.png
+23/May/2015 23:34:01,353- Main: fetching http://www.cnblogs.com/lhb25/archive/2012/05/09/exciting-online-web-games-built-in-html5.html
+23/May/2015 23:34:01,370- Main: fetching http://q.cnblogs.com/q/72309/
+23/May/2015 23:34:01,398- Main: fetching http://www.cnblogs.com/dudu/articles/52480.aspx
+23/May/2015 23:34:01,425- Main: res content type error: image/png @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252200042314.png
+23/May/2015 23:34:01,425- Main: page content too short or too big: 84chars @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252200042314.png
+23/May/2015 23:34:01,425- Main: fetching http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252200451100.png
+23/May/2015 23:34:01,463- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=2060856
+23/May/2015 23:34:01,478- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=1327711
+23/May/2015 23:34:01,490- Main: fetching passport.cnblogs.com/(X(1)S(kbrvefmjfs3bnr4edzouzucy))/BotDetectCaptcha.ashx?get=sound&c=c_register_ctl00_holderleft_registercaptcha&t=58302c2825954b04b734ed62a92b60f3&s=0jBaUftNFV%2byt0p4Ol3T8rCw3x7REB3gogBHkNPkqvNizWdDqQEN3M8ZUADZO%2fuG%2fexXPyYyCQd8Mg2MyMg5PQ%3d%3d
+23/May/2015 23:34:01,494- Main: fetching lrysir.iteye.com/blog/monthblog_more
+23/May/2015 23:34:01,506- Main: fetching http://home.cnblogs.com/u/chizelin/
+23/May/2015 23:34:01,529- Main: res content type error: image/png @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252200451100.png
+23/May/2015 23:34:01,530- Main: page content too short or too big: 84chars @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252200451100.png
+23/May/2015 23:34:01,530- Main: fetching http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252201225062.png
+23/May/2015 23:34:01,530- Main: fetching http://www.cnblogs.com/zzPrince/p/4443693.html
+23/May/2015 23:34:01,535- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://passport.cnblogs.com/(X(1)S(kbrvefmjfs3bnr4edzouzucy))/BotDetectCaptcha.ashx?get=sound&c=c_register_ctl00_holderleft_registercaptcha&t=58302c2825954b04b734ed62a92b60f3&s=0jBaUftNFV%2byt0p4Ol3T8rCw3x7REB3gogBHkNPkqvNizWdDqQEN3M8ZUADZO%2fuG%2fexXPyYyCQd8Mg2MyMg5PQ%3d%3d
+23/May/2015 23:34:01,536- Main: page content too short or too big: 270chars @passport.cnblogs.com/(X(1)S(kbrvefmjfs3bnr4edzouzucy))/BotDetectCaptcha.ashx?get=sound&c=c_register_ctl00_holderleft_registercaptcha&t=58302c2825954b04b734ed62a92b60f3&s=0jBaUftNFV%2byt0p4Ol3T8rCw3x7REB3gogBHkNPkqvNizWdDqQEN3M8ZUADZO%2fuG%2fexXPyYyCQd8Mg2MyMg5PQ%3d%3d
+23/May/2015 23:34:01,536- Main: fetching q.cnblogs.com/u/murongxiaopifu/question
+23/May/2015 23:34:01,543- Main: fetching q.cnblogs.com/u/149033/
+23/May/2015 23:34:01,571- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3675744
+23/May/2015 23:34:01,602- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/chizelin/
+23/May/2015 23:34:01,602- Main: page content too short or too big: 37chars @http://home.cnblogs.com/u/chizelin/
+23/May/2015 23:34:01,602- Main: fetching http://home.cnblogs.com/u/714268/
+23/May/2015 23:34:01,634- Main: res content type error: image/png @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252201225062.png
+23/May/2015 23:34:01,634- Main: page content too short or too big: 84chars @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252201225062.png
+23/May/2015 23:34:01,634- Main: fetching http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252202119067.png
+23/May/2015 23:34:01,651- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=2982944
+23/May/2015 23:34:01,692- Main: fetching http://blog.csdn.net/heiyeshuwu/article/month/2013/11
+23/May/2015 23:34:01,695- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=2060856
+23/May/2015 23:34:01,695- Main: fetching http://www.cnblogs.com/lhb25/archive/2011/06/27/100-best-and-beautiful-free-blogger-templates-of-2011.html
+23/May/2015 23:34:01,710- Main: fetching http://i.cnblogs.com/EditArticles.aspx?postid=3608269
+23/May/2015 23:34:01,717- Main: res content type error: image/png @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252202119067.png
+23/May/2015 23:34:01,718- Main: page content too short or too big: 84chars @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252202119067.png
+23/May/2015 23:34:01,718- Main: fetching http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/20121125220305701.png
+23/May/2015 23:34:01,736- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/714268/
+23/May/2015 23:34:01,736- Main: page content too short or too big: 35chars @http://home.cnblogs.com/u/714268/
+23/May/2015 23:34:01,737- Main: fetching http://home.cnblogs.com/u/754513/
+23/May/2015 23:34:01,778- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=2304032
+23/May/2015 23:34:01,786- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=1327711
+23/May/2015 23:34:01,786- Main: fetching http://www.cnblogs.com/JimmyZhang/archive/2008/11/05/1327710.html
+23/May/2015 23:34:01,845- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/754513/
+23/May/2015 23:34:01,845- Main: page content too short or too big: 35chars @http://home.cnblogs.com/u/754513/
+23/May/2015 23:34:01,845- Main: fetching http://home.cnblogs.com/u/lucien06/
+23/May/2015 23:34:01,850- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=2489500
+23/May/2015 23:34:01,866- Main: res content type error: image/png @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/20121125220305701.png
+23/May/2015 23:34:01,866- Main: page content too short or too big: 83chars @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/20121125220305701.png
+23/May/2015 23:34:01,866- Main: fetching http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252205126125.png
+23/May/2015 23:34:01,878- Main: ===============================
+23/May/2015 23:34:01,878- Main: -- Page fetch done. exiting  --
+23/May/2015 23:34:01,878- Main: ===============================
+23/May/2015 23:34:01,881- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3675744
+23/May/2015 23:34:01,881- Main: fetching http://www.cnblogs.com/zhonghan/default.html?page=2
+23/May/2015 23:34:01,908- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=2982944
+23/May/2015 23:34:01,908- Main: fetching http://www.cnblogs.com/lhb25/archive/2013/03/22/swipebox-touchable-lightbox-jquery.html
+23/May/2015 23:34:01,939- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/lucien06/
+23/May/2015 23:34:01,939- Main: page content too short or too big: 37chars @http://home.cnblogs.com/u/lucien06/
+23/May/2015 23:34:01,939- Main: fetching http://home.cnblogs.com/u/xicat/
+23/May/2015 23:34:01,962- Main: res content type error: image/png @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252205126125.png
+23/May/2015 23:34:01,962- Main: page content too short or too big: 84chars @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252205126125.png
+23/May/2015 23:34:01,962- Main: fetching http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252206233347.png
+23/May/2015 23:34:02,026- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/xicat/
+23/May/2015 23:34:02,026- Main: page content too short or too big: 34chars @http://home.cnblogs.com/u/xicat/
+23/May/2015 23:34:02,026- Main: fetching http://home.cnblogs.com/u/748540/
+23/May/2015 23:34:02,033- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditArticles.aspx?postid=3608269
+23/May/2015 23:34:02,033- Main: fetching http://www.cnblogs.com/carekee/default.html?page=2
+23/May/2015 23:34:02,049- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=2304032
+23/May/2015 23:34:02,051- Main: fetching http://i.cnblogs.com/EditPosts.aspx?postid=3888509
+23/May/2015 23:34:02,066- Main: res content type error: image/png @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252206233347.png
+23/May/2015 23:34:02,067- Main: page content too short or too big: 84chars @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/201211252206233347.png
+23/May/2015 23:34:02,067- Main: fetching http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201212/201212011552213260.png
+23/May/2015 23:34:02,137- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/748540/
+23/May/2015 23:34:02,137- Main: page content too short or too big: 35chars @http://home.cnblogs.com/u/748540/
+23/May/2015 23:34:02,137- Main: fetching http://home.cnblogs.com/u/756431/
+23/May/2015 23:34:02,174- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=2489500
+23/May/2015 23:34:02,175- Main: fetching http://www.cnblogs.com/artech/archive/2012/04/10/how-mvc-works.html
+23/May/2015 23:34:02,216- Main: res content type error: image/png @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201212/201212011552213260.png
+23/May/2015 23:34:02,216- Main: page content too short or too big: 84chars @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201212/201212011552213260.png
+23/May/2015 23:34:02,217- Main: fetching http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/20121125220858630.png
+23/May/2015 23:34:02,247- Main: res getInputStream error Server returned HTTP response code: 500 for URL: http://home.cnblogs.com/u/756431/
+23/May/2015 23:34:02,247- Main: page content too short or too big: 35chars @http://home.cnblogs.com/u/756431/
+23/May/2015 23:34:02,247- Main: fetching http://home.cnblogs.com/u/Dragon-wuxl/
+23/May/2015 23:34:02,301- Main: this is a login page, drop it. @ http://i.cnblogs.com/EditPosts.aspx?postid=3888509
+23/May/2015 23:34:02,301- Main: fetching http://www.cnblogs.com/lhb25/p/css-balls.html
+23/May/2015 23:34:02,357- Main: res content type error: image/png @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/20121125220858630.png
+23/May/2015 23:34:02,358- Main: page content too short or too big: 83chars @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201211/20121125220858630.png
+23/May/2015 23:34:02,358- Main: fetching http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201212/201212011553145319.png
+23/May/2015 23:34:02,467- Main: res content type error: image/png @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201212/201212011553145319.png
+23/May/2015 23:34:02,468- Main: page content too short or too big: 84chars @http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201212/201212011553145319.png
+23/May/2015 23:34:02,468- Main: fetching http://images.cnblogs.com/cnblogs_com/KnightsWarrior/201212/201212011554092525.png

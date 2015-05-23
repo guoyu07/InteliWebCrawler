@@ -153,7 +153,20 @@ public class FileUtils {
         return new SimpleDateFormat("HH-mm-ss_SSS").format(new Date());
     }
 
+    public static void cleanFile(File f) {
+        try {
+            RandomAccessFile raf = new RandomAccessFile(f, "rw");
+            raf.setLength(0);
+            raf.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Cannot clean: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("clean file error:" + e.getMessage());
+        }
+    }
+
     public void close() {
         this.writer.close();
     }
+
 }

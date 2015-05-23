@@ -69,6 +69,7 @@ public class Main {
         // start processes to fetch pages, do not use the seed file
         if (config.isResume) {
             // get url-to and url-done
+            System.out.println("resuming starting");
             String statusDir = "status";
             File dir = new File(statusDir);
             File[] listOfFiles = dir.listFiles();
@@ -77,21 +78,15 @@ public class Main {
                 if (f.isFile()) {
                     String fileName = f.getName();
                     if (fileName.startsWith("url-to") && f.canRead()) {
-                        BlockingQueue<String> urlToFetch = new ArrayBlockingQueue<String>(FetchPageThread.URL_QUEUE_SIZE);
-                        String line;
-                        BufferedReader br = new BufferedReader(new FileReader(f));
-                        while ((line = br.readLine()) != null) {
-                            try {
-                                urlToFetch.put(line);
-                            } catch (InterruptedException e) {
-                                Main.mainLogger.info("add url failed");
-                            }
+                        if ( Main.config.isResumeFromOneFile) {
+                            int threadCount = Main.resumeThreadsFromFile(f);
+                            System.out.println("resumed thread count: " + threadCount);
+                            Main.mainLogger.info("resumed thread count: " + threadCount);
+                        } else {
+                            Main.resumeOneThreadFromOneFile(f);
                         }
-
-                        // start a new fetching thread
-                        new Thread(new FetchPageThread(urlToFetch)).start();
-                        newThreadCount++;
-                        System.out.println("resuming a new thread");
+                        // clean the url-to file
+                        FileUtils.cleanFile(f);
                     } else if (f.isFile() && f.getName().startsWith("url-done") && f.canRead()) {
                         // load urls that has done
                         BufferedReader br = new BufferedReader(new FileReader(f));
@@ -146,5 +141,52 @@ public class Main {
             }
             Main.todoLogger.info("===");
         }
+    }
+
+    /**
+     * resume one fetching thread from one saved file
+     * @param f file that saves the urls
+     * @throws IOException
+     */
+    public static void resumeOneThreadFromOneFile(File f) throws IOException {
+        BlockingQueue<String> urlToFetch = new ArrayBlockingQueue<String>(FetchPageThread.URL_QUEUE_SIZE);
+        String line;
+        BufferedReader br = new BufferedReader(new FileReader(f));
+        while ((line = br.readLine()) != null) {
+            try {
+                urlToFetch.put(line);
+            } catch (InterruptedException e) {
+                Main.mainLogger.info("add url failed");
+            }
+        }
+
+        // start a new fetching thread
+        new Thread(new FetchPageThread(urlToFetch)).start();
+        System.out.println("resuming a new thread from one file");
+    }
+
+    public static int resumeThreadsFromFile(File f) throws IOException {
+        String line;
+        int threadCount = 0;
+        BufferedReader br = new BufferedReader(new FileReader(f));
+        while ((line = br.readLine()) != null) {
+            BlockingQueue<String> urlToFetch = new ArrayBlockingQueue<String>(FetchPageThread.URL_QUEUE_SIZE);
+            // System.out.println("resuming url @ " + line);
+            while (line != null && !line.equals("===")) {
+                try {
+                    urlToFetch.put(line);
+                } catch (InterruptedException e) {
+                    Main.mainLogger.info("add url failed");
+                }
+                line = br.readLine();
+            }
+            if (urlToFetch.size() > 0) {
+                threadCount++;
+                new Thread(new FetchPageThread(urlToFetch)).start();
+                System.out.println("resuming a new thread");
+            }
+        }
+
+        return threadCount;
     }
 }
