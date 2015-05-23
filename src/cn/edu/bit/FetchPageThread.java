@@ -92,7 +92,7 @@ public class FetchPageThread implements Runnable{
             Main.doneLogger.info(FileUtils.shortMd5(url));
             // if it is to short, drop it
             if (pageStr.length() <= 500 || pageStr.length() > 5 * 1000 * 1000) {
-                Main.mainLogger.info("page no content or too big: " + pageStr.length() + " @" + url);
+                Main.mainLogger.info("page content too short or too big: " + pageStr.length() + "chars @" + url);
                 continue;
             }
 
@@ -125,8 +125,13 @@ public class FetchPageThread implements Runnable{
                             Main.mapLogger.info(hashUrlMap.getKey() + " " + hashUrlMap.getValue());
                         }
                         Calendar cal = Calendar.getInstance();
-                        System.out.println("End at :: " + cal.getTime());
                         System.out.println("map logging done");
+
+                        System.out.println("==   log url-todo-list    ==");
+                        Main.saveUrlsToFetchToFile();
+                        System.out.println("== log url-todo-list done ==");
+
+                        System.out.println("End at :: " + cal.getTime());
                     }
                 }
                 System.exit(1);

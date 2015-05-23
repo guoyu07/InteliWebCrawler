@@ -133,4 +133,18 @@ public class Main {
     public synchronized static void fetchedCountPlus() {
         Main.pageCount++;
     }
+
+
+    /**
+     * save every thread's to-fetch urls to file (one file)
+     */
+    public static void saveUrlsToFetchToFile() {
+        for (java.util.Map.Entry<String,BlockingQueue<String>> entry : Main.threadUrlMap.entrySet())  {
+            BlockingQueue<String> urlQueue = entry.getValue();
+            for (String url : urlQueue) {
+                Main.todoLogger.info(url);
+            }
+            Main.todoLogger.info("===");
+        }
+    }
 }
