@@ -8,9 +8,9 @@
 out/
 
 # folder pages/ is to save the result files
-pages/
+pages/*
 
-
+*.html
 *.class
 *.log
 
