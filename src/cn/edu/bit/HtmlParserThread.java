@@ -74,6 +74,17 @@ public class HtmlParserThread implements Runnable {
                 fu.close();
             }
 
+            // @todo if Main.urlFetched.size() is enough then do no more parse
+            if (Main.isFetchedMapFull) {
+                try {
+                    if (pageQueue.size() == 0) return;
+                    pageStr = pageQueue.take();
+                } catch (InterruptedException e) {
+                    Main.mainLogger.info("page queue take error: " + e.getMessage());
+                }
+                continue;
+            }
+
 
             doc = Jsoup.parse(pageStr);
             Elements links = doc.select("a[href]");
@@ -97,9 +108,18 @@ public class HtmlParserThread implements Runnable {
                 // Main.addFetchedUrl(hashUrl);
                 // add hashUrl directly
                 Main.urlFetched.add(hashUrl);
+                if (Main.urlFetched.size() > Main.config.pagesToFetch) {
+                    Main.mainLogger.info("==============");
+                    Main.mainLogger.info("- count done -");
+                    Main.mainLogger.info("==============");
+                    System.out.println("==========fetched map full ==========");
+                    Main.isFetchedMapFull = true;
+                }
                 // Main.mapLogger.info(hashUrl + "   " + parentUrl);
                 // add to hashUrlMap, log when exit
-                Main.hashUrlMap.put(hashUrl, hrefStr);
+                // Main.hashUrlMap.put(hashUrl, hrefStr);
+                // log it directly
+                Main.mapLogger.info(hashUrl + " " + hrefStr);
                 // }
             }
             // add to urlQueue

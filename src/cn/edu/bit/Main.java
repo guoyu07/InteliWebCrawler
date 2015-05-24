@@ -19,6 +19,9 @@ public class Main {
 
     public static boolean hasLogedHash = false;
 
+    // Is Main.urlFetched more then config.pagesToFetch
+    public static boolean isFetchedMapFull = false;
+
     // pages count, start from 1
     public static int pageCount = 1;
     public final static int THREAD_SIZE = 100;
