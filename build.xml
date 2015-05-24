@@ -11,13 +11,19 @@
   <property name="classpath"  location="lib"/>
   <property name="main-class"  value="cn.edu.bit.Main"/>
 
+  <path id="project.classpath">
+    <fileset dir="${classpath}">
+      <include name="*.jar"/>
+    </fileset>
+  </path>
+
   <target name="clean">
     <delete dir="${build.dir}"/>
   </target>
 
   <target name="compile">
     <mkdir dir="${classes.dir}"/>
-    <javac srcdir="${src.dir}" destdir="${classes.dir}" classpath="lib/jsoup-1.8.1.jar"/>
+    <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="project.classpath"/>
   </target>
 
   <target name="jar" depends="compile">
