@@ -42,7 +42,7 @@
 
   <target name="run" depends="jar">
     <java jar="${jar.dir}/${ant.project.name}.jar" fork="true">
-      <arg key="log4j.configurationFile" value="${log4j2}"/>
+      <sysproperty key="log4j.configurationFile" value="${log4j2}"/>
     </java>
   </target>
 
