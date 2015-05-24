@@ -112,7 +112,7 @@ public class FetchPageThread implements Runnable{
             // Main.fetchedCountPlus();
             if (Main.pageCount % 500 == 0) {
                 Main.mainLogger.info("fetching success no: " + Main.pageCount);
-                System.out.println("another 500 pages done, and the last url is:" + Main.urlFetched.last());
+                System.out.println("another 500 pages done, and the last url is:" + Main.urlFetched.last() + "@ " + (Calendar.getInstance().getTime().getTime()));
             }
             if (Main.pageCount > Main.FULL_PAGE_SIZE) {
 

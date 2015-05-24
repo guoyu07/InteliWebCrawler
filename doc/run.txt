@@ -1,0 +1,1 @@
+java -Dlog4j.configurationFile=/home/wuxu/repo.d/webcrawler/src/log4j2.xml -jar build/jar/InteliWeb.jar
