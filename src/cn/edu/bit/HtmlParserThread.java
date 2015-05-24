@@ -92,6 +92,11 @@ public class HtmlParserThread implements Runnable {
                 String hrefStr = (link.attr("href"));
                 if (hrefStr.startsWith("//")) hrefStr = "http:" + hrefStr;
                 else if (hrefStr.startsWith("/")) hrefStr = baseUrl + hrefStr;
+
+                // remove hashTag
+                if (hrefStr.indexOf("#") > 0) {
+                    hrefStr = hrefStr.substring(hrefStr.indexOf("#"));
+                }
                 // check if it a available link
                 if ( !isAvailableUrl(hrefStr) ) continue;
 

@@ -25,7 +25,7 @@ public class FetchPageThread implements Runnable{
      * set to 100 as const
      * update size to 30000; 2015-05-22
      */
-    public static final int URL_QUEUE_SIZE = 30000;
+    public static final int URL_QUEUE_SIZE = 50000;
 
     /**
      * decrease the limit of pages buffer to 20
