@@ -1,72 +1,43 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project basedir="." default="run" name="WebCrawler">
-    <property environment="env"/>
-    <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.6"/>
-    <property name="source" value="1.6"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="InteliWeb" default="main" basedir=".">
+  <description>
+    simple example build file
+  </description>
+  <!-- set global properties for this build -->
+  <property name="src.dir" location="src/cn/edu/bit"/>
+  <property name="build.dir" location="build"/>
+  <property name="jar.dir"     value="${build.dir}/jar"/>
+  <property name="classes.dir"  location="dist"/>
+  <property name="classpath"  location="lib"/>
+  <property name="main-class"  value="cn.edu.bit.Main"/>
 
-    <property name="one-jar.dist.dir" value="../onejar"/>
-    <import file="${one-jar.dist.dir}/one-jar-ant-task.xml" optional="true" />
+  <target name="clean">
+    <delete dir="${build.dir}"/>
+  </target>
 
-    <property name="src.dir"          value="src"/>
-    <property name="bin.dir"          value="bin"/>
-    <property name="build.dir"        value="build"/>
-    <property name="classes.dir"      value="${build.dir}/classes"/>
-    <property name="jar.target.dir"   value="${build.dir}/jars"/>
-    <property name="external.lib.dir" value="./lib"/>
-    <property name="final.jar"        value="${bin.dir}/${ant.project.name}.jar"/>
+  <target name="compile">
+    <mkdir dir="${classes.dir}"/>
+    <javac srcdir="${src.dir}" destdir="${classes.dir}" classpath="lib/jsoup-1.8.1.jar"/>
+  </target>
 
-    <property name="main.class"       value="cn.edu.bit.Main"/>
+  <target name="jar" depends="compile">
+    <mkdir dir="${jar.dir}"/>
+    <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
+      <manifest>
+        <attribute name="Main-Class" value="${main-class}"/>
+        <!--<attribute name="Class-Path" value="../../lib/jsoup-1.8.1.jar"/>-->
+      </manifest>
+      <!--<fileset dir="${classpath}" includes="**/*.class" />-->
+      <zipgroupfileset dir="${classpath}" includes="**/*.jar" />
+    </jar>
+  </target>
 
-    <path id="project.classpath">
-        <fileset dir="${external.lib.dir}">
-            <include name="*.jar"/>
-        </fileset>
-    </path>
+  <target name="run" depends="jar">
+    <java jar="${jar.dir}/${ant.project.name}.jar" fork="true"/>
+  </target>
 
-    <target name="init">
-        <mkdir dir="${bin.dir}"/>
-        <mkdir dir="${build.dir}"/>
-        <mkdir dir="${classes.dir}"/>
-        <mkdir dir="${jar.target.dir}"/>
-        <copy includeemptydirs="false" todir="${classes.dir}">
-            <fileset dir="${src.dir}">
-                <exclude name="**/*.launch"/>
-                <exclude name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
+  <target name="clean-build" depends="clean,jar"/>
 
-    <target name="clean">
-        <delete dir="${build.dir}"/>
-        <delete dir="${bin.dir}"/>
-    </target>
-
-    <target name="cleanall" depends="clean"/>
-
-    <target name="build" depends="init">
-        <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="${classes.dir}" source="${source}" target="${target}">
-            <src path="${src.dir}"/>
-            <classpath refid="project.classpath"/>
-        </javac>
-    </target>
-
-    <target name="build-jar" depends="build">
-        <delete file="${final.jar}" />
-        <one-jar destfile="${final.jar}" onejarmainclass="${main.class}">
-            <main>
-                <fileset dir="${classes.dir}"/>
-            </main>
-            <lib>
-                <fileset dir="${external.lib.dir}" />
-            </lib>
-        </one-jar>
-    </target>
-
-    <target name="run" depends="clean,build-jar">
-      <java jar="${jar.dir}/${ant.project.name}.jar" fork="true"/>
-    </target>
-
+  <target name="main" depends="clean,run"/>
 
 </project>
