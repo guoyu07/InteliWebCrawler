@@ -42,7 +42,7 @@ public class FetchPageThread implements Runnable{
 
     public FetchPageThread(String initUrl) {
         this.initUrl = initUrl;
-        System.out.println("init as " + initUrl);
+        Main.mainLogger.info("init as " + initUrl);
         try {
             urlQueue.put(initUrl);
         } catch (InterruptedException e) {
@@ -76,6 +76,11 @@ public class FetchPageThread implements Runnable{
             Main.mainLogger.info("url queue take error " + e.getMessage());
         }
 
+        /**
+         * for try catch block, continue will still goto the finally block
+         * so take url at finally block will working ok with continue
+         * @todo optimize the try-catch block, it is too large for now
+         */
         while (url != null) try {
 
             Main.mainLogger.info("fetching " + url);
@@ -169,7 +174,25 @@ public class FetchPageThread implements Runnable{
         /**
          * @date 2015-04-01 add proxy
          */
-        Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("10.4.20.2", 3128));
+        Proxy proxy = null;
+        if (Main.config.useProxy) {
+            proxy= new Proxy(Proxy.Type.HTTP,
+                    new InetSocketAddress(Main.config.proxyHost, Main.config.proxyPort)
+            );
+
+            // if use authenticator for this proxy
+            // set authenticator's default value
+            if ( !Main.config.proxyUsername.equals("")) {
+                Authenticator auth = new Authenticator() {
+                    @Override
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(Main.config.proxyUsername, Main.config.proxyPassword.toCharArray());
+                    }
+                };
+
+                Authenticator.setDefault(auth);
+            }
+        }
         // Proxy proxy = null; //new Proxy(Proxy.Type.HTTP, new InetSocketAddress("10.4.20.2", 3128));
 
         // for some href is not start with http protocol, so add it manually
@@ -183,7 +206,11 @@ public class FetchPageThread implements Runnable{
 
         HttpURLConnection conn;
         try {
-            conn = (HttpURLConnection)url.openConnection(proxy);
+            if (proxy != null) {
+                conn = (HttpURLConnection)url.openConnection(proxy);
+            } else {
+                conn = (HttpURLConnection)url.openConnection();
+            }
         } catch (IOException e) {
             System.out.println("open connection error " + e.getMessage());
             return "";
@@ -206,9 +233,10 @@ public class FetchPageThread implements Runnable{
             Main.mainLogger.info("conn connect error " + e.getMessage());
             return "";
         }
-        Map<String, List<String>> headers = conn.getHeaderFields();
+        // todo headers handle
+        // Map<String, List<String>> headers = conn.getHeaderFields();
         // int resCode = conn.getResponseCode();
-        int contentLength = conn.getContentLength();
+        // int contentLength = conn.getContentLength();
 
         // get charset
         String resType = conn.getContentType();

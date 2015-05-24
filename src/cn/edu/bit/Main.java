@@ -107,19 +107,12 @@ public class Main {
         } else {
             // read seed file to start crawling
             // write your code here
-            final String seedFile = "conf" + File.separator + "seeds.conf";
-            HashSet<String> urlSet = FileParser.parseSeedUrls(seedFile);
-
-            if (urlSet == null) return;
-
-            for (String anUrl : urlSet) {
-                // System.out.println("seed: " + anUrl);
-                FetchPageThread fpt = new FetchPageThread(anUrl);
-                new Thread(fpt).start();
-            }
+            int seedCount = Main.startFromSeedFile();
+            Main.mainLogger.info("started form seed file:" + seedCount + " threads started");
+            System.out.println("started form seed file:" + seedCount + " threads started");
         }
 
-        System.out.println(config);
+        // System.out.println(config);
     }
 
     public synchronized static void addFetchedUrl(String urlHash) {
@@ -166,6 +159,14 @@ public class Main {
         System.out.println("resuming a new thread from one file");
     }
 
+    /**
+     * resume all fetching from one url-to file
+     * each line obtains an url to fetching
+     * use "===" line as separator of the threads
+     * @param f File contains the urls
+     * @return number of threads started by this function
+     * @throws IOException
+     */
     public static int resumeThreadsFromFile(File f) throws IOException {
         String line;
         int threadCount = 0;
@@ -186,6 +187,28 @@ public class Main {
                 new Thread(new FetchPageThread(urlToFetch)).start();
                 System.out.println("resuming a new thread");
             }
+        }
+
+        return threadCount;
+    }
+
+    /**
+     * start crawling from seed file
+     * each line obtains a seed url
+     * @return number of thread/seed started
+     */
+    public static int startFromSeedFile() {
+        int threadCount = 0;
+        final String seedFile = "conf" + File.separator + "seeds.conf";
+        HashSet<String> urlSet = FileParser.parseSeedUrls(seedFile);
+
+        if (urlSet == null) return 0;
+
+        for (String anUrl : urlSet) {
+            // System.out.println("seed: " + anUrl);
+            FetchPageThread fpt = new FetchPageThread(anUrl);
+            new Thread(fpt).start();
+            threadCount++;
         }
 
         return threadCount;

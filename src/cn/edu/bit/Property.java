@@ -4,7 +4,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
@@ -35,11 +34,11 @@ public class Property {
     public boolean isTrimTags;
     public boolean isAutoChangeIp;
     public boolean useProxy;
-    public String ProxyHost;
-    public int ProxyPort;
-    public String ProxyUsername;
-    public String ProxyPassword;
-    public boolean useFileLog;
+    public String   proxyHost;
+    public int      proxyPort;
+    public String   proxyUsername;
+    public String   proxyPassword;
+    public boolean  useFileLog;
 
     public boolean isSaveStatus;
     public boolean isResume;
@@ -65,10 +64,10 @@ public class Property {
             isTrimTags  = Boolean.parseBoolean(props.getProperty("isTrimTags", "1"));
             isAutoChangeIp  = Boolean.parseBoolean(props.getProperty("isAutoChangeIp", "1"));
             useProxy    = Boolean.parseBoolean(props.getProperty("useProxy", "1"));
-            ProxyHost   = props.getProperty("ProxyHost", "");
-            ProxyPort   = Integer.parseInt(props.getProperty("ProxyPort", "3128"));
-            ProxyUsername   = props.getProperty("ProxyUsername", "");
-            ProxyPassword   = props.getProperty("ProxyPassword", "");
+            proxyHost = props.getProperty("proxyHost", "");
+            proxyPort = Integer.parseInt(props.getProperty("proxyPort", "3128"));
+            proxyUsername = props.getProperty("proxyUsername", "");
+            proxyPassword = props.getProperty("proxyPassword", "");
             useFileLog    = Boolean.parseBoolean(props.getProperty("useFileLog", "1"));
             isSaveStatus    = Boolean.parseBoolean(props.getProperty("isSaveStatus", "1"));
             isResume        = Boolean.parseBoolean(props.getProperty("isResume", "1"));
@@ -107,10 +106,10 @@ public class Property {
                         "isTrimTags:" + isTrimTags + "-" +
                         "isAutoChangeIp:" + isAutoChangeIp + "-" +
                         "useProxy:" + useProxy + "-" +
-                        "ProxyHost:" + ProxyHost + "-" +
-                        "ProxyPort:" + ProxyPort + "-" +
-                        "ProxyUsername:" + ProxyUsername + "-" +
-                        "ProxyPassword:" + ProxyPassword + "-" +
+                        "proxyHost:" + proxyHost + "-" +
+                        "proxyPort:" + proxyPort + "-" +
+                        "proxyUsername:" + proxyUsername + "-" +
+                        "proxyPassword:" + proxyPassword + "-" +
                         "useFileLog:" + useFileLog + "-" +
                         "useFileLog:" + useFileLog + "-" +
                         "isSaveStatus:" + isSaveStatus +
