@@ -125,12 +125,12 @@ public class FetchPageThread implements Runnable{
                         Main.mainLogger.info("===============================");
                         System.out.println("fetch done, exiting");
                         Main.hasLogedHash = true;
-                        System.out.println("logging hash-url-map");
-                        for (Map.Entry<String, String> hashUrlMap : Main.hashUrlMap.entrySet()) {
-                            Main.mapLogger.info(hashUrlMap.getKey() + " " + hashUrlMap.getValue());
-                        }
+                        // System.out.println("logging hash-url-map");
+                        // for (Map.Entry<String, String> hashUrlMap : Main.hashUrlMap.entrySet()) {
+                        //     Main.mapLogger.info(hashUrlMap.getKey() + " " + hashUrlMap.getValue());
+                        // }
                         Calendar cal = Calendar.getInstance();
-                        System.out.println("map logging done");
+                        // System.out.println("map logging done");
 
                         System.out.println("==   log url-todo-list    ==");
                         Main.saveUrlsToFetchToFile();
