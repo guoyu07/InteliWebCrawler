@@ -2,8 +2,8 @@
 <project basedir="." default="build" name="WebCrawler">
     <property environment="env"/>
     <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.8"/>
-    <property name="source" value="1.8"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
 
     <property name="one-jar.dist.dir" value="../onejar"/>
     <import file="${one-jar.dist.dir}/one-jar-ant-task.xml" optional="true" />
