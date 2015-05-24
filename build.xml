@@ -13,7 +13,8 @@
 
   <path id="project.classpath">
     <fileset dir="${classpath}">
-      <include name="*.jar"/>
+      <include name="*.*"/>
+      <!--<include name="*.jar"/>-->
     </fileset>
   </path>
 
