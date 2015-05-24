@@ -8,13 +8,14 @@
   <property name="build.dir" location="build"/>
   <property name="jar.dir"     value="${build.dir}/jar"/>
   <property name="classes.dir"  location="dist"/>
+  <property name="log4j2"  location="src/log4j2.xml"/>
   <property name="classpath"  location="lib"/>
   <property name="main-class"  value="cn.edu.bit.Main"/>
 
   <path id="project.classpath">
     <fileset dir="${classpath}">
-      <include name="*.*"/>
-      <!--<include name="*.jar"/>-->
+      <!--<include name="*.*"/>-->
+      <include name="*.jar"/>
     </fileset>
   </path>
 
@@ -40,7 +41,9 @@
   </target>
 
   <target name="run" depends="jar">
-    <java jar="${jar.dir}/${ant.project.name}.jar" fork="true"/>
+    <java jar="${jar.dir}/${ant.project.name}.jar" fork="true">
+      <arg key="log4j.configurationFile" value="${log4j2}"/>
+    </java>
   </target>
 
   <target name="clean-build" depends="clean,jar"/>
