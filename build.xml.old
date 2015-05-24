@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="InteliWeb" default="main" basedir=".">
+  <description>
+    simple example build file
+  </description>
+  <!-- set global properties for this build -->
+  <property name="src.dir" location="src/cn/edu/bit"/>
+  <property name="build.dir" location="build"/>
+  <property name="jar.dir"     value="${build.dir}/jar"/>
+  <property name="classes.dir"  location="dist"/>
+  <property name="classpath"  location="lib"/>
+  <property name="main-class"  value="cn.edu.bit.Main"/>
+
+
+
+  <target name="clean">
+    <delete dir="${build.dir}"/>
+  </target>
+
+  <target name="compile">
+    <mkdir dir="${classes.dir}"/>
+    <javac srcdir="${src.dir}" destdir="${classes.dir}" classpath="lib/jsoup-1.8.1.jar"/>
+  </target>
+
+  <target name="jar" depends="compile">
+    <mkdir dir="${jar.dir}"/>
+    <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
+      <manifest>
+        <attribute name="Main-Class" value="${main-class}"/>
+        <attribute name="Class-Path" value="../../lib/jsoup-1.8.1.jar"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="run" depends="jar">
+    <java jar="${jar.dir}/${ant.project.name}.jar" fork="true"/>
+  </target>
+
+  <target name="clean-build" depends="clean,jar"/>
+
+  <target name="main" depends="clean,run"/>
+
+</project>
