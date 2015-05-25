@@ -166,6 +166,7 @@ public class FetchPageThread implements Runnable{
 
         System.out.println("end of thread :" + Thread.currentThread().getName() + " for urlQueue is null");
         Main.mainLogger.info("end of thread :" + Thread.currentThread().getName() + " for urlQueue is null");
+        Main.currentThreadNumMinus();
     }
 
     /**

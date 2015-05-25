@@ -48,7 +48,7 @@ public class HtmlParserThread implements Runnable {
 
         // fu.setName();
         Random rand = new Random();
-        Main.currentThreadNumPlus();
+        // Main.currentThreadNumPlus();
 
         Main.mainLogger.info("Html page parsing @ " + Thread.currentThread().getName());
 

@@ -131,6 +131,10 @@ public class Main {
         Main.currentThreadNum++;
     }
 
+    public synchronized static void currentThreadNumMinus() {
+        Main.currentThreadNum--;
+    }
+
 
     /**
      * save every thread's to-fetch urls to file (one file)
