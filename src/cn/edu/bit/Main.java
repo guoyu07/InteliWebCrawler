@@ -24,7 +24,7 @@ public class Main {
 
     // pages count, start from 1
     public static int pageCount = 1;
-    public final static int THREAD_SIZE = 100;
+    public final static int THREAD_SIZE = Main.config.maxFetchingThread;
 
     // 最大爬取网页数量
     public final static int FULL_PAGE_SIZE = config.pagesToFetch+100;
@@ -124,6 +124,10 @@ public class Main {
 
     public synchronized static void fetchedCountPlus() {
         Main.pageCount++;
+    }
+
+    public synchronized static void currentThreadNumPlus() {
+        Main.currentThreadNum++;
     }
 
 

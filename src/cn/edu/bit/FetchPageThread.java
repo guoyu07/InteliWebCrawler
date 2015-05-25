@@ -6,6 +6,7 @@ import java.nio.charset.Charset;
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by wuxu92 on 3/25/2015.
@@ -65,13 +66,13 @@ public class FetchPageThread implements Runnable{
     @Override
     public void run() {
         String url = null;
-        Main.currentThreadNum++;
+        Main.currentThreadNumPlus();
         Main.mainLogger.info("new thread starting : " + Thread.currentThread().getName());
 
         Main.threadUrlMap.put(Thread.currentThread().getName(), this.urlQueue);
 
         try {
-            url = urlQueue.take();
+            url = urlQueue.poll(1, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
             Main.mainLogger.info("url queue take error " + e.getMessage());
         }
@@ -103,7 +104,7 @@ public class FetchPageThread implements Runnable{
 
             // use new thread to parseHTML
             // one fetch thread with one parse thread
-            pageQueue.put(pageStr);
+            pageQueue.offer(pageStr, 1000, TimeUnit.MILLISECONDS);
             if (this.isNewParserTread) {
                 new Thread(new HtmlParserThread(pageQueue, urlQueue)).start();
                 this.isNewParserTread = false;
@@ -112,7 +113,7 @@ public class FetchPageThread implements Runnable{
             // Main.fetchedCountPlus();
             if (Main.pageCount % 500 == 0) {
                 Main.mainLogger.info("fetching success no: " + Main.pageCount);
-                System.out.println("another 500 pages done, and the last url is:" + Main.urlFetched.last() + "@ " + (Calendar.getInstance().getTime().getTime()));
+                System.out.println("another 500 pages done, and count is:" + Main.pageCount + "@ " + (Calendar.getInstance().getTime().getTime()));
             }
             if (Main.pageCount > Main.FULL_PAGE_SIZE) {
 
@@ -150,7 +151,8 @@ public class FetchPageThread implements Runnable{
             Main.mainLogger.info("InterruptedException " + " " + e.getMessage());
         } finally {
             try {
-                url = urlQueue.take();
+                // after 1 second waiting, if not item is available, then terminate the thread
+                url = urlQueue.poll(1, TimeUnit.SECONDS);
                 // if thread size not full, then start a new thread
                 if (Main.currentThreadNum < Main.THREAD_SIZE) {
                     new Thread(new FetchPageThread(url)).start();
@@ -161,6 +163,7 @@ public class FetchPageThread implements Runnable{
         }
 
         System.out.println("end of thread :" + Thread.currentThread().getName());
+        Main.mainLogger.info("end of thread :" + Thread.currentThread().getName());
     }
 
     /**

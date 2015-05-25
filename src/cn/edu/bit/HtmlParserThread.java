@@ -10,6 +10,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.*;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.TimeUnit;
 
 /**
  * class HtmlParserThread
@@ -47,13 +48,13 @@ public class HtmlParserThread implements Runnable {
 
         // fu.setName();
         Random rand = new Random();
-        Main.currentThreadNum++;
+        Main.currentThreadNumPlus();
 
         Main.mainLogger.info("Html page parsing @ " + Thread.currentThread().getName());
 
         String pageStr = null;
         try {
-            pageStr = pageQueue.take();
+            pageStr = pageQueue.poll(1000, TimeUnit.MILLISECONDS);
         } catch (InterruptedException e) {
             Main.mainLogger.info("queue take error " + e.getMessage());
         }
@@ -77,7 +78,7 @@ public class HtmlParserThread implements Runnable {
             // @todo if Main.urlFetched.size() is enough then do no more parse
             if (Main.isFetchedMapFull) {
                 try {
-                    if (pageQueue.size() == 0) return;
+                    // if (pageQueue.size() == 0) return;
                     pageStr = pageQueue.take();
                 } catch (InterruptedException e) {
                     Main.mainLogger.info("page queue take error: " + e.getMessage());
@@ -113,13 +114,16 @@ public class HtmlParserThread implements Runnable {
                 // Main.addFetchedUrl(hashUrl);
                 // add hashUrl directly
                 Main.urlFetched.add(hashUrl);
-                if (Main.urlFetched.size() > Main.config.pagesToFetch) {
-                    Main.mainLogger.info("==============");
-                    Main.mainLogger.info("- count done -");
-                    Main.mainLogger.info("==============");
-                    System.out.println("==========fetched map full ==========");
-                    Main.isFetchedMapFull = true;
-                }
+                /**
+                 * there is a logic error here, for urlFetched map has lots of bad pages
+                 */
+                // if (Main.urlFetched.size() > Main.config.pagesToFetch) {
+                //     Main.mainLogger.info("==============");
+                //     Main.mainLogger.info("- count done -");
+                //     Main.mainLogger.info("==============");
+                //     System.out.println("==========fetched map full ==========");
+                //     Main.isFetchedMapFull = true;
+                // }
                 // Main.mapLogger.info(hashUrl + "   " + parentUrl);
                 // add to hashUrlMap, log when exit
                 // Main.hashUrlMap.put(hashUrl, hrefStr);
@@ -131,40 +135,46 @@ public class HtmlParserThread implements Runnable {
             // if queue is full or cannot put all new urls to queue
             // then remove part of the new urls, and add the rest to the queue
 //            try {
-                int restNum = FetchPageThread.URL_QUEUE_SIZE - urlQueue.size();
-                int oldSize = urlArr.size();
-                if (restNum > 0 && restNum < oldSize) {
-                    // remove some
-                    int removeNum = oldSize - restNum;
-                    int i=0;
-                    for (; i<removeNum; i++) {
-                        // always remove the first item
-                        urlArr.remove(1);
-                    }
-                    
-                    Main.mainLogger.info("drop urls: " + (i + 1) + " :: add:" + urlArr.size());
-                } else if (restNum < 0) {
-                    urlArr.clear();
-                    Main.mainLogger.info("Drop all new urls");
+            /**
+             * drop is not needed any more
+             * use offer instead
+             */
+            // int restNum = FetchPageThread.URL_QUEUE_SIZE - urlQueue.size();
+            // int oldSize = urlArr.size();
+            // if (restNum > 0 && restNum < oldSize) {
+            //     // remove some
+            //     int removeNum = oldSize - restNum;
+            //     int i=0;
+            //     for (; i<removeNum; i++) {
+            //         // always remove the first item
+            //         urlArr.remove(1);
+            //     }
+            //
+            //     Main.mainLogger.info("drop urls: " + (i + 1) + " :: add:" + urlArr.size());
+            // } else if (restNum < 0) {
+            //     urlArr.clear();
+            //     Main.mainLogger.info("Drop all new urls");
+            // }
+            // urlQueue.addAll(urlArr);
+            for (String u : urlArr) {
+                try {
+                    urlQueue.offer(u, 300, TimeUnit.MILLISECONDS);
+                } catch (InterruptedException e) {
+                    Main.mainLogger.info("put into url queue error " + e.getMessage());
                 }
-                // urlQueue.addAll(urlArr);
-                for (String u : urlArr)
-                    try {
-                        urlQueue.put(u);
-                    } catch (InterruptedException e) {
-                        Main.mainLogger.info("put into url queue error " + e.getMessage());
-                    }
-//            } catch (InterruptedException e) {
-//                System.out.println("put to queue error" + e.getMessage());
-//            }
+            }
+
             try {
-                pageStr = pageQueue.take();
+                // wait for 1 seconds, if there is no page available after this time
+                // then null will be assigned
+                pageStr = pageQueue.poll(1000, TimeUnit.MILLISECONDS);
             } catch (InterruptedException e) {
                 Main.mainLogger.info("page queue take error: " + e.getMessage());
             }
         }
         
         System.out.println(Thread.currentThread().getName() + " quit for pageStr is null");
+        Main.mainLogger.info(Thread.currentThread().getName() + " quit for pageStr is null");
     }
 
     /**
