@@ -131,22 +131,18 @@ public class FileUtils {
      * @return String s's md5 code, "" if failed
      */
     public static String md5(String s) {
-        byte[] digbytes;
-        String hashStr;
+        byte[] digbytes = new byte[0];
+        String hashStr = "";
         try {
             digbytes = MessageDigest.getInstance("MD5").digest(s.getBytes("UTF-8"));
-        } catch (UnsupportedEncodingException e) {
-            return "1111111111";
-        } catch (NoSuchAlgorithmException e) {
-            return "1111111111";
-        } finally {
-            System.out.println(s + "md5 fialed");
+            StringBuilder fileName = new StringBuilder();
+            for (byte b : digbytes) {
+                fileName.append(String.format("%02x", b & 0xff));
+            }
+            hashStr = fileName.toString();
+        } catch (Exception e) {
+            System.out.println("Digest error");
         }
-        StringBuilder fileName = new StringBuilder();
-        for (byte b : digbytes) {
-            fileName.append(String.format("%02x", b & 0xff));
-        }
-        hashStr = fileName.toString();
         return hashStr;
     }
 
