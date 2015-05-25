@@ -107,7 +107,7 @@ public class FetchPageThread implements Runnable{
             // one fetch thread with one parse thread
             pageQueue.offer(pageStr, 5000, TimeUnit.MILLISECONDS);
             if (this.isNewParserTread) {
-                new Thread(new HtmlParserThread(pageQueue, urlQueue)).start();
+                new Thread(new HtmlParserThread(pageQueue, urlQueue, Thread.currentThread().getName())).start();
                 this.isNewParserTread = false;
             }
 

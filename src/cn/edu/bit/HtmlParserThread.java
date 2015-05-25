@@ -21,16 +21,18 @@ public class HtmlParserThread implements Runnable {
 
     BlockingQueue<String> urlQueue;
     BlockingQueue<String> pageQueue;
+    public String fetcher;
     // String pageStr;
     Document doc;
 
     // public HtmlParserThread(BlockingQueue<String> queue) {
     //     this.urlQueue = queue;
     // }
-    public HtmlParserThread(BlockingQueue<String> pageQueue, BlockingQueue<String> queue) {
+    public HtmlParserThread(BlockingQueue<String> pageQueue, BlockingQueue<String> queue, String fetcher) {
         this.pageQueue = pageQueue;
         // doc = Jsoup.parse(pageStr);
         this.urlQueue = queue;
+        this.fetcher = fetcher;
     }
     /**
      * simple version for just get all links to put to urlqueue
@@ -170,7 +172,8 @@ public class HtmlParserThread implements Runnable {
             try {
                 // wait for 20 seconds, if there is no page available after this time
                 // then null will be assigned
-                pageStr = pageQueue.poll(20000, TimeUnit.MILLISECONDS);
+                if (urlQueue.size() == 0) pageStr = pageQueue.poll(20000, TimeUnit.MILLISECONDS);
+                else pageStr = pageQueue.take();
             } catch (InterruptedException e) {
                 Main.mainLogger.info("page queue take error: " + e.getMessage());
             }
@@ -179,8 +182,8 @@ public class HtmlParserThread implements Runnable {
         /**
          * if pageStr is null, it means the corresponding fetching thread is dead
          */
-        System.out.println(Thread.currentThread().getName() + " quit for pageStr is null");
-        Main.mainLogger.info(Thread.currentThread().getName() + " quit for pageStr is null");
+        System.out.println(Thread.currentThread().getName() + " quit for pageQueue is" + pageQueue.size());
+        Main.mainLogger.info(Thread.currentThread().getName() + " quit for pageQueue is " +  + pageQueue.size());
         Main.currentParseThreadNumMinus();
     }
 
@@ -249,7 +252,6 @@ public class HtmlParserThread implements Runnable {
 //        }
         return url;
     }
-
 
     public static boolean isAvailableUrl(String href) {
 
