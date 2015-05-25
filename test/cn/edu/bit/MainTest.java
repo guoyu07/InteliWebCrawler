@@ -6,6 +6,7 @@ import org.junit.Test;
 import sun.reflect.misc.FieldUtil;
 
 import java.io.File;
+import java.sql.Time;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
@@ -61,14 +62,21 @@ public class MainTest {
     }
 
     @Test
+    @Ignore
     public void testShortMd5Right() {
         Assert.assertEquals("157535e5", FileUtils.shortMd5("http://www.csdn.net/tag/%E4%BA%A7%E5%93%81/news"));
     }
 
     @Test
+    @Ignore
     public void testCleanFile() {
         File f = new File("status/url-done.txt");
         FileUtils.cleanFile(f);
         Assert.assertEquals(0, f.length());
+    }
+
+    @Test
+    public void testTimePrint() {
+        System.out.println(new Time(1432522393).getTime());
     }
 }

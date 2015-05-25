@@ -3,6 +3,7 @@ package cn.edu.bit;
 import java.io.*;
 import java.net.*;
 import java.nio.charset.Charset;
+import java.sql.Time;
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -32,7 +33,7 @@ public class FetchPageThread implements Runnable{
      * decrease the limit of pages buffer to 20
      * for page fetching is much more slower than page parser
      */
-    public static final int PAGE_QUEUE_SIZE = 20;
+    public static final int PAGE_QUEUE_SIZE = 100;
 
     /**
      * url blocking queue, use blockingQueue class to implements concurrency
@@ -113,7 +114,7 @@ public class FetchPageThread implements Runnable{
             // Main.fetchedCountPlus();
             if (Main.pageCount % 500 == 0) {
                 Main.mainLogger.info("fetching success no: " + Main.pageCount);
-                System.out.println("another 500 pages done, and count is:" + Main.pageCount + "@ " + (Calendar.getInstance().getTime().getTime()));
+                System.out.println("another 500 pages done, and count is:" + Main.pageCount + "@ " + (Calendar.getInstance().getTime()) + ", cur threads: " + Main.currentThreadNum);
             }
             if (Main.pageCount > Main.FULL_PAGE_SIZE) {
 
@@ -153,11 +154,15 @@ public class FetchPageThread implements Runnable{
             try {
                 // after 1 second waiting, if not item is available, then terminate the thread
                 url = urlQueue.poll(5, TimeUnit.SECONDS);
-                // if thread size not full, then start a new thread
-                if (Main.currentThreadNum < Main.THREAD_SIZE) {
-                    new Thread(new FetchPageThread(url)).start();
-                    System.out.println("new thread with url: " + url);
-                    Main.mainLogger.info("new thread with url: " + url);
+                if (url != null) {
+                    // if thread size not full, then start a new thread
+                    if (Main.currentThreadNum < Main.THREAD_SIZE) {
+                        new Thread(new FetchPageThread(url)).start();
+                        System.out.println("new thread with url: " + url);
+                        Main.mainLogger.info("new thread with url: " + url);
+                        // take a new url
+                        url = urlQueue.poll(5, TimeUnit.SECONDS);
+                    }
                 }
             } catch (InterruptedException e) {
                 Main.mainLogger.info("url queue take error " + e.getMessage());

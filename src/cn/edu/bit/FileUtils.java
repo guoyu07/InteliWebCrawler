@@ -22,6 +22,7 @@ import java.util.Scanner;
  */
 public class FileUtils {
 
+    public final static MessageDigest md5Digest = getMd();
     static Calendar cal = Calendar.getInstance();
     private Path file;
     final static String BASE_DIR = "pages";
@@ -60,6 +61,15 @@ public class FileUtils {
         this.content = content;
         //this.file = Files.createFile(Paths.get(baseDirStr, this.name));
 
+    }
+    
+    public static MessageDigest getMd() {
+        try {
+            return  MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            System.out.println("init messageDigest error");
+            return null;
+        }
     }
 
     /**
@@ -121,18 +131,14 @@ public class FileUtils {
      * @return String s's md5 code, "" if failed
      */
     public static String md5(String s) {
-        byte[] digbytes = new byte[0];
-        String hashStr = "";
-        try {
-            digbytes = MessageDigest.getInstance("MD5").digest(s.getBytes("UTF-8"));
-            StringBuilder fileName = new StringBuilder();
-            for (byte b : digbytes) {
-                fileName.append(String.format("%02x", b & 0xff));
-            }
-            hashStr = fileName.toString();
-        } catch (Exception e) {
-            System.out.println("Digest error");
+        byte[] digbytes;
+        String hashStr;
+        digbytes = FileUtils.md5Digest.digest(s.getBytes());
+        StringBuilder fileName = new StringBuilder();
+        for (byte b : digbytes) {
+            fileName.append(String.format("%02x", b & 0xff));
         }
+        hashStr = fileName.toString();
         return hashStr;
     }
 
@@ -142,7 +148,7 @@ public class FileUtils {
      * @return md5 string's first 8 chars
      */
     public static String shortMd5(String s) {
-        return md5(s).substring(0, 8);
+        return md5(s).substring(0, 12);
     }
 
     /**

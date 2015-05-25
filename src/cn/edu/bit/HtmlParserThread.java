@@ -76,15 +76,15 @@ public class HtmlParserThread implements Runnable {
             }
 
             // @todo if Main.urlFetched.size() is enough then do no more parse
-            if (Main.isFetchedMapFull) {
-                try {
-                    // if (pageQueue.size() == 0) return;
-                    pageStr = pageQueue.take();
-                } catch (InterruptedException e) {
-                    Main.mainLogger.info("page queue take error: " + e.getMessage());
-                }
-                continue;
-            }
+            // if (Main.isFetchedMapFull) {
+            //     try {
+            //         // if (pageQueue.size() == 0) return;
+            //         pageStr = pageQueue.take();
+            //     } catch (InterruptedException e) {
+            //         Main.mainLogger.info("page queue take error: " + e.getMessage());
+            //     }
+            //     continue;
+            // }
 
 
             doc = Jsoup.parse(pageStr);
@@ -98,7 +98,7 @@ public class HtmlParserThread implements Runnable {
                 if (hrefStr.indexOf("#") > 0) {
                     hrefStr = hrefStr.substring(hrefStr.indexOf("#"));
                 }
-                // check if it a available link
+                // check if it is a available link
                 if ( !isAvailableUrl(hrefStr) ) continue;
 
                 // check if fetched
@@ -158,7 +158,8 @@ public class HtmlParserThread implements Runnable {
             // urlQueue.addAll(urlArr);
             for (String u : urlArr) {
                 try {
-                    urlQueue.offer(u, 300, TimeUnit.MILLISECONDS);
+                    boolean offerRes = urlQueue.offer(u, 300, TimeUnit.MILLISECONDS);
+                    if (!offerRes) Main.mainLogger.info("****url Queue is full****");
                 } catch (InterruptedException e) {
                     Main.mainLogger.info("put into url queue error " + e.getMessage());
                 }
@@ -167,12 +168,15 @@ public class HtmlParserThread implements Runnable {
             try {
                 // wait for 10 seconds, if there is no page available after this time
                 // then null will be assigned
-                pageStr = pageQueue.poll(10000, TimeUnit.MILLISECONDS);
+                pageStr = pageQueue.poll(5000, TimeUnit.MILLISECONDS);
             } catch (InterruptedException e) {
                 Main.mainLogger.info("page queue take error: " + e.getMessage());
             }
         }
-        
+
+        /**
+         * if pageStr is null, it means the corresponding fetching thread is dead
+         */
         System.out.println(Thread.currentThread().getName() + " quit for pageStr is null");
         Main.mainLogger.info(Thread.currentThread().getName() + " quit for pageStr is null");
     }

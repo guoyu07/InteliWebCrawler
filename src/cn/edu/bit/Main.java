@@ -36,7 +36,7 @@ public class Main {
     public static ConcurrentSkipListSet<String> urlFetched = new ConcurrentSkipListSet<String>();
 
     // 保存url的短md5值与原url的对应，最后一次写入日志
-    public static ConcurrentHashMap<String, String> hashUrlMap = new ConcurrentHashMap<String, String>();
+    // public static ConcurrentHashMap<String, String> hashUrlMap = new ConcurrentHashMap<String, String>();
 
     // 保存各线程待爬取队列的引用
     public static ConcurrentHashMap<String, BlockingQueue<String>> threadUrlMap = new ConcurrentHashMap<String, BlockingQueue<String>>();
