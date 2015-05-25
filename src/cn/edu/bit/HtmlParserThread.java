@@ -38,6 +38,8 @@ public class HtmlParserThread implements Runnable {
     @SuppressWarnings("ReturnInsideFinallyBlock")
     @Override
     public void run() {
+
+        Main.currentParseThreadNumPlus();
         // FileUtils fu = new FileUtils(Thread.currentThread().getName() + "-" + url.substring(url.lastIndexOf("/")+1) + "_1.html");
         // FileUtils fu = new FileUtils(Thread.currentThread().getName() + "-" + FileUtils.md5(url).substring(0, 8) + "_1.html");
         // fu.setName(Thread.currentThread().getName() + FileUtils.md5(url).substring(0, 8) + ".html");
@@ -166,9 +168,9 @@ public class HtmlParserThread implements Runnable {
             }
 
             try {
-                // wait for 10 seconds, if there is no page available after this time
+                // wait for 20 seconds, if there is no page available after this time
                 // then null will be assigned
-                pageStr = pageQueue.poll(5000, TimeUnit.MILLISECONDS);
+                pageStr = pageQueue.poll(20000, TimeUnit.MILLISECONDS);
             } catch (InterruptedException e) {
                 Main.mainLogger.info("page queue take error: " + e.getMessage());
             }
@@ -179,6 +181,7 @@ public class HtmlParserThread implements Runnable {
          */
         System.out.println(Thread.currentThread().getName() + " quit for pageStr is null");
         Main.mainLogger.info(Thread.currentThread().getName() + " quit for pageStr is null");
+        Main.currentParseThreadNumMinus();
     }
 
     /**

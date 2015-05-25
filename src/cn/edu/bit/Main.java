@@ -32,6 +32,8 @@ public class Main {
     // 当前线程数
     public static int currentThreadNum = 0;
 
+    public static int currentParseThreadNum = 0;
+
     // 保存已经爬取的页面的url的hash的集合
     public static ConcurrentSkipListSet<String> urlFetched = new ConcurrentSkipListSet<String>();
 
@@ -136,6 +138,12 @@ public class Main {
     }
 
 
+    public synchronized static void currentParseThreadNumPlus() {
+        Main.currentParseThreadNum++;
+    }
+    public synchronized static void currentParseThreadNumMinus() {
+        Main.currentParseThreadNum--;
+    }
     /**
      * save every thread's to-fetch urls to file (one file)
      */
