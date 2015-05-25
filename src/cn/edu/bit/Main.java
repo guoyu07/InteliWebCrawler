@@ -62,6 +62,7 @@ public class Main {
                 if (oldQueue == null || oldQueue.size() == 0) return;
                 // or use new thread
                 new Thread(new FetchPageThread(oldQueue)).start();
+                System.out.println("thread restarted");
 
                 // remove old key-value pair
                 // just remove the reference, will not delete the object

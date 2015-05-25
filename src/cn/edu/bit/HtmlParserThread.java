@@ -54,7 +54,7 @@ public class HtmlParserThread implements Runnable {
 
         String pageStr = null;
         try {
-            pageStr = pageQueue.poll(1000, TimeUnit.MILLISECONDS);
+            pageStr = pageQueue.poll(10000, TimeUnit.MILLISECONDS);
         } catch (InterruptedException e) {
             Main.mainLogger.info("queue take error " + e.getMessage());
         }
@@ -165,9 +165,9 @@ public class HtmlParserThread implements Runnable {
             }
 
             try {
-                // wait for 1 seconds, if there is no page available after this time
+                // wait for 10 seconds, if there is no page available after this time
                 // then null will be assigned
-                pageStr = pageQueue.poll(1000, TimeUnit.MILLISECONDS);
+                pageStr = pageQueue.poll(10000, TimeUnit.MILLISECONDS);
             } catch (InterruptedException e) {
                 Main.mainLogger.info("page queue take error: " + e.getMessage());
             }

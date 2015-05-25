@@ -104,7 +104,7 @@ public class FetchPageThread implements Runnable{
 
             // use new thread to parseHTML
             // one fetch thread with one parse thread
-            pageQueue.offer(pageStr, 1000, TimeUnit.MILLISECONDS);
+            pageQueue.offer(pageStr, 5000, TimeUnit.MILLISECONDS);
             if (this.isNewParserTread) {
                 new Thread(new HtmlParserThread(pageQueue, urlQueue)).start();
                 this.isNewParserTread = false;
@@ -152,18 +152,20 @@ public class FetchPageThread implements Runnable{
         } finally {
             try {
                 // after 1 second waiting, if not item is available, then terminate the thread
-                url = urlQueue.poll(1, TimeUnit.SECONDS);
+                url = urlQueue.poll(5, TimeUnit.SECONDS);
                 // if thread size not full, then start a new thread
                 if (Main.currentThreadNum < Main.THREAD_SIZE) {
                     new Thread(new FetchPageThread(url)).start();
+                    System.out.println("new thread with url: " + url);
+                    Main.mainLogger.info("new thread with url: " + url);
                 }
             } catch (InterruptedException e) {
                 Main.mainLogger.info("url queue take error " + e.getMessage());
             }
         }
 
-        System.out.println("end of thread :" + Thread.currentThread().getName());
-        Main.mainLogger.info("end of thread :" + Thread.currentThread().getName());
+        System.out.println("end of thread :" + Thread.currentThread().getName() + " for urlQueue is null");
+        Main.mainLogger.info("end of thread :" + Thread.currentThread().getName() + " for urlQueue is null");
     }
 
     /**
