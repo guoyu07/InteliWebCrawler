@@ -173,7 +173,7 @@ public class HtmlParserThread implements Runnable {
                 // wait for 20 seconds, if there is no page available after this time
                 // then null will be assigned
                 if (urlQueue.size() == 0) pageStr = pageQueue.poll(20000, TimeUnit.MILLISECONDS);
-                else pageStr = pageQueue.take();
+                else pageStr = pageQueue.poll(60, TimeUnit.SECONDS);
             } catch (InterruptedException e) {
                 Main.mainLogger.info("page queue take error: " + e.getMessage());
             }
