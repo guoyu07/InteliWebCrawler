@@ -22,7 +22,7 @@ import java.util.Scanner;
  */
 public class FileUtils {
 
-    public final static MessageDigest md5Digest = getMd();
+    // public final static MessageDigest md5Digest = getMd();
     static Calendar cal = Calendar.getInstance();
     private Path file;
     final static String BASE_DIR = "pages";
@@ -133,7 +133,15 @@ public class FileUtils {
     public static String md5(String s) {
         byte[] digbytes;
         String hashStr;
-        digbytes = FileUtils.md5Digest.digest(s.getBytes());
+        try {
+            digbytes = MessageDigest.getInstance("MD5").digest(s.getBytes("UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            return "1111111111";
+        } catch (NoSuchAlgorithmException e) {
+            return "1111111111";
+        } finally {
+            System.out.println(s + "md5 fialed");
+        }
         StringBuilder fileName = new StringBuilder();
         for (byte b : digbytes) {
             fileName.append(String.format("%02x", b & 0xff));
