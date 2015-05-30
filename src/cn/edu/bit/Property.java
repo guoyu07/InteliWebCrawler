@@ -46,6 +46,13 @@ public class Property {
 
     public List<String> excludeType;
 
+    public boolean isSetCookie;
+    public String cookieString;
+
+    // check only some of the nodes
+    public boolean useNodeCheck;
+    public String[] nodesToCheck;
+
     private Property() {
         props = new Properties();
 
@@ -61,20 +68,34 @@ public class Property {
             dbUsername  = props.getProperty("dbUsername", "");
             dbPassword  = props.getProperty("dbPassword", "");
             dbName      = props.getProperty("dbName", "");
-            isTrimTags  = Boolean.parseBoolean(props.getProperty("isTrimTags", "1"));
-            isAutoChangeIp  = Boolean.parseBoolean(props.getProperty("isAutoChangeIp", "1"));
-            useProxy    = Boolean.parseBoolean(props.getProperty("useProxy", "1"));
+            isTrimTags  = Boolean.parseBoolean(props.getProperty("isTrimTags", "true"));
+            isAutoChangeIp  = Boolean.parseBoolean(props.getProperty("isAutoChangeIp", "true"));
+            useProxy    = Boolean.parseBoolean(props.getProperty("useProxy", "true"));
             proxyHost = props.getProperty("proxyHost", "");
             proxyPort = Integer.parseInt(props.getProperty("proxyPort", "3128"));
             proxyUsername = props.getProperty("proxyUsername", "");
             proxyPassword = props.getProperty("proxyPassword", "");
-            useFileLog    = Boolean.parseBoolean(props.getProperty("useFileLog", "1"));
-            isSaveStatus    = Boolean.parseBoolean(props.getProperty("isSaveStatus", "1"));
-            isResume        = Boolean.parseBoolean(props.getProperty("isResume", "1"));
-            isResumeFromOneFile        = Boolean.parseBoolean(props.getProperty("isResumeFromOneFile", "1"));
+            useFileLog    = Boolean.parseBoolean(props.getProperty("useFileLog", "true"));
+            isSaveStatus    = Boolean.parseBoolean(props.getProperty("isSaveStatus", "true"));
+            isResume        = Boolean.parseBoolean(props.getProperty("isResume", "true"));
+            isResumeFromOneFile        = Boolean.parseBoolean(props.getProperty("isResumeFromOneFile", "true"));
+
+            isSetCookie     = Boolean.parseBoolean(props.getProperty("isSetCookie", "true"));
+            cookieString = props.getProperty("cookieString", "");
 
             String excludeTypeStr = props.getProperty("excludeType", "");
             excludeType = Arrays.asList(excludeTypeStr.split(","));
+
+            // use nodeCheck
+            useNodeCheck     = Boolean.parseBoolean(props.getProperty("useNodeCheck", "0"));
+            String nodesTemp = props.getProperty("nodesToCheck", "");
+            nodesToCheck = nodesTemp.split(";");
+            
+            // add a tag to nodes selector
+            for (int i =0; i<nodesToCheck.length; i++) {
+                nodesToCheck[i] += " a[href]";
+                System.out.println("nodes to check:" + nodesToCheck[i]);
+            }
 
         } catch (FileNotFoundException e) {
             System.out.println("=============\r\nFile config.properties not found\rr\n=============");

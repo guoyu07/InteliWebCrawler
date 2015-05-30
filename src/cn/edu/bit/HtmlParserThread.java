@@ -92,7 +92,19 @@ public class HtmlParserThread implements Runnable {
 
 
             doc = Jsoup.parse(pageStr);
-            Elements links = doc.select("a[href]");
+            Elements links = new Elements();
+            // Elements links = doc.select("a[href]");
+            // for tieba, search #thread_list and #frs_list_pager links only
+            if (!Main.config.useNodeCheck) links = doc.select("a[href]");
+            else {
+                for (String selector : Main.config.nodesToCheck) {
+                    links.addAll(doc.select(selector));
+                }
+                // links = doc.select("#thread_list a[href]");
+                // links.addAll(doc.select("#frs_list_pager a[href]"));
+            }
+            // System.out.println("links count: " + links.size());
+
             for (Element link : links) {
                 String hrefStr = (link.attr("href"));
                 if (hrefStr.startsWith("//")) hrefStr = "http:" + hrefStr;
@@ -100,8 +112,11 @@ public class HtmlParserThread implements Runnable {
 
                 // remove hashTag
                 if (hrefStr.indexOf("#") > 0) {
-                    hrefStr = hrefStr.substring(hrefStr.indexOf("#"));
+                    hrefStr = hrefStr.substring(0, hrefStr.indexOf("#"));
                 }
+                // for douban pagination url
+                if (hrefStr.startsWith("?")) hrefStr = parentUrl + hrefStr;
+
                 // check if it is a available link
                 if ( !isAvailableUrl(hrefStr) ) continue;
 
@@ -188,7 +203,7 @@ public class HtmlParserThread implements Runnable {
     }
 
     /**
-     * process url, especially for taobao to remove the spam part of it
+     * process url, especially for taobao.com; to remove the spam part of it
      * @param url String url to be processed
      * @return String
      */
@@ -258,12 +273,36 @@ public class HtmlParserThread implements Runnable {
         /**
          * if href out of seeds domains, return false
          */
-        if (!(href.contains("csdn") || href.contains("cnblogs") || href.contains("51cto") || href.contains("iteye") ) ) {
+        // if (!(href.contains("csdn") || href.contains("cnblogs") || href.contains("51cto") || href.contains("iteye") ) ) {
             // System.out.println("bad href out of domains: " + href);
-            return false;
+            // return false;
+        // }
+
+        // check include patter
+        boolean patterIncludeFlag = false;
+        for (String pattern : Main.includes) {
+            // if matches one, then break
+            if (href.matches(pattern)) {
+                patterIncludeFlag = true;
+                break;
+            }
         }
-        // 登录页面则跳过
-        if (href.contains("signin") || href.contains("login")) return false;
+        
+        // if no any include patter matches, return false
+        if (!patterIncludeFlag) return false;
+
+        boolean patterExcludeFlag = false;
+        patterExcludeFlag = false;
+        for (String pattern : Main.exclusives) {
+            if (href.matches(pattern)) {
+                patterExcludeFlag = true;
+                break;
+            }
+        }
+        // if any exclusive pattern matches the href, return false
+        if (patterExcludeFlag) return false;
+        // old code
+        // if (href.contains("signin") || href.contains("login")) return false;
 
         // final String[] postfix = {"jpg", "jpeg", "pdf", "apk", "zip", "rar", "7z", "tar", "gz", "2z", "", "gif", "ttf", "swf", "doc"};
         final List<String> postfixList = Main.config.excludeType;

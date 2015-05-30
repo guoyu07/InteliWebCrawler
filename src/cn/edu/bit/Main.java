@@ -17,6 +17,10 @@ public class Main {
     public static Logger mapLogger = LogManager.getLogger("cn.edu.bit.HashUrlMap");
     public static Property config = Property.getInstance();
 
+    public static String[] exclusives = FileParser.parseFileByLine("conf/exclusive.conf");
+
+    public static String[] includes = FileParser.parseFileByLine("conf.include.conf");
+
     public static boolean hasLogedHash = false;
 
     // Is Main.urlFetched more then config.pagesToFetch

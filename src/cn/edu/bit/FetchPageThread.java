@@ -36,6 +36,12 @@ public class FetchPageThread implements Runnable{
     public static final int PAGE_QUEUE_SIZE = 100;
 
     /**
+     * hold the reference of the parser thread
+     * check its status for restart one
+     */
+    Thread parser;
+
+    /**
      * url blocking queue, use blockingQueue class to implements concurrency
      * void the usage of await and notify calls
      */
@@ -236,6 +242,10 @@ public class FetchPageThread implements Runnable{
         conn.setInstanceFollowRedirects(true);
         conn.setRequestProperty("User-agent", "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36");
 
+        // set cookie
+        if (Main.config.isSetCookie) {
+            conn.setRequestProperty("Cookie", Main.config.cookieString);
+        }
         // send request
         try {
             conn.connect();

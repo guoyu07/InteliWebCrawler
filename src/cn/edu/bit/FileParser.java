@@ -1,12 +1,11 @@
 package cn.edu.bit;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -50,5 +49,29 @@ public class FileParser {
         }
 
         return urlSet;
+    }
+
+    public static String[] parseFileByLine(String fileName) {
+        if (Files.notExists(Paths.get(fileName))) {
+            System.out.println("file [ " + fileName + " ] is not found");
+            throw new IllegalArgumentException("file:" + fileName + " not exist");
+        }
+
+        HashSet<String> result = new HashSet<String>();
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(fileName));
+            String line;
+            while ((line = br.readLine()) != null) {
+                result.add(line);
+            }
+        } catch (FileNotFoundException e) {
+            // do nothing
+        } catch (IOException e) {
+            // do nothing
+        }
+        String[] rs = new String[result.size()];
+        result.toArray(rs);
+        return rs;
     }
 }
