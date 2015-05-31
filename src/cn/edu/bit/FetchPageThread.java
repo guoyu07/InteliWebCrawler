@@ -98,7 +98,7 @@ public class FetchPageThread implements Runnable{
              * @date 2015-04-01 22:50
              */
             String pageStr = "" + url + System.getProperty("line.separator") + fetchOnePage(url);
-            if (pageStr.contains("<title>用户登录")) {
+            if (pageStr.contains("<title>用户登录") || pageStr.contains("<title>登录")) {
                 Main.mainLogger.info("this is a login page, drop it. @ " + url);
                 continue;
             }
@@ -170,7 +170,7 @@ public class FetchPageThread implements Runnable{
                     // if thread size not full, then start a new thread
                     if (Main.currentThreadNum < Main.THREAD_SIZE) {
                         new Thread(new FetchPageThread(url)).start();
-                        System.out.println("new thread with url: " + url);
+                        System.out.println("new thread with url: [" + Main.currentThreadNum +"]" + url);
                         Main.mainLogger.info("new thread with url: " + url);
                         // take a new url
                         url = urlQueue.poll(5, TimeUnit.SECONDS);
@@ -256,8 +256,8 @@ public class FetchPageThread implements Runnable{
         try {
             conn.connect();
         } catch (IOException e) {
-            System.out.println("conn connect error " + e.getMessage());
-            Main.mainLogger.info("conn connect error " + e.getMessage());
+            System.out.println("conn connect error " + e.getMessage() + "@ " + urlStr);
+            Main.mainLogger.info("conn connect error " + e.getMessage() + "@ " + urlStr);
             return "";
         }
         // todo headers handle

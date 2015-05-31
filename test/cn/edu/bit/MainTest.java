@@ -79,4 +79,10 @@ public class MainTest {
     public void testTimePrint() {
         System.out.println(new Time(1432522393).getTime());
     }
+
+    @Test
+    public void testStrMatch() {
+        String s = "http://bbs.tianya.cn/post-travel-711574-1.shtml";
+        Assert.assertEquals(s.matches("tianya"), true);
+    }
 }

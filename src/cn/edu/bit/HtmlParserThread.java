@@ -66,6 +66,7 @@ public class HtmlParserThread implements Runnable {
             ArrayList<String> urlArr = new ArrayList<String>();
             int urlIndex =  pageStr.indexOf(System.getProperty("line.separator"));
             String parentUrl = pageStr.substring(0, urlIndex);
+            // System.out.println("parent url:" + parentUrl);
             String baseUrl = getUrlHost(parentUrl);
             // String fileName = FileUtils.nowTime() + "-" + Thread.currentThread().getName() + ".html";
             String fileName = FileUtils.shortMd5(parentUrl) + ".html";
@@ -78,6 +79,8 @@ public class HtmlParserThread implements Runnable {
                 Main.fetchedCountPlus();
                 fu.close();
             }
+
+            Main.mapLogger.info(fileName + "    " + parentUrl);
 
             // @todo if Main.urlFetched.size() is enough then do no more parse
             // if (Main.isFetchedMapFull) {
@@ -92,9 +95,10 @@ public class HtmlParserThread implements Runnable {
 
 
             doc = Jsoup.parse(pageStr);
-            Elements links = new Elements();
-            // Elements links = doc.select("a[href]");
+            //Elements links = new Elements();
+            Elements links = doc.select("a[href]");
             // for tieba, search #thread_list and #frs_list_pager links only
+            /**
             if (!Main.config.useNodeCheck) links = doc.select("a[href]");
             else {
                 for (String selector : Main.config.nodesToCheck) {
@@ -103,6 +107,7 @@ public class HtmlParserThread implements Runnable {
                 // links = doc.select("#thread_list a[href]");
                 // links.addAll(doc.select("#frs_list_pager a[href]"));
             }
+             **/
             // System.out.println("links count: " + links.size());
 
             for (Element link : links) {
@@ -147,7 +152,7 @@ public class HtmlParserThread implements Runnable {
                 // add to hashUrlMap, log when exit
                 // Main.hashUrlMap.put(hashUrl, hrefStr);
                 // log it directly
-                Main.mapLogger.info(hashUrl + " " + hrefStr);
+                // Main.mapLogger.info(hashUrl + " " + hrefStr);
                 // }
             }
             // add to urlQueue
@@ -282,19 +287,21 @@ public class HtmlParserThread implements Runnable {
         boolean patterIncludeFlag = false;
         for (String pattern : Main.includes) {
             // if matches one, then break
-            if (href.matches(pattern)) {
+            // System.out.println("pattern:" + pattern + " @href: " + href + " result: " + href.contains(pattern));
+            if (href.contains(pattern)) {
                 patterIncludeFlag = true;
                 break;
             }
         }
-        
+
         // if no any include patter matches, return false
         if (!patterIncludeFlag) return false;
 
         boolean patterExcludeFlag = false;
         patterExcludeFlag = false;
         for (String pattern : Main.exclusives) {
-            if (href.matches(pattern)) {
+            // System.out.println("pattern2:" + pattern + " @href: " + href + " result: " + href.contains(pattern));
+            if (href.contains(pattern)) {
                 patterExcludeFlag = true;
                 break;
             }

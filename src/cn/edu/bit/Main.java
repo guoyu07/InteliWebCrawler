@@ -19,7 +19,7 @@ public class Main {
 
     public static String[] exclusives = FileParser.parseFileByLine("conf/exclusive.conf");
 
-    public static String[] includes = FileParser.parseFileByLine("conf.include.conf");
+    public static String[] includes = FileParser.parseFileByLine("conf/include.conf");
 
     public static boolean hasLogedHash = false;
 
@@ -53,6 +53,7 @@ public class Main {
 
         Calendar cal = Calendar.getInstance();
         System.out.println("Start at :: " + cal.getTime());
+        System.out.println(config);
         mainLogger.info("Start at :: " + cal.getTime());
 
         // init a thread pool up to 100

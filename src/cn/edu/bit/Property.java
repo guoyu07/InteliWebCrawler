@@ -88,13 +88,15 @@ public class Property {
 
             // use nodeCheck
             useNodeCheck     = Boolean.parseBoolean(props.getProperty("useNodeCheck", "0"));
-            String nodesTemp = props.getProperty("nodesToCheck", "");
-            nodesToCheck = nodesTemp.split(";");
-            
-            // add a tag to nodes selector
-            for (int i =0; i<nodesToCheck.length; i++) {
-                nodesToCheck[i] += " a[href]";
-                System.out.println("nodes to check:" + nodesToCheck[i]);
+            if (useNodeCheck) {
+                String nodesTemp = props.getProperty("nodesToCheck", "");
+                nodesToCheck = nodesTemp.split(";");
+
+                // add a tag to nodes selector
+                for (int i =0; i<nodesToCheck.length; i++) {
+                    nodesToCheck[i] += " a[href]";
+                    System.out.println("nodes to check:" + nodesToCheck[i]);
+                }
             }
 
         } catch (FileNotFoundException e) {
@@ -134,6 +136,8 @@ public class Property {
                         "useFileLog:" + useFileLog + "-" +
                         "useFileLog:" + useFileLog + "-" +
                         "isSaveStatus:" + isSaveStatus +
-                        "excludeTypes: " + (excludeType);
+                        "\r\nuseNodeCheck:" + useNodeCheck +
+                        "\r\nNodeCheck:" + Arrays.toString(nodesToCheck) +
+                        "\r\nexcludeTypes: " + (excludeType);
     }
 }
