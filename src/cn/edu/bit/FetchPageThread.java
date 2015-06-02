@@ -233,7 +233,7 @@ public class FetchPageThread implements Runnable{
         }
 
         // set connect and read timeout both to just 1 second
-        conn.setConnectTimeout(5000);
+        conn.setConnectTimeout(10000);
         conn.setReadTimeout(10000);
         conn.setInstanceFollowRedirects(true);
         conn.setRequestProperty("User-agent", "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36");
