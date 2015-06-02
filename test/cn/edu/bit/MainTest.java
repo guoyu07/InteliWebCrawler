@@ -76,13 +76,24 @@ public class MainTest {
     }
 
     @Test
+    @Ignore
     public void testTimePrint() {
         System.out.println(new Time(1432522393).getTime());
     }
 
     @Test
+    @Ignore
     public void testStrMatch() {
         String s = "http://bbs.tianya.cn/post-travel-711574-1.shtml";
         Assert.assertEquals(s.matches("tianya"), true);
+    }
+
+    @Test
+    public void testUrlAvailable() {
+        HtmlParserThread hpt = new HtmlParserThread();
+        Assert.assertEquals(HtmlParserThread.isAvailableUrl("http://bbs.tianya.cn/thread-ss-12321421-01.shtml"), true);
+        Assert.assertEquals(HtmlParserThread.isAvailableUrl("http://bbs.csdn.cn/thread-ss-12321421-01.shtml"), false);
+        Assert.assertEquals(HtmlParserThread.isAvailableUrl("http://bbs.tianya.cn/login.jsp"), false);
+
     }
 }

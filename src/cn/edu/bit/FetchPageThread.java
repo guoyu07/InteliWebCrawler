@@ -116,10 +116,10 @@ public class FetchPageThread implements Runnable{
             /**
              * if the parser thread is dead, restart one
              */
-            if (parser == null || parser.getState() == Thread.State.TERMINATED) {
-                parser = new Thread(new HtmlParserThread(pageQueue, urlQueue, Thread.currentThread().getName()));
+            if (parser == null || parser.getState().equals(Thread.State.TERMINATED)) {
+                Main.mainLogger.info("fetcher start a new parser for " + (parser == null ? "null" : "terminated"));
+                parser = new Thread(new HtmlParserThread(pageQueue, urlQueue, Thread.currentThread()));
                 parser.start();
-                System.out.println("fetcher start a new parser " + parser.getName());
                 this.isNewParserTread = false;
             }
 
@@ -164,16 +164,24 @@ public class FetchPageThread implements Runnable{
             Main.mainLogger.info("InterruptedException " + " " + e.getMessage());
         } finally {
             try {
-                // after 1 second waiting, if not item is available, then terminate the thread
-                url = urlQueue.poll(5, TimeUnit.SECONDS);
+                /**
+                 * if parser is still alive, should wait for a long time
+                 * if parser is terminated, then wait a short time
+                 */
+                if (parser != null && parser.getState().equals(Thread.State.TERMINATED)) {
+                    url = urlQueue.poll(300, TimeUnit.MILLISECONDS);
+                } else url = urlQueue.poll(90, TimeUnit.SECONDS);
                 if (url != null) {
                     // if thread size not full, then start a new thread
                     if (Main.currentThreadNum < Main.THREAD_SIZE) {
                         new Thread(new FetchPageThread(url)).start();
-                        System.out.println("new thread with url: [" + Main.currentThreadNum +"]" + url);
+                        // System.out.println("new thread with url: [" + Main.currentThreadNum +"] " + url);
                         Main.mainLogger.info("new thread with url: " + url);
                         // take a new url
-                        url = urlQueue.poll(5, TimeUnit.SECONDS);
+                        // check parser state for diff wait time
+                        if (parser != null && parser.getState().equals(Thread.State.TERMINATED)) {
+                            url = urlQueue.poll(2, TimeUnit.SECONDS);
+                        } else url = urlQueue.poll(90, TimeUnit.SECONDS);
                     }
                 }
             } catch (InterruptedException e) {
@@ -181,8 +189,8 @@ public class FetchPageThread implements Runnable{
             }
         }
 
-        System.out.println("end of thread :" + Thread.currentThread().getName() + " for urlQueue is null");
-        Main.mainLogger.info("end of thread :" + Thread.currentThread().getName() + " for urlQueue is null");
+        System.out.println("Fetcher :" + Thread.currentThread().getName() + " ended for urlQueue is " + urlQueue.size() + " Parser: " + parser.getState());
+        Main.mainLogger.info("Fetcher :" + Thread.currentThread().getName() + " ended for urlQueue is " + urlQueue.size());
         Main.currentThreadNumMinus();
     }
 
@@ -197,25 +205,7 @@ public class FetchPageThread implements Runnable{
         /**
          * @date 2015-04-01 add proxy
          */
-        Proxy proxy = null;
-        if (Main.config.useProxy) {
-            proxy= new Proxy(Proxy.Type.HTTP,
-                    new InetSocketAddress(Main.config.proxyHost, Main.config.proxyPort)
-            );
 
-            // if use authenticator for this proxy
-            // set authenticator's default value
-            if ( !Main.config.proxyUsername.equals("")) {
-                Authenticator auth = new Authenticator() {
-                    @Override
-                    protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(Main.config.proxyUsername, Main.config.proxyPassword.toCharArray());
-                    }
-                };
-
-                Authenticator.setDefault(auth);
-            }
-        }
         // Proxy proxy = null; //new Proxy(Proxy.Type.HTTP, new InetSocketAddress("10.4.20.2", 3128));
 
         // for some href is not start with http protocol, so add it manually
@@ -229,13 +219,13 @@ public class FetchPageThread implements Runnable{
 
         HttpURLConnection conn;
         try {
-            if (proxy != null) {
-                conn = (HttpURLConnection)url.openConnection(proxy);
+            if (Main.proxy != null) {
+                conn = (HttpURLConnection)url.openConnection(Main.proxy);
             } else {
                 conn = (HttpURLConnection)url.openConnection();
             }
         } catch (IOException e) {
-            System.out.println("open connection error " + e.getMessage());
+            System.out.println("open connection error " + e.getMessage() + " @:" + urlStr);
             return "";
         }
         if (conn == null) {
@@ -257,6 +247,7 @@ public class FetchPageThread implements Runnable{
             conn.connect();
         } catch (IOException e) {
             System.out.println("conn connect error " + e.getMessage() + "@ " + urlStr);
+            // e.printStackTrace();
             Main.mainLogger.info("conn connect error " + e.getMessage() + "@ " + urlStr);
             return "";
         }
@@ -281,15 +272,17 @@ public class FetchPageThread implements Runnable{
             }
         }
         InputStream res = null;
+        StringBuilder pageStrBuilder;
         try {
             res = conn.getInputStream();
+            pageStrBuilder =  (readFromStreamByLine(res));
+            res.close();
         } catch (IOException e) {
             Main.mainLogger.info("res getInputStream error " + e.getMessage());
             return "";
         }
         // build string
         // System.out.println(res.toString());
-        StringBuilder pageStrBuilder =  (readFromStreamByLine(res));
         // if (contentLength != -1) pageStrBuilder = new StringBuilder(readBytesFromStream(res, contentLength, charset));
         // else {
         // pageStrBuilder = (readFromStreamByLine(res));

@@ -21,19 +21,25 @@ public class HtmlParserThread implements Runnable {
 
     BlockingQueue<String> urlQueue;
     BlockingQueue<String> pageQueue;
-    public String fetcher;
+
+    /**
+     * hold the fetcher's reference
+     * if fetcher is still alive, parser should keep waiting
+     */
+    public Thread fetcher;
     // String pageStr;
     Document doc;
 
     // public HtmlParserThread(BlockingQueue<String> queue) {
     //     this.urlQueue = queue;
     // }
-    public HtmlParserThread(BlockingQueue<String> pageQueue, BlockingQueue<String> queue, String fetcher) {
+    public HtmlParserThread(BlockingQueue<String> pageQueue, BlockingQueue<String> queue, Thread fetcher) {
         this.pageQueue = pageQueue;
         // doc = Jsoup.parse(pageStr);
         this.urlQueue = queue;
         this.fetcher = fetcher;
     }
+    public HtmlParserThread() {}
     /**
      * simple version for just get all links to put to urlqueue
      */
@@ -115,6 +121,10 @@ public class HtmlParserThread implements Runnable {
                 if (hrefStr.startsWith("//")) hrefStr = "http:" + hrefStr;
                 else if (hrefStr.startsWith("/")) hrefStr = baseUrl + hrefStr;
 
+                if ( !hrefStr.startsWith("http://") &&
+                        !hrefStr.startsWith("https://")) {
+                    hrefStr = "http://" + hrefStr;
+                }
                 // remove hashTag
                 if (hrefStr.indexOf("#") > 0) {
                     hrefStr = hrefStr.substring(0, hrefStr.indexOf("#"));
@@ -182,7 +192,7 @@ public class HtmlParserThread implements Runnable {
             // urlQueue.addAll(urlArr);
             for (String u : urlArr) {
                 try {
-                    boolean offerRes = urlQueue.offer(u, 300, TimeUnit.MILLISECONDS);
+                    boolean offerRes = urlQueue.offer(u, 800, TimeUnit.MILLISECONDS);
                     if (!offerRes) Main.mainLogger.info("****url Queue is full****");
                 } catch (InterruptedException e) {
                     Main.mainLogger.info("put into url queue error " + e.getMessage());
@@ -190,10 +200,14 @@ public class HtmlParserThread implements Runnable {
             }
 
             try {
-                // wait for 20 seconds, if there is no page available after this time
-                // then null will be assigned
-                if (urlQueue.size() == 0) pageStr = pageQueue.poll(20000, TimeUnit.MILLISECONDS);
-                else pageStr = pageQueue.poll(60, TimeUnit.SECONDS);
+                // if fetcher is terminated, then parser should not keep waiting
+                // if fetcher is alive/not terminated, parser should keep wait
+                if (fetcher.getState().equals(Thread.State.TERMINATED)) pageStr = pageQueue.poll(2000, TimeUnit.MILLISECONDS);
+                else {
+                    pageStr = pageQueue.poll(90, TimeUnit.SECONDS);
+                    // System.out.println("waiting for 60 seconds, page len: " + pageStr.length());
+                }
+
             } catch (InterruptedException e) {
                 Main.mainLogger.info("page queue take error: " + e.getMessage());
             }
@@ -202,8 +216,8 @@ public class HtmlParserThread implements Runnable {
         /**
          * if pageStr is null, it means the corresponding fetching thread is dead
          */
-        System.out.println(Thread.currentThread().getName() + " quit for pageQueue is" + pageQueue.size());
-        Main.mainLogger.info(Thread.currentThread().getName() + " quit for pageQueue is " +  + pageQueue.size());
+        System.out.println("Parser " + Thread.currentThread().getName() + " quit for pageQueue is " + pageQueue.size() + " fetcher: " + fetcher.getState());
+        Main.mainLogger.info("Parser " + Thread.currentThread().getName() + " quit for pageQueue is " +  + pageQueue.size());
         Main.currentParseThreadNumMinus();
     }
 

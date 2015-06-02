@@ -4,6 +4,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
+import java.net.Authenticator;
+import java.net.InetSocketAddress;
+import java.net.PasswordAuthentication;
+import java.net.Proxy;
 import java.util.Calendar;
 import java.util.HashSet;
 import java.util.concurrent.*;
@@ -48,6 +52,8 @@ public class Main {
     public static ConcurrentHashMap<String, BlockingQueue<String>> threadUrlMap = new ConcurrentHashMap<String, BlockingQueue<String>>();
 
     public static ExecutorService executor;
+
+    public static Proxy proxy = Main.setProxy();
 
     public static void main(String[] args) throws IOException {
 
@@ -237,5 +243,28 @@ public class Main {
         }
 
         return threadCount;
+    }
+
+    public static Proxy setProxy() {
+        Proxy proxy = null;
+        if (Main.config.useProxy) {
+            proxy= new Proxy(Proxy.Type.HTTP,
+                    new InetSocketAddress(Main.config.proxyHost, Main.config.proxyPort)
+            );
+
+            // if use authenticator for this proxy
+            // set authenticator's default value
+            if ( !Main.config.proxyUsername.equals("")) {
+                Authenticator auth = new Authenticator() {
+                    @Override
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(Main.config.proxyUsername, Main.config.proxyPassword.toCharArray());
+                    }
+                };
+
+                Authenticator.setDefault(auth);
+            }
+        }
+        return proxy;
     }
 }
